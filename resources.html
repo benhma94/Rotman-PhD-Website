@@ -1,0 +1,23 @@
+---
+title: Resources
+---
+
+<div class="page-header">
+  <h1>📁 Resources</h1>
+</div>
+
+{% assign categories = site.resources | map: "category" | uniq | sort %}
+{% for category in categories %}
+<div class="resource-category">
+  <div class="category-label">{{ category }}</div>
+  {% assign cat_resources = site.resources | where: "category", category | sort: "title" %}
+  {% for r in cat_resources %}
+  <div class="resource-item">
+    <a href="{{ r.url }}" target="_blank" rel="noopener noreferrer">{{ r.title }}</a>
+    {% if r.description %}
+    <span class="resource-desc">— {{ r.description }}</span>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endfor %}
