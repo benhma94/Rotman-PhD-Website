@@ -7,5 +7,78 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'benhma94/Rotman-PhD-Website',
+          branch: 'master',
+          auth_type: 'pkce',
+          app_id: 'Ov23liKN0jT58PUBMDzZ'
+        },
+        media_folder: 'assets/uploads',
+        public_folder: '/assets/uploads',
+        collections: [
+          {
+            name: 'notices',
+            label: 'Notices',
+            label_singular: 'Notice',
+            folder: '_notices',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            editor: { preview: false },
+            fields: [
+              { label: 'Title',  name: 'title',  widget: 'string' },
+              { label: 'Date',   name: 'date',   widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false },
+              { label: 'Body',   name: 'body',   widget: 'text',    required: false },
+              { label: 'Pinned', name: 'pinned', widget: 'boolean', default: false }
+            ]
+          },
+          {
+            name: 'events',
+            label: 'Events & Deadlines',
+            label_singular: 'Event',
+            folder: '_events',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            editor: { preview: false },
+            fields: [
+              { label: 'Title',    name: 'title',    widget: 'string' },
+              { label: 'Date',     name: 'date',     widget: 'datetime', format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false },
+              { label: 'Location', name: 'location', widget: 'string',  required: false },
+              {
+                label: 'Type', name: 'type', widget: 'select',
+                options: [
+                  { label: 'Event',    value: 'event' },
+                  { label: 'Deadline', value: 'deadline' }
+                ],
+                default: 'event'
+              }
+            ]
+          },
+          {
+            name: 'resources',
+            label: 'Resources',
+            label_singular: 'Resource',
+            folder: '_resources',
+            create: true,
+            slug: '{{slug}}',
+            editor: { preview: false },
+            fields: [
+              { label: 'Title',       name: 'title',       widget: 'string' },
+              { label: 'URL',         name: 'url',         widget: 'string' },
+              {
+                label: 'Category', name: 'category', widget: 'select',
+                options: ['Guides', 'Policies', 'Forms', 'Admin']
+              },
+              { label: 'Description', name: 'description', widget: 'text',    required: false },
+              { label: 'Pinned',      name: 'pinned',      widget: 'boolean', default: false }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
