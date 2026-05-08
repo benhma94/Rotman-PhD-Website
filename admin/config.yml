@@ -3,7 +3,7 @@ backend:
   repo: benhma94/Rotman-PhD-Website
   branch: master
   auth_type: pkce
-  app_id: YOUR_OAUTH_APP_CLIENT_ID
+  app_id: Ov23liKN0jT58PUBMDzZ
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
