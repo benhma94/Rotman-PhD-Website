@@ -1,0 +1,28 @@
+<aside class="sidebar">
+  <nav>
+    <a href="{{ '/' | relative_url }}"
+       class="nav-item {% if page.url == '/' %}active{% endif %}">
+      🏠 Home
+    </a>
+    <a href="{{ '/resources' | relative_url }}"
+       class="nav-item {% if page.url contains 'resources' %}active{% endif %}">
+      📁 Resources
+    </a>
+    <a href="{{ '/events' | relative_url }}"
+       class="nav-item {% if page.url contains 'events' %}active{% endif %}">
+      📅 Events
+    </a>
+    <a href="{{ '/notices' | relative_url }}"
+       class="nav-item {% if page.url contains 'notices' %}active{% endif %}">
+      📢 Notices
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="{{ '/admin' | relative_url }}"
+       class="nav-item"
+       id="admin-link"
+       style="display:none">
+      ⚙️ Admin
+    </a>
+  </div>
+</aside>
