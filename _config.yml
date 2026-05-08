@@ -1,0 +1,23 @@
+title: "Rotman PhD Association"
+description: "Internal portal for Rotman PhD students"
+baseurl: ""
+url: ""
+
+markdown: kramdown
+permalink: pretty
+
+collections:
+  notices:
+    output: false
+    sort_by: date
+  events:
+    output: false
+    sort_by: date
+  resources:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
