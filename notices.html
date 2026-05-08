@@ -1,0 +1,21 @@
+---
+title: Notices
+---
+
+<div class="page-header">
+  <h1>📢 Notices</h1>
+</div>
+
+{% assign pinned   = site.notices | where: "pinned", true  | sort: "date" | reverse %}
+{% assign unpinned = site.notices | where: "pinned", false | sort: "date" | reverse %}
+{% assign all_notices = pinned | concat: unpinned %}
+
+{% for notice in all_notices %}
+<div class="notice-item {% if notice.pinned %}pinned{% endif %}">
+  <div class="notice-date">{{ notice.date | date: "%B %-d, %Y" }}{% if notice.pinned %} &nbsp;📌 Pinned{% endif %}</div>
+  <div class="notice-title">{{ notice.title }}</div>
+  {% if notice.body %}
+  <div class="notice-body">{{ notice.body }}</div>
+  {% endif %}
+</div>
+{% endfor %}

@@ -1,0 +1,23 @@
+---
+title: Events
+---
+
+<div class="page-header">
+  <h1>📅 Events & Deadlines</h1>
+</div>
+
+{% assign sorted_events = site.events | sort: "date" %}
+{% for event in sorted_events %}
+<div class="event-full-item">
+  <div class="event-full-badge {% if event.type == 'deadline' %}deadline{% endif %}">
+    <div class="badge-day">{{ event.date | date: "%-d" }}</div>
+    <div class="badge-month">{{ event.date | date: "%b %Y" }}</div>
+  </div>
+  <div class="event-info">
+    <h3>{{ event.title }}{% if event.type == 'deadline' %} ⚠️{% endif %}</h3>
+    {% if event.location %}
+    <div class="event-location">📍 {{ event.location }}</div>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}

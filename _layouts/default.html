@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+
+  {% include password-gate.html %}
+
+  <div class="site-shell" id="site-shell" style="display:none">
+    <header class="top-bar">
+      <span class="site-title">Rotman PhD Association</span>
+      <span class="academic-year">2025–2026</span>
+    </header>
+    <div class="layout">
+      {% include sidebar.html %}
+      <main class="content">
+        {{ content }}
+      </main>
+    </div>
+  </div>
+
+  <script src="{{ '/assets/js/auth.js' | relative_url }}"></script>
+</body>
+</html>
