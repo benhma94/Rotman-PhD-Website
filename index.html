@@ -1,0 +1,49 @@
+---
+title: Home
+---
+
+<div class="welcome-banner">
+  <h1>Welcome, PhD Students 👋</h1>
+  <p>Your association hub for resources, events, and notices.</p>
+</div>
+
+{% assign pinned_notice = site.notices | where: "pinned", true | sort: "date" | reverse | first %}
+{% if pinned_notice %}
+<div class="notice-alert">
+  <span style="font-size:1.5rem">📢</span>
+  <div>
+    <div class="notice-label">Latest Notice</div>
+    <div class="notice-title">{{ pinned_notice.title }}</div>
+  </div>
+</div>
+{% endif %}
+
+<div class="dashboard-grid">
+
+  <div class="card">
+    <div class="card-header">📁 Quick Resources</div>
+    {% assign pinned_resources = site.resources | where: "pinned", true %}
+    {% for r in pinned_resources limit: 6 %}
+    <a class="resource-link" href="{{ r.url }}" target="_blank" rel="noopener noreferrer">
+      {{ r.title }}
+    </a>
+    {% endfor %}
+  </div>
+
+  <div class="card">
+    <div class="card-header">📅 Upcoming Events</div>
+    {% assign upcoming = site.events | sort: "date" %}
+    {% for event in upcoming limit: 4 %}
+    <div class="event-item">
+      <div class="date-badge {% if event.type == 'deadline' %}deadline{% endif %}">
+        {{ event.date | date: "%b" | upcase }}<br>
+        {{ event.date | date: "%-d" }}
+      </div>
+      <div class="event-title {% if event.type == 'deadline' %}deadline{% endif %}">
+        {{ event.title }}{% if event.type == 'deadline' %} ⚠️{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
