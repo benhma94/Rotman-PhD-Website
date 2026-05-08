@@ -1,0 +1,62 @@
+<h2>Three Approaches for the PhD Association Site</h2>
+<p class="subtitle">All use GitHub Pages + a client-side password gate. Pick the build approach that fits best.</p>
+
+<div class="options">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Plain HTML / CSS / JS</h3>
+      <p>Hand-written HTML pages, no build tools. You edit the HTML directly to update content.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul>
+          <li>Zero setup — push files, site is live</li>
+          <li>No dependencies, never breaks</li>
+          <li>Full control over every pixel</li>
+        </ul></div>
+        <div class="cons"><h4>Cons</h4><ul>
+          <li>Content and code are mixed — updating a notice means editing HTML</li>
+          <li>Harder for non-technical future admins</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Jekyll (GitHub Pages native) ⭐ Recommended</h3>
+      <p>GitHub Pages has Jekyll built-in — push markdown/YAML files and GitHub builds the site automatically. No CI/CD setup needed.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul>
+          <li>Content lives in simple YAML/markdown files (easy for future admins)</li>
+          <li>GitHub builds it for free — zero extra tooling</li>
+          <li>Future admins can edit content via GitHub's web editor (no code knowledge needed)</li>
+          <li>Clean separation: change a resource link without touching HTML</li>
+        </ul></div>
+        <div class="cons"><h4>Cons</h4><ul>
+          <li>Small upfront learning curve for the data file format</li>
+          <li>Slightly slower GitHub Pages build (~1–2 min after a push)</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>React / Next.js (static export)</h3>
+      <p>Modern component-based framework with a GitHub Actions build step to deploy to Pages.</p>
+      <div class="pros-cons">
+        <div class="pros"><h4>Pros</h4><ul>
+          <li>Easiest to add interactive features later (polls, dynamic filtering)</li>
+          <li>Great ecosystem of UI libraries</li>
+        </ul></div>
+        <div class="cons"><h4>Cons</h4><ul>
+          <li>Overkill for a resources + calendar site</li>
+          <li>Requires GitHub Actions setup for deployment</li>
+          <li>Node.js dependency management can be a maintenance burden</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</div>
