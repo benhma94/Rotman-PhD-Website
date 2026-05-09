@@ -73,9 +73,6 @@
       }
     }
 
-    var detail = document.querySelector('.cal-detail');
-    detail.classList.remove('visible');
-    detail.innerHTML = '';
   }
 
   function makeCell(year, month, day, otherMonth) {
@@ -109,52 +106,43 @@
 
   function handleDateClick(cell, dateStr) {
     var eventsOnDay = allEvents.filter(function (e) { return e.date === dateStr; });
-    var wasSelected = cell.classList.contains('selected');
 
     document.querySelectorAll('.cal-cell.selected').forEach(function (c) {
       c.classList.remove('selected');
     });
+    cell.classList.add('selected');
 
-    if (wasSelected) {
-      var detail = document.querySelector('.cal-detail');
-      detail.classList.remove('visible');
-      detail.innerHTML = '';
+    if (eventsOnDay.length === 1) {
+      var ev = eventsOnDay[0];
+      NoticeDialog.open(
+        ev.title + (ev.type === 'deadline' ? ' ⚠️' : ''),
+        formatDate(dateStr) + (ev.type === 'deadline' ? ' · Deadline' : ' · Event'),
+        buildEventHtml(ev)
+      );
     } else {
-      cell.classList.add('selected');
-      showDetail(eventsOnDay);
+      var html = eventsOnDay.map(function (ev) {
+        return '<div class="event-dialog-entry"><strong>' + esc(ev.title) +
+               (ev.type === 'deadline' ? ' ⚠️' : '') + '</strong>' +
+               buildEventHtml(ev) + '</div>';
+      }).join('<hr class="event-dialog-sep">');
+      NoticeDialog.open(formatDate(dateStr), eventsOnDay.length + ' events', html);
     }
   }
 
-  function showDetail(events) {
-    var detail = document.querySelector('.cal-detail');
-    detail.innerHTML = '';
+  function buildEventHtml(ev) {
+    var parts = [];
+    if (ev.description) parts.push('<p>' + esc(ev.description) + '</p>');
+    if (ev.location)    parts.push('<p>📍 ' + esc(ev.location) + '</p>');
+    return parts.length ? parts.join('') : '<p><em>No additional details.</em></p>';
+  }
 
-    events.forEach(function (ev) {
-      var card = document.createElement('div');
-      card.className = 'cal-detail-card' + (ev.type === 'deadline' ? ' deadline' : '');
+  function formatDate(dateStr) {
+    var p = dateStr.split('-');
+    return MONTHS[parseInt(p[1], 10) - 1] + ' ' + parseInt(p[2], 10) + ', ' + p[0];
+  }
 
-      var badge = document.createElement('span');
-      badge.className = 'cal-detail-badge';
-      badge.textContent = ev.type === 'deadline' ? 'DEADLINE ⚠️' : 'EVENT';
-
-      var title = document.createElement('div');
-      title.className = 'cal-detail-title';
-      title.textContent = ev.title;
-
-      card.appendChild(badge);
-      card.appendChild(title);
-
-      if (ev.location) {
-        var loc = document.createElement('div');
-        loc.className = 'cal-detail-location';
-        loc.textContent = '📍 ' + ev.location;
-        card.appendChild(loc);
-      }
-
-      detail.appendChild(card);
-    });
-
-    detail.classList.add('visible');
+  function esc(str) {
+    return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
   function switchView(view) {

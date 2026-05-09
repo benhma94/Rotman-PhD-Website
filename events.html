@@ -24,7 +24,11 @@ title: Events
 <div id="list-view">
   {% assign sorted_events = site.events | sort: "date" %}
   {% for event in sorted_events %}
-  <div class="event-full-item">
+  <div class="event-full-item"
+       data-title="{{ event.title | escape }}{% if event.type == 'deadline' %} ⚠️{% endif %}"
+       data-subtitle="{{ event.date | date: '%B %-d, %Y' }}{% if event.type == 'deadline' %} · Deadline{% endif %}"
+       data-description="{{ event.description | escape }}"
+       data-location="{{ event.location | escape }}">
     <div class="event-full-badge {% if event.type == 'deadline' %}deadline{% endif %}">
       <div class="badge-day">{{ event.date | date: "%-d" }}</div>
       <div class="badge-month">{{ event.date | date: "%b %Y" }}</div>
@@ -40,6 +44,22 @@ title: Events
 </div>
 
 <script type="application/json" id="events-data">
-[{% assign sorted_events = site.events | sort: "date" %}{% for event in sorted_events %}{% unless forloop.first %},{% endunless %}{"title":{{ event.title | jsonify }},"date":"{{ event.date | date: "%Y-%m-%d" }}","type":"{{ event.type }}","location":{{ event.location | default: "" | jsonify }}}{% endfor %}]
+[{% assign sorted_events = site.events | sort: "date" %}{% for event in sorted_events %}{% unless forloop.first %},{% endunless %}{"title":{{ event.title | jsonify }},"date":"{{ event.date | date: "%Y-%m-%d" }}","type":"{{ event.type }}","location":{{ event.location | default: "" | jsonify }},"description":{{ event.description | default: "" | jsonify }}}{% endfor %}]
 </script>
 <script src="{{ '/assets/js/calendar.js' | relative_url }}"></script>
+<script>
+(function () {
+  function eventHtml(desc, loc) {
+    var parts = [];
+    if (desc) parts.push('<p>' + desc + '</p>');
+    if (loc)  parts.push('<p>📍 ' + loc + '</p>');
+    return parts.length ? parts.join('') : '<p><em>No additional details.</em></p>';
+  }
+  document.querySelectorAll('.event-full-item[data-title]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      NoticeDialog.open(el.dataset.title, el.dataset.subtitle,
+        eventHtml(el.dataset.description, el.dataset.location));
+    });
+  });
+}());
+</script>

@@ -9,13 +9,26 @@ title: Home
 
 {% assign pinned_notice = site.notices | where: "pinned", true | sort: "date" | reverse | first %}
 {% if pinned_notice %}
-<div class="notice-alert">
+<div class="notice-alert"
+     data-title="{{ pinned_notice.title | escape }}"
+     data-date="{{ pinned_notice.date | date: '%B %-d, %Y' }}"
+     data-pinned="true">
   <span style="font-size:1.5rem">📢</span>
   <div>
     <div class="notice-label">Latest Notice</div>
     <div class="notice-title">{{ pinned_notice.title }}</div>
   </div>
 </div>
+<template id="home-notice-body">{{ pinned_notice.content }}</template>
+<script>
+(function () {
+  var el = document.querySelector('.notice-alert');
+  if (!el) return;
+  el.addEventListener('click', function () {
+    NoticeDialog.open(el.dataset.title, el.dataset.date + '  📌 Pinned', document.getElementById('home-notice-body').innerHTML);
+  });
+}());
+</script>
 {% endif %}
 
 <div class="dashboard-grid">
@@ -34,7 +47,11 @@ title: Home
     <div class="card-header">📅 Upcoming Events</div>
     {% assign upcoming = site.events | sort: "date" %}
     {% for event in upcoming limit: 4 %}
-    <div class="event-item">
+    <div class="event-item"
+         data-title="{{ event.title | escape }}{% if event.type == 'deadline' %} ⚠️{% endif %}"
+         data-subtitle="{{ event.date | date: '%B %-d, %Y' }}{% if event.type == 'deadline' %} · Deadline{% endif %}"
+         data-description="{{ event.description | escape }}"
+         data-location="{{ event.location | escape }}">
       <div class="date-badge {% if event.type == 'deadline' %}deadline{% endif %}">
         {{ event.date | date: "%b" | upcase }}<br>
         {{ event.date | date: "%-d" }}
@@ -45,5 +62,21 @@ title: Home
     </div>
     {% endfor %}
   </div>
+<script>
+(function () {
+  function eventHtml(desc, loc) {
+    var parts = [];
+    if (desc) parts.push('<p>' + desc + '</p>');
+    if (loc)  parts.push('<p>📍 ' + loc + '</p>');
+    return parts.length ? parts.join('') : '<p><em>No additional details.</em></p>';
+  }
+  document.querySelectorAll('.event-item[data-title]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      NoticeDialog.open(el.dataset.title, el.dataset.subtitle,
+        eventHtml(el.dataset.description, el.dataset.location));
+    });
+  });
+}());
+</script>
 
 </div>
