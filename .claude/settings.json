@@ -21,7 +21,10 @@
       "Bash(curl -s \"https://api.github.com/repos/decaporg/decap-cms/contents/packages/decap-cms-backend-github/src\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/decaporg/decap-cms/main/packages/decap-cms-backend-github/src/AuthenticationPage.js\")",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:sveltiacms.app)"
+      "WebFetch(domain:sveltiacms.app)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\Ben Ma\\\\Dropbox\\\\benma\\\\Rotman PhD Website\" -Recurse -Force)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Select-String \"notice\" -SimpleMatch)"
     ]
   }
 }

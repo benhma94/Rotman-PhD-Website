@@ -11,11 +11,64 @@ title: Notices
 {% assign all_notices = pinned | concat: unpinned %}
 
 {% for notice in all_notices %}
-<div class="notice-item {% if notice.pinned %}pinned{% endif %}">
+<div class="notice-item {% if notice.pinned %}pinned{% endif %}"
+     data-notice="{{ forloop.index }}"
+     data-title="{{ notice.title | escape }}"
+     data-date="{{ notice.date | date: '%B %-d, %Y' }}"
+     data-pinned="{{ notice.pinned }}">
   <div class="notice-date">{{ notice.date | date: "%B %-d, %Y" }}{% if notice.pinned %} &nbsp;📌 Pinned{% endif %}</div>
   <div class="notice-title">{{ notice.title }}</div>
-  {% if notice.body %}
-  <div class="notice-body">{{ notice.body }}</div>
-  {% endif %}
 </div>
+<template id="notice-body-{{ forloop.index }}">{{ notice.content }}</template>
 {% endfor %}
+
+<!-- Notice dialog -->
+<div id="notice-dialog" class="notice-dialog-overlay" hidden>
+  <div class="notice-dialog-box" role="dialog" aria-modal="true" aria-labelledby="notice-dialog-title">
+    <div class="notice-dialog-header">
+      <div>
+        <div class="notice-date" id="notice-dialog-date"></div>
+        <h2 class="notice-dialog-title" id="notice-dialog-title"></h2>
+      </div>
+      <button class="notice-dialog-close" id="notice-dialog-close" aria-label="Close">&times;</button>
+    </div>
+    <div class="notice-dialog-body" id="notice-dialog-body"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var overlay   = document.getElementById('notice-dialog');
+  var dlgDate   = document.getElementById('notice-dialog-date');
+  var dlgTitle  = document.getElementById('notice-dialog-title');
+  var dlgBody   = document.getElementById('notice-dialog-body');
+  var closeBtn  = document.getElementById('notice-dialog-close');
+
+  document.querySelectorAll('.notice-item').forEach(function (item) {
+    item.addEventListener('click', function () {
+      var id     = item.dataset.notice;
+      var tpl    = document.getElementById('notice-body-' + id);
+      var pinned = item.dataset.pinned === 'true';
+
+      dlgDate.textContent  = item.dataset.date + (pinned ? '  📌 Pinned' : '');
+      dlgTitle.textContent = item.dataset.title;
+      dlgBody.innerHTML    = tpl ? tpl.innerHTML : '';
+      overlay.hidden       = false;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeDialog() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeDialog);
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeDialog();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !overlay.hidden) closeDialog();
+  });
+}());
+</script>
