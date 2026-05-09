@@ -299,15 +299,6 @@ body {
   visibility: visible;
 }
 .notice-dialog-box {
-  transform: scale(0.95);
-  opacity: 0;
-  transition: transform 200ms ease, opacity 200ms ease;
-}
-.notice-dialog-overlay.is-open .notice-dialog-box {
-  transform: scale(1);
-  opacity: 1;
-}
-.notice-dialog-box {
   background: var(--white);
   border-radius: 10px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
@@ -317,6 +308,13 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+.notice-dialog-overlay.is-open .notice-dialog-box {
+  transform: scale(1);
+  opacity: 1;
 }
 .notice-dialog-header {
   display: flex;

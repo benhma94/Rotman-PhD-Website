@@ -3,6 +3,7 @@ var NoticeDialog = (function () {
   var dlgDate  = document.getElementById('notice-dialog-date');
   var dlgTitle = document.getElementById('notice-dialog-title');
   var dlgBody  = document.getElementById('notice-dialog-body');
+  var _closeHandler = null;
 
   document.getElementById('notice-dialog-close').addEventListener('click', close);
   overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
@@ -32,16 +33,22 @@ var NoticeDialog = (function () {
     autolinkUrls(dlgBody);
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(function () {
-      overlay.classList.add('is-open');
+      requestAnimationFrame(function () {
+        overlay.classList.add('is-open');
+      });
     });
   }
 
   function close() {
+    if (_closeHandler) overlay.removeEventListener('transitionend', _closeHandler);
     overlay.classList.remove('is-open');
-    overlay.addEventListener('transitionend', function handler() {
-      overlay.removeEventListener('transitionend', handler);
+    _closeHandler = function handler(e) {
+      if (e.propertyName !== 'opacity') return;
+      overlay.removeEventListener('transitionend', _closeHandler);
+      _closeHandler = null;
       document.body.style.overflow = '';
-    });
+    };
+    overlay.addEventListener('transitionend', _closeHandler);
   }
 
   return { open: open };
