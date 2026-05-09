@@ -6,18 +6,40 @@ title: Events
   <h1>📅 Events & Deadlines</h1>
 </div>
 
-{% assign sorted_events = site.events | sort: "date" %}
-{% for event in sorted_events %}
-<div class="event-full-item">
-  <div class="event-full-badge {% if event.type == 'deadline' %}deadline{% endif %}">
-    <div class="badge-day">{{ event.date | date: "%-d" }}</div>
-    <div class="badge-month">{{ event.date | date: "%b %Y" }}</div>
-  </div>
-  <div class="event-info">
-    <h3>{{ event.title }}{% if event.type == 'deadline' %} ⚠️{% endif %}</h3>
-    {% if event.location %}
-    <div class="event-location">📍 {{ event.location }}</div>
-    {% endif %}
-  </div>
+<div class="view-tabs">
+  <button class="view-tab active" data-view="calendar">📅 Calendar</button>
+  <button class="view-tab" data-view="list">☰ List</button>
 </div>
-{% endfor %}
+
+<div id="calendar-view">
+  <div class="cal-nav">
+    <button class="cal-prev">←</button>
+    <span class="cal-month-label"></span>
+    <button class="cal-next">→</button>
+  </div>
+  <div class="cal-grid"></div>
+  <div class="cal-detail"></div>
+</div>
+
+<div id="list-view">
+  {% assign sorted_events = site.events | sort: "date" %}
+  {% for event in sorted_events %}
+  <div class="event-full-item">
+    <div class="event-full-badge {% if event.type == 'deadline' %}deadline{% endif %}">
+      <div class="badge-day">{{ event.date | date: "%-d" }}</div>
+      <div class="badge-month">{{ event.date | date: "%b %Y" }}</div>
+    </div>
+    <div class="event-info">
+      <h3>{{ event.title }}{% if event.type == 'deadline' %} ⚠️{% endif %}</h3>
+      {% if event.location %}
+      <div class="event-location">📍 {{ event.location }}</div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<script type="application/json" id="events-data">
+[{% assign sorted_events = site.events | sort: "date" %}{% for event in sorted_events %}{% unless forloop.first %},{% endunless %}{"title":{{ event.title | jsonify }},"date":"{{ event.date | date: "%Y-%m-%d" }}","type":"{{ event.type }}","location":{{ event.location | default: "" | jsonify }}}{% endfor %}]
+</script>
+<script src="{{ '/assets/js/calendar.js' | relative_url }}"></script>
