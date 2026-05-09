@@ -6,12 +6,18 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Rotman PhD Association//Events//EN
 X-WR-CALNAME:Rotman PhD Events
-{% for event in site.events %}BEGIN:VEVENT
+{%- for event in site.events %}
+BEGIN:VEVENT
 UID:{{ event.date | date: "%Y%m%d" }}-{{ event.title | slugify }}@rotmanphd.ca
 SUMMARY:{{ event.title }}
 DTSTART;VALUE=DATE:{{ event.date | date: "%Y%m%d" }}
 DTEND;VALUE=DATE:{{ event.date | date: "%Y%m%d" }}
-{% if event.description %}DESCRIPTION:{{ event.description | strip_newlines }}
-{% endif %}{% if event.location %}LOCATION:{{ event.location }}
-{% endif %}END:VEVENT
-{% endfor %}END:VCALENDAR
+{%- if event.description %}
+DESCRIPTION:{{ event.description | strip_newlines }}
+{%- endif %}
+{%- if event.location %}
+LOCATION:{{ event.location }}
+{%- endif %}
+END:VEVENT
+{%- endfor %}
+END:VCALENDAR
