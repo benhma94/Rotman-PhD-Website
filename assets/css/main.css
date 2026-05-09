@@ -445,7 +445,7 @@ body {
   transition: background 0.15s;
 }
 .cal-prev:hover, .cal-next:hover { background: var(--gray-200); }
-.cal-month-label { font-weight: 700; color: var(--navy); font-size: 1rem; }
+.cal-month-label { font-weight: 700; color: var(--navy); font-size: 1rem; transition: opacity 100ms ease; }
 
 /* ── Calendar grid ─────────────────────────── */
 .cal-grid {
@@ -453,6 +453,7 @@ body {
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
   margin-bottom: 0.75rem;
+  transition: opacity 100ms ease;
 }
 .cal-day-header {
   font-size: 0.65rem;

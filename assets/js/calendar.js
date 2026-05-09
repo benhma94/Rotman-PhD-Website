@@ -181,10 +181,29 @@
   }
 
   function navigate(delta) {
-    currentMonth += delta;
-    if (currentMonth < 0)  { currentMonth = 11; currentYear -= 1; }
-    if (currentMonth > 11) { currentMonth = 0;  currentYear += 1; }
-    renderGrid(currentYear, currentMonth);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      currentMonth += delta;
+      if (currentMonth < 0)  { currentMonth = 11; currentYear -= 1; }
+      if (currentMonth > 11) { currentMonth = 0;  currentYear += 1; }
+      renderGrid(currentYear, currentMonth);
+      return;
+    }
+    var grid  = document.querySelector('.cal-grid');
+    var label = document.querySelector('.cal-month-label');
+    grid.style.opacity  = '0';
+    label.style.opacity = '0';
+    setTimeout(function () {
+      currentMonth += delta;
+      if (currentMonth < 0)  { currentMonth = 11; currentYear -= 1; }
+      if (currentMonth > 11) { currentMonth = 0;  currentYear += 1; }
+      renderGrid(currentYear, currentMonth);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          grid.style.opacity  = '';
+          label.style.opacity = '';
+        });
+      });
+    }, 100);
   }
 
   function pad(n) { return n < 10 ? '0' + n : String(n); }
