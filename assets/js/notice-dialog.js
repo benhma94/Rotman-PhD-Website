@@ -7,7 +7,7 @@ var NoticeDialog = (function () {
   document.getElementById('notice-dialog-close').addEventListener('click', close);
   overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && overlay.style.display !== 'none') close();
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
   });
 
   function autolinkUrls(el) {
@@ -30,13 +30,18 @@ var NoticeDialog = (function () {
     dlgTitle.textContent = title;
     dlgBody.innerHTML    = html;
     autolinkUrls(dlgBody);
-    overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () {
+      overlay.classList.add('is-open');
+    });
   }
 
   function close() {
-    overlay.style.display = 'none';
-    document.body.style.overflow = '';
+    overlay.classList.remove('is-open');
+    overlay.addEventListener('transitionend', function handler() {
+      overlay.removeEventListener('transitionend', handler);
+      document.body.style.overflow = '';
+    });
   }
 
   return { open: open };

@@ -290,6 +290,22 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease, visibility 200ms ease;
+}
+.notice-dialog-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+.notice-dialog-box {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+.notice-dialog-overlay.is-open .notice-dialog-box {
+  transform: scale(1);
+  opacity: 1;
 }
 .notice-dialog-box {
   background: var(--white);
