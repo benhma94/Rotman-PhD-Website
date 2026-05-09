@@ -5,6 +5,7 @@
   var currentYear = 0;
   var currentMonth = 0;
   var _transitioning = false;
+  var _navigating = false;
 
   var MONTHS = ['January','February','March','April','May','June',
                 'July','August','September','October','November','December'];
@@ -181,6 +182,7 @@
   }
 
   function navigate(delta) {
+    if (_navigating) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       currentMonth += delta;
       if (currentMonth < 0)  { currentMonth = 11; currentYear -= 1; }
@@ -190,6 +192,7 @@
     }
     var grid  = document.querySelector('.cal-grid');
     var label = document.querySelector('.cal-month-label');
+    _navigating = true;
     grid.style.opacity  = '0';
     label.style.opacity = '0';
     setTimeout(function () {
@@ -201,6 +204,7 @@
         requestAnimationFrame(function () {
           grid.style.opacity  = '';
           label.style.opacity = '';
+          _navigating = false;
         });
       });
     }, 100);
