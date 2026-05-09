@@ -427,6 +427,24 @@ body {
 .view-tab.active { background: var(--navy); color: var(--white); }
 .view-tab:hover:not(.active) { background: var(--gray-200); }
 
+/* ── Calendar subscribe button ───────────────── */
+.cal-subscribe-btn {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cyan);
+  text-decoration: none;
+  border: 1px solid var(--cyan);
+  border-radius: 4px;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 1rem;
+  transition: background 0.15s, color 0.15s;
+}
+.cal-subscribe-btn:hover {
+  background: var(--cyan);
+  color: var(--white);
+}
+
 /* ── Calendar nav ──────────────────────────────── */
 .cal-nav {
   display: flex;
