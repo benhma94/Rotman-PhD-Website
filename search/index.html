@@ -49,7 +49,7 @@ permalink: /search/
     container.innerHTML = results.slice(0, 20).map(function (r) {
       var d = docMap[r.ref];
       if (!d) return '';
-      return '<a href="' + d.url + '" class="search-result">' +
+      return '<a href="' + esc(d.url) + '" class="search-result">' +
         '<span class="search-result-type search-result-type--' + d.type + '">' + d.type + '</span>' +
         '<span class="search-result-title">' + esc(d.title) + '</span>' +
         (d.body ? '<span class="search-result-excerpt">' + esc(d.body.slice(0, 120)) + '…</span>' : '') +
