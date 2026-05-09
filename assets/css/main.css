@@ -309,3 +309,123 @@ body {
   .content         { margin-left: 0; padding: 1rem; }
   .dashboard-grid  { grid-template-columns: 1fr; }
 }
+
+/* ── View toggle tabs ──────────────────────────── */
+.view-tabs {
+  display: flex;
+  margin-bottom: 1.25rem;
+  border: 2px solid var(--navy);
+  border-radius: 6px;
+  overflow: hidden;
+  width: fit-content;
+}
+.view-tab {
+  padding: 0.45rem 1.1rem;
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--white);
+  color: var(--navy);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.view-tab + .view-tab { border-left: 2px solid var(--navy); }
+.view-tab.active { background: var(--navy); color: var(--white); }
+.view-tab:hover:not(.active) { background: var(--gray-200); }
+
+/* ── Calendar nav ──────────────────────────────── */
+.cal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.cal-prev, .cal-next {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--navy);
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.cal-prev:hover, .cal-next:hover { background: var(--gray-200); }
+.cal-month-label { font-weight: 700; color: var(--navy); font-size: 1rem; }
+
+/* ── Calendar grid ─────────────────────────── */
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 0.75rem;
+}
+.cal-day-header {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gray-600);
+  text-align: center;
+  padding: 0.25rem 0;
+}
+.cal-cell {
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  position: relative;
+  cursor: default;
+  transition: background 0.1s;
+}
+.cal-cell.other-month { color: var(--gray-200); }
+.cal-cell.has-event { cursor: pointer; font-weight: 600; }
+.cal-cell.has-event::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--navy);
+}
+.cal-cell.has-event.deadline::after { background: var(--pink); }
+.cal-cell.selected {
+  outline: 2px solid var(--orange);
+  outline-offset: 1px;
+  background: var(--gray-200);
+}
+.cal-cell.has-event:hover:not(.selected) { background: var(--gray-100); }
+
+/* ── Calendar detail panel ─────────────────────── */
+.cal-detail { display: none; margin-top: 0.75rem; }
+.cal-detail.visible { display: block; }
+.cal-detail-card {
+  background: var(--white);
+  border-left: 3px solid var(--navy);
+  border-radius: 0 6px 6px 0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.cal-detail-card.deadline { border-left-color: var(--pink); }
+.cal-detail-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.cal-detail-card.deadline .cal-detail-badge { color: var(--pink); }
+.cal-detail-title { font-weight: 600; font-size: 0.95rem; }
+.cal-detail-location { font-size: 0.85rem; color: var(--gray-600); margin-top: 0.2rem; }
+
+/* ── JS utility ────────────────────────────── */
+.js-hidden { display: none !important; }
