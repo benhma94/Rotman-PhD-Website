@@ -12,7 +12,9 @@
       "Bash(node -e \"const fs=require\\('fs'\\); const css=fs.readFileSync\\('assets/css/main.css','utf8'\\); const test=/\\\\.js-hidden\\\\s*\\\\{\\\\s*display:\\\\s*none\\\\s*!important;\\\\s*\\\\}/; console.log\\('js-hidden has !important:', test.test\\(css\\) ? 'YES' : 'NO'\\)\")",
       "Bash(node -e ' *)",
       "Bash(git push *)",
-      "Bash(del \"c:\\\\Users\\\\Ben Ma\\\\Dropbox\\\\benma\\\\Rotman PhD Website\\\\admin\\\\config.yml\")"
+      "Bash(del \"c:\\\\Users\\\\Ben Ma\\\\Dropbox\\\\benma\\\\Rotman PhD Website\\\\admin\\\\config.yml\")",
+      "WebFetch(domain:rotmanphd.ca)",
+      "Bash(curl -s -H \"Cache-Control: no-cache\" \"https://rotmanphd.ca/admin/\")"
     ]
   }
 }
