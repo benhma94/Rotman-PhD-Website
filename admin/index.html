@@ -46,8 +46,8 @@
             fields: [
               { label: 'Title',    name: 'title',    widget: 'string' },
               { label: 'Date',     name: 'date',     widget: 'datetime', date_format: 'YYYY-MM-DD', time_format: false, format: 'YYYY-MM-DD' },
-              { label: 'Start Time', name: 'start_time', widget: 'string', required: false, hint: '24h format, e.g. 14:00. Leave blank for all-day.' },
-              { label: 'End Time',   name: 'end_time',   widget: 'string', required: false, hint: '24h format, e.g. 15:30. Leave blank if no end time.' },
+              { label: 'Start Time', name: 'start_time', widget: 'datetime', date_format: false, time_format: 'HH:mm', format: 'HH:mm', required: false, hint: 'Leave blank for all-day.' },
+              { label: 'End Time',   name: 'end_time',   widget: 'datetime', date_format: false, time_format: 'HH:mm', format: 'HH:mm', required: false, hint: 'Leave blank if no end time.' },
               { label: 'Location',    name: 'location',    widget: 'string', required: false },
               { label: 'Description', name: 'description', widget: 'text',   required: false },
               {
