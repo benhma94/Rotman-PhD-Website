@@ -1,0 +1,36 @@
+---
+layout: null
+permalink: /search.json
+---
+{
+  "notices": [
+    {%- for notice in site.notices %}{
+      "id": "notice-{{ forloop.index }}",
+      "type": "notice",
+      "title": {{ notice.title | jsonify }},
+      "body": {{ notice.content | strip_html | truncate: 500 | jsonify }},
+      "url": "/notices/"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+  "events": [
+    {%- for event in site.events %}{
+      "id": "event-{{ forloop.index }}",
+      "type": "event",
+      "title": {{ event.title | jsonify }},
+      "body": {{ event.description | default: "" | jsonify }},
+      "url": "/events/"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+  "resources": [
+    {%- for resource in site.resources %}{
+      "id": "resource-{{ forloop.index }}",
+      "type": "resource",
+      "title": {{ resource.title | jsonify }},
+      "body": {{ resource.description | default: "" | jsonify }},
+      "url": "/resources/"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
