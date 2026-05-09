@@ -18,6 +18,17 @@
     currentYear = now.getFullYear();
     currentMonth = now.getMonth();
 
+    if (allEvents.length > 0) {
+      var todayStr = currentYear + '-' + pad(currentMonth + 1) + '-' + pad(now.getDate());
+      var upcoming = allEvents.filter(function (e) { return e.date >= todayStr; });
+      var target = upcoming.length > 0
+        ? upcoming.reduce(function (a, b) { return a.date <= b.date ? a : b; })
+        : allEvents.reduce(function (a, b) { return a.date >= b.date ? a : b; });
+      var parts = target.date.split('-');
+      currentYear  = parseInt(parts[0], 10);
+      currentMonth = parseInt(parts[1], 10) - 1;
+    }
+
     document.getElementById('list-view').classList.add('js-hidden');
 
     document.querySelectorAll('.view-tab').forEach(function (tab) {

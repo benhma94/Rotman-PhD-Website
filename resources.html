@@ -13,7 +13,7 @@ title: Resources
   {% assign cat_resources = site.resources | where: "category", category | sort: "title" %}
   {% for r in cat_resources %}
   <div class="resource-item">
-    <a href="{{ r.url }}" target="_blank" rel="noopener noreferrer">{{ r.title }}</a>
+    <a href="{{ r.link }}" target="_blank" rel="noopener noreferrer">{{ r.title }}</a>
     {% if r.description %}
     <span class="resource-desc">— {{ r.description }}</span>
     {% endif %}

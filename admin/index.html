@@ -46,7 +46,8 @@
             fields: [
               { label: 'Title',    name: 'title',    widget: 'string' },
               { label: 'Date',     name: 'date',     widget: 'datetime', date_format: 'YYYY-MM-DD', time_format: false, format: 'YYYY-MM-DD' },
-              { label: 'Location', name: 'location', widget: 'string',  required: false },
+              { label: 'Location',    name: 'location',    widget: 'string', required: false },
+              { label: 'Description', name: 'description', widget: 'text',   required: false },
               {
                 label: 'Type', name: 'type', widget: 'select',
                 options: [
@@ -67,7 +68,7 @@
             editor: { preview: false },
             fields: [
               { label: 'Title',       name: 'title',       widget: 'string' },
-              { label: 'URL or File', name: 'url',         widget: 'file',   required: false, hint: 'Upload a file (Word, PDF…) or type/paste a URL' },
+              { label: 'URL or File', name: 'link',        widget: 'file',   required: false, hint: 'Upload a file (Word, PDF…) or type/paste a URL' },
               {
                 label: 'Category', name: 'category', widget: 'select',
                 options: ['Guides', 'Policies', 'Forms', 'Admin']

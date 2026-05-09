@@ -1,5 +1,5 @@
 ---
 title: "Graduate Scholarship — Internal Deadline"
-date: 2025-05-11
+date: 2026-05-11
 type: deadline
 ---
