@@ -35,10 +35,10 @@ async function checkPassword() {
     return;
   }
   if (hash === ACCESS.admin) {
-    sessionStorage.setItem('phd-access', 'admin');
+    localStorage.setItem('phd-access', 'admin');
     unlockSite('admin');
   } else if (hash === ACCESS.student) {
-    sessionStorage.setItem('phd-access', 'student');
+    localStorage.setItem('phd-access', 'student');
     unlockSite('student');
   } else {
     errorEl.textContent = 'Incorrect password. Please try again.';
@@ -47,7 +47,7 @@ async function checkPassword() {
 }
 
 // Restore session on page load
-const saved = sessionStorage.getItem('phd-access');
+const saved = localStorage.getItem('phd-access');
 if (saved) {
   unlockSite(saved);
 } else {
