@@ -81,7 +81,15 @@
       var allDeadlines = eventsOnDay.every(function (e) { return e.type === 'deadline'; });
       if (allDeadlines) cell.classList.add('deadline');
       cell.dataset.date = dateStr;
+      cell.setAttribute('role', 'button');
+      cell.setAttribute('tabindex', '0');
       cell.addEventListener('click', function () { handleDateClick(cell, dateStr); });
+      cell.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleDateClick(cell, dateStr);
+        }
+      });
     }
 
     cell.textContent = day;

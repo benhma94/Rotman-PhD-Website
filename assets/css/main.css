@@ -381,7 +381,7 @@ body {
   cursor: default;
   transition: background 0.1s;
 }
-.cal-cell.other-month { color: var(--gray-200); }
+.cal-cell.other-month { color: var(--gray-600); }
 .cal-cell.has-event { cursor: pointer; font-weight: 600; }
 .cal-cell.has-event::after {
   content: '';
