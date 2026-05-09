@@ -530,3 +530,8 @@ body {
 #list-view {
   transition: opacity 120ms ease;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  #calendar-view,
+  #list-view { transition: none; }
+}

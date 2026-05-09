@@ -4,6 +4,7 @@
   var allEvents = [];
   var currentYear = 0;
   var currentMonth = 0;
+  var _transitioning = false;
 
   var MONTHS = ['January','February','March','April','May','June',
                 'July','August','September','October','November','December'];
@@ -146,6 +147,7 @@
   }
 
   function switchView(view) {
+    if (_transitioning) return;
     document.querySelectorAll('.view-tab').forEach(function (t) {
       t.classList.toggle('active', t.dataset.view === view);
     });
@@ -156,6 +158,13 @@
 
     if (outgoing.classList.contains('js-hidden')) return; // already correct view
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      outgoing.classList.add('js-hidden');
+      incoming.classList.remove('js-hidden');
+      return;
+    }
+
+    _transitioning = true;
     outgoing.style.opacity = '0';
     setTimeout(function () {
       outgoing.classList.add('js-hidden');
@@ -165,6 +174,7 @@
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
           incoming.style.opacity = '';
+          _transitioning = false;
         });
       });
     }, 120);
