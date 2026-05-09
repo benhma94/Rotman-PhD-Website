@@ -553,6 +553,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   #calendar-view,
   #list-view { transition: none; }
+  .notice-dialog-overlay,
+  .notice-dialog-box { transition: none; }
 }
 
 /* ── Search page ─────────────────────────────── */

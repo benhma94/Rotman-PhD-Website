@@ -27,6 +27,10 @@ var NoticeDialog = (function () {
   }
 
   function open(title, subtitle, html) {
+    if (_closeHandler) {
+      overlay.removeEventListener('transitionend', _closeHandler);
+      _closeHandler = null;
+    }
     dlgDate.textContent  = subtitle || '';
     dlgTitle.textContent = title;
     dlgBody.innerHTML    = html;
