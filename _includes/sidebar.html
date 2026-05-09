@@ -16,6 +16,10 @@
        class="nav-item {% if page.url contains 'notices' %}active{% endif %}">
       📢 Notices
     </a>
+    <a href="{{ '/search' | relative_url }}"
+       class="nav-item {% if page.url contains 'search' %}active{% endif %}">
+      🔍 Search
+    </a>
   </nav>
   <div class="sidebar-footer">
     <a href="{{ '/admin' | relative_url }}"
