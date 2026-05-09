@@ -149,13 +149,25 @@
     document.querySelectorAll('.view-tab').forEach(function (t) {
       t.classList.toggle('active', t.dataset.view === view);
     });
-    if (view === 'calendar') {
-      document.getElementById('calendar-view').classList.remove('js-hidden');
-      document.getElementById('list-view').classList.add('js-hidden');
-    } else {
-      document.getElementById('calendar-view').classList.add('js-hidden');
-      document.getElementById('list-view').classList.remove('js-hidden');
-    }
+    var calView  = document.getElementById('calendar-view');
+    var listView = document.getElementById('list-view');
+    var outgoing = (view === 'calendar') ? listView : calView;
+    var incoming = (view === 'calendar') ? calView  : listView;
+
+    if (outgoing.classList.contains('js-hidden')) return; // already correct view
+
+    outgoing.style.opacity = '0';
+    setTimeout(function () {
+      outgoing.classList.add('js-hidden');
+      outgoing.style.opacity = '';
+      incoming.classList.remove('js-hidden');
+      incoming.style.opacity = '0';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          incoming.style.opacity = '';
+        });
+      });
+    }, 120);
   }
 
   function navigate(delta) {

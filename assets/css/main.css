@@ -524,3 +524,9 @@ body {
 
 /* ── JS utility ────────────────────────────── */
 .js-hidden { display: none !important; }
+
+/* ── View transition ────────────────────────── */
+#calendar-view,
+#list-view {
+  transition: opacity 120ms ease;
+}
