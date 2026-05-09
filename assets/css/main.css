@@ -385,6 +385,7 @@ body {
 .badge-month { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; }
 .event-info h3       { font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; }
 .event-location { font-size: 0.85rem; color: var(--gray-600); }
+.event-time     { font-size: 0.85rem; color: var(--gray-600); }
 
 /* ── Responsive ────────────────────────────── */
 @media (max-width: 768px) {

@@ -11,6 +11,19 @@
                 'July','August','September','October','November','December'];
   var DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
+  function fmt12h(t) {
+    var parts = t.split(':');
+    var h = parseInt(parts[0], 10);
+    var m = parts[1];
+    var ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    return h + ':' + m + ' ' + ampm;
+  }
+
+  function fmtTimeRange(start, end) {
+    return end ? fmt12h(start) + ' – ' + fmt12h(end) : fmt12h(start);
+  }
+
   function init() {
     var blob = document.getElementById('events-data');
     if (!blob) return;
@@ -40,6 +53,28 @@
     document.querySelector('.cal-next').addEventListener('click', function () { navigate(1); });
 
     renderGrid(currentYear, currentMonth);
+
+    document.querySelectorAll('.event-full-item').forEach(function (el) {
+      var start = el.dataset.startTime;
+      var end   = el.dataset.endTime;
+      if (start) {
+        var timeEl = document.createElement('div');
+        timeEl.className = 'event-time';
+        timeEl.textContent = '🕐 ' + fmtTimeRange(start, end);
+        el.querySelector('.event-info').appendChild(timeEl);
+      }
+      el.addEventListener('click', function () {
+        var timeStr = start ? fmtTimeRange(start, end) : '';
+        var subtitle = el.dataset.subtitle + (timeStr ? ' · ' + timeStr : '');
+        var desc = el.dataset.description;
+        var loc  = el.dataset.location;
+        var html = [];
+        if (desc) html.push('<p>' + esc(desc) + '</p>');
+        if (loc)  html.push('<p>📍 ' + esc(loc) + '</p>');
+        NoticeDialog.open(el.dataset.title, subtitle,
+          html.length ? html.join('') : '<p><em>No additional details.</em></p>');
+      });
+    });
   }
 
   function renderGrid(year, month) {
@@ -133,6 +168,7 @@
 
   function buildEventHtml(ev) {
     var parts = [];
+    if (ev.start_time)  parts.push('<p>🕐 ' + esc(fmtTimeRange(ev.start_time, ev.end_time)) + '</p>');
     if (ev.description) parts.push('<p>' + esc(ev.description) + '</p>');
     if (ev.location)    parts.push('<p>📍 ' + esc(ev.location) + '</p>');
     return parts.length ? parts.join('') : '<p><em>No additional details.</em></p>';

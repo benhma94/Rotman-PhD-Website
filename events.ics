@@ -6,12 +6,51 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Rotman PhD Association//Events//EN
 X-WR-CALNAME:Rotman PhD Events
+{%- assign has_timed = false -%}
+{%- for event in site.events -%}
+  {%- if event.start_time -%}
+    {%- assign has_timed = true -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if has_timed %}
+BEGIN:VTIMEZONE
+TZID:America/Toronto
+BEGIN:STANDARD
+DTSTART:19671029T020000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=11
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:19870405T020000
+RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+END:DAYLIGHT
+END:VTIMEZONE
+{%- endif %}
 {%- for event in site.events %}
 BEGIN:VEVENT
 UID:{{ event.date | date: "%Y%m%d" }}-{{ event.title | slugify }}@rotmanphd.ca
 SUMMARY:{{ event.title }}
+{%- if event.start_time -%}
+{%- assign s = event.start_time | split: ":" -%}
+{%- if event.end_time -%}
+{%- assign e = event.end_time | split: ":" %}
+DTSTART;TZID=America/Toronto:{{ event.date | date: "%Y%m%d" }}T{{ s[0] }}{{ s[1] }}00
+DTEND;TZID=America/Toronto:{{ event.date | date: "%Y%m%d" }}T{{ e[0] }}{{ e[1] }}00
+{%- else -%}
+{%- assign end_h = s[0] | plus: 1 -%}
+{%- assign end_h_pad = end_h | prepend: "00" | slice: -2, 2 %}
+DTSTART;TZID=America/Toronto:{{ event.date | date: "%Y%m%d" }}T{{ s[0] }}{{ s[1] }}00
+DTEND;TZID=America/Toronto:{{ event.date | date: "%Y%m%d" }}T{{ end_h_pad }}{{ s[1] }}00
+{%- endif -%}
+{%- else %}
 DTSTART;VALUE=DATE:{{ event.date | date: "%Y%m%d" }}
 DTEND;VALUE=DATE:{{ event.date | date: "%Y%m%d" }}
+{%- endif %}
 {%- if event.description %}
 DESCRIPTION:{{ event.description | strip_newlines }}
 {%- endif %}
