@@ -1,7 +1,7 @@
 title: "Rotman PhD Association"
 description: "Internal portal for Rotman PhD students"
-baseurl: "/Rotman-PhD-Website"
-url: "https://benhma94.github.io"
+baseurl: ""
+url: "https://rotmanphd.ca"
 
 markdown: kramdown
 permalink: pretty
