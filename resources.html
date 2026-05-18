@@ -19,7 +19,7 @@ title: Resources
     <a href="{{ r.url | relative_url }}">{{ r.title }}</a>
     {% endif %}
     {% if r.description %}
-    <span class="resource-desc">— {{ r.description }}</span>
+    <span class="resource-desc">{{ r.description }}</span>
     {% endif %}
   </div>
   {% endfor %}
