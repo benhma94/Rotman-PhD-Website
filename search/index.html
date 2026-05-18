@@ -20,7 +20,7 @@ permalink: /search/
   fetch('{{ "/search.json" | relative_url }}')
     .then(function (r) { return r.json(); })
     .then(function (data) {
-      docs = [].concat(data.notices, data.events, data.resources);
+      docs = [].concat(data.notices, data.events, data.resources).filter(canView);
       idx = lunr(function () {
         this.ref('id');
         this.field('title', { boost: 10 });
@@ -59,6 +59,12 @@ permalink: /search/
 
   function esc(s) {
     return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function canView(doc) {
+    if (!doc.access) return true;
+    var level = sessionStorage.getItem('phd-access') || localStorage.getItem('phd-access');
+    return level === 'admin' || level === doc.access;
   }
 }());
 </script>

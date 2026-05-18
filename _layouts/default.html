@@ -10,7 +10,7 @@
 
   {% include password-gate.html %}
 
-  <div class="site-shell" id="site-shell" style="display:none">
+  <div class="site-shell" id="site-shell" style="display:none"{% if page.access %} data-required-access="{{ page.access }}"{% endif %}>
     <header class="top-bar">
       <span class="site-title">Rotman PhD Association</span>
       <div class="top-bar-actions">

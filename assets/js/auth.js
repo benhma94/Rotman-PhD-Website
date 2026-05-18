@@ -41,7 +41,51 @@ function restoreAccess() {
   return null;
 }
 
+function canAccess(level, required) {
+  if (!required) return true;
+  return level === 'admin' || level === required;
+}
+
+function requiredAccess() {
+  const shell = document.getElementById('site-shell');
+  return shell ? shell.dataset.requiredAccess : '';
+}
+
+function updateAccessVisibility(level) {
+  document.querySelectorAll('[data-access]').forEach(el => {
+    const allowed = canAccess(level, el.dataset.access);
+    el.classList.toggle('js-hidden', !allowed);
+  });
+
+  document.querySelectorAll('.resource-category').forEach(category => {
+    const items = category.querySelectorAll('.resource-item');
+    if (items.length === 0) return;
+    const hasVisibleItem = Array.from(items).some(item => !item.classList.contains('js-hidden'));
+    category.classList.toggle('js-hidden', !hasVisibleItem);
+  });
+}
+
+function showGateError(message) {
+  const gate = document.getElementById('password-gate');
+  const shell = document.getElementById('site-shell');
+  const errorEl = document.getElementById('password-error');
+
+  if (shell) shell.style.display = 'none';
+  if (gate) gate.style.display = 'flex';
+  if (errorEl) {
+    errorEl.textContent = message;
+    errorEl.style.display = 'block';
+  }
+}
+
 function unlockSite(level) {
+  const required = requiredAccess();
+  if (!canAccess(level, required)) {
+    showGateError('This page requires the accounting password.');
+    updateAccessVisibility(level);
+    return false;
+  }
+
   document.getElementById('password-gate').style.display  = 'none';
   document.getElementById('site-shell').style.display     = 'flex';
   document.getElementById('site-shell').style.flexDirection = 'column';
@@ -55,6 +99,9 @@ function unlockSite(level) {
   } else if (level === 'accounting') {
     if (accountingLink) accountingLink.style.display = 'flex';
   }
+
+  updateAccessVisibility(level);
+  return true;
 }
 
 async function checkPassword() {
@@ -73,9 +120,10 @@ async function checkPassword() {
     unlockSite('admin');
   } else if (hash === ACCESS.accounting) {
     saveAccess('accounting');
-    unlockSite('accounting');
-    const accountingLink = document.getElementById('accounting-link');
-    location.assign(accountingLink ? accountingLink.href : '/accounting');
+    if (unlockSite('accounting') && !requiredAccess()) {
+      const accountingLink = document.getElementById('accounting-link');
+      location.assign(accountingLink ? accountingLink.href : '/resources/accounting-welcome-guide/');
+    }
   } else if (hash === ACCESS.student) {
     saveAccess('student');
     unlockSite('student');
@@ -105,6 +153,7 @@ function logoutSite() {
   }
   if (adminLink) adminLink.style.display = 'none';
   if (accountingLink) accountingLink.style.display = 'none';
+  updateAccessVisibility('');
 }
 
 // Restore session on page load

@@ -1,7 +1,8 @@
 ---
 title: "Accounting Welcome Guide"
 category: "Accounting"
-description: "Practical first-year advice for incoming Rotman Accounting PhD students."
+description: "Advice for incoming Rotman Accounting PhD students, adapted from the 2025 welcome letter."
+access: accounting
 pinned: false
 toc: true
 toc_items:
@@ -29,309 +30,369 @@ toc_items:
     title: "Closing advice"
 ---
 
-This guide adapts the 2025 accounting welcome letter into a more scannable resource for incoming Rotman Accounting PhD students. It is informal peer advice from current and recent students, so treat official university, program, insurance, and immigration sources as the final authority.
-
 ## Welcome
 {: #welcome}
 
-Welcome to Rotman Accounting. The first year brings a lot of tacit knowledge: how Math Camp feels, what administrative tasks matter first, how courses are usually handled, where to ask for help, and how to settle into Toronto. This page collects the practical advice that upper-year accounting students wanted incoming students to have before arriving.
+Congratulations and welcome to Rotman Accounting, Océanne, Jason, and Harry!
 
-The short version:
+We are all really excited that you are joining the team.
 
-- Use Math Camp to get back into academic rhythm and meet people across Rotman and Economics.
-- Handle key Canadian logistics early: SIN, TCard, health insurance, banking, phone, housing, and transit.
-- Ask upper-year students questions. A lot of first-year survival depends on small details that are easier to learn from people who just went through it.
-- Work with your cohort. Group study, peer review, and shared notes are recurring themes for good reason.
-- Keep official requirements and policy links handy, because details change year to year.
+As newly rising years, we’ve learned a lot from the guidance of the current and rising PhD candidates, from second through fifth and sixth years.
+
+With this letter, our goal is to consolidate some of the knowledge we’ve learned over the past years and share personal experiences that may be useful to you. Like anything new, there’s a significant amount of “tacit knowledge” that you’ll learn over the first year that we can’t necessarily describe on paper, but we’ll do our best to minimize the mystery coming your way.
+
+Without further ado, here is a roughly chronological odyssey through the first year.
 
 ## Math Camp
 {: #math-camp}
 
-Math Camp usually starts around mid-August and is a fast review of proofs, logic, math, and statistics. The goal is to bring incoming students to a shared baseline for the required Economics Department courses.
+Welcome to Toronto. The program will start with a quick sprint through the world of proofs, logic, and calculations. Starting around mid-August, you’ll be ushered into a basement room with around 40 confused strangers and told to do math problems for six hours a day for three weeks. Sounds like fun, right?
 
-You will likely be in class with Economics PhD and MA students, plus Rotman students from areas such as Finance, Accounting, Operations Management, Economic Analysis and Policy, and Marketing. Introduce yourself early. Many of these classmates will appear again in required courses.
+All joking aside, the purpose of Math Camp is to bring all entering first-year students to a level of knowledge in math and statistics that will be sufficient for the required courses in the Econ Department. Your classmates will be from the programs that require some subset of basic theory courses in the Economics Department. The students will be mostly Econ PhDs and some Masters students, but there will be a smattering of Rotman folks from Finance, Accounting, Operations Management, Economic Analysis and Policy, and Marketing as well. You’ll see them again in many of your required courses, so introduce yourself.
 
-What to expect:
+The schedule might vary a bit year by year, but usually, the professor teaches in two-hour blocks for three periods each class day, and there will be ungraded homework assigned each night that the TA will review the following afternoon.
 
-- The schedule can change year to year, but it has often been taught in multiple two-hour blocks per day.
-- Homework is usually ungraded and reviewed by the TA.
-- Math Camp is pass/fail.
-- There are typically two tests: one focused on math and one focused on statistics.
-- The material can be intense, but it is also a useful transition back into rigorous academic work.
+The professor for our year, Prof. Martin Burda, talks very quietly, so be sure to sit near the front of the class if he’s still teaching. He’s kind, unassuming, and very sharp, especially with the statistical portion. He’s also known for starting his classes with small bits of Toronto trivia, which is a fun way to be introduced to your new home.
 
-Practical advice:
+Make sure to use your weekends wisely. Time can be a constraint during boot camp, so studying during the weekends is highly recommended if you’re feeling a bit overwhelmed by the plunge back into academics. Otherwise, the weather will be nice, if not a little hot, so go out and enjoy the city, catch a Jays game, and/or visit the lake and islands during your free time.
 
-- Sit near the front if the instructor speaks quietly.
-- Use weekends strategically. Study if you feel behind, but also leave room to enjoy Toronto while the weather is good.
-- Use Khan Academy, YouTube, and other short explanations when a topic does not click in lecture.
-- Study together before tests. Your cohort is one of your best resources.
-- Ask upper-year students for course notes if you want to preview the style of material.
-- Stay calm when the pace feels compressed. Part of Math Camp is psychological preparation for the rigor ahead.
+Math Camp is graded on a pass/fail basis. There will be two tests at the end of each of the week-and-a-half long sections of the course: first math, then stats. There is a fair amount of difficult material, some of which you may never use again, but judging by your background, you should not have an existential fear about not passing the course. Those moments may come later in the required courses, though. Feel free to contact any of the upper-year students if you want to take a look at course notes. The course changes each year based on feedback from the Econ Department, so this will cover most, but not all, of the material.
 
-Food and campus-life notes from prior cohorts:
+Looking back, Math Camp was one of our favorite periods of the first year for some of us, even though it was stressful. It was a nice transition back into a serious academic environment since the course was rigorous and demanded a good chunk of time outside of class. Math Camp can also be challenging in the sense that you have a shortage of time to cover a lot of topics. One thing that some of us did that helped a lot was to use Khan Academy, YouTube, and other places for quick lectures to explain some of the topics. Also, take advantage of talking and studying together. You are each other’s best resource, so it is highly recommended to group study prior to the tests.
 
-- Exchange Cafe is convenient inside Rotman.
-- Mercurio is a common Rotman faculty/student hangout and has had student lunch discounts.
-- Bringing food from home is common; PhD House has microwaves.
-- Kensington Market, Chinatown, Bloor Street, and nearby grocery stores are useful budget options.
-- Some stores have student discounts, including selected Metro and Shoppers Drug Mart locations. Ask current students for the latest details.
+One of the most important skills you’ll learn during Math Camp is to stay cool under pressure. The time is short, there is a lot of content, the city is new, the people are new, and all of this may cause you to “freak out” at some moments. If that happens, just cool off and take things one day at a time. Step-by-step, you will see that the objective of Math Camp is as much to prepare you psychologically for the rigor ahead as to get your math and stats skills up to speed.
 
-## Government, Health, Financial, and Phone Logistics
+Most importantly, though, the course can act as an opportunity to form strong professional and team bonds with the other students in our cohort.
+
+During our daily lunch breaks, we explored the restaurants around campus, especially down Bloor Street, and began to get acquainted with the Exchange Café in Rotman. However, the standard Rotman “hangout” for faculty and students is Mercurio, which has lunch deals with a 10% discount for students. Also, it is pretty common to bring food from home, so if you cook, feel free to bring lunch and warm it up in the microwaves in PhD House. Kensington Market offers some relatively cheap restaurants within walking distance, along with a T&T grocery store that opened in 2022. All Metro grocery stores, including the one on Robert and Bloor, give 10% off if you show them your U of T student ID and join their loyalty program. The Shoppers Drug Mart at 236 Bloor St West also offers a 15% discount for students every day. There are other places, mostly on Bloor Street, that have similar discounts. If you’re curious, just ask us. Chinatown on Spadina also has cheap produce and meats if you know how to choose your own groceries. Pat Central is useful if you’re looking for Korean products at grocery-store prices. Bulk Barn also has 10% off on Wednesdays for students.
+
+## Government, Health, Financial, and Cellular Logistics
 {: #logistics}
 
-Once you have your visa, there are several Canada-specific tasks that are easiest to handle early and roughly in this order.
+There are a few logistical must-dos specific to Canada that you should know after you get your visa. If you follow the advice here and complete each item in approximately the order below, you will save some time.
 
-### First administrative tasks
+### SIN number
 
-1. **SIN number.** Visit Service Canada with your study permit and passport. You need a Social Insurance Number for employment, taxes, and other civic/financial tasks.
-2. **TCard.** Get your U of T student ID at the student information desk inside the Bookstore Building at 214 College Street. Bring your study permit and passport.
-3. **UHIP card.** International students are usually covered by the University Health Insurance Plan through Sun Life. You can print the card yourself or ask the UHIP office at Cumberland House for help.
-4. **Provincial ID or driver's licence.** ServiceOntario handles this. For driver's licence services, the College Park ServiceOntario at 777 Bay Street is the relevant location. Booking an appointment can save time.
+It’s crucial for you to head to a Service Canada, for example City Hall at 100 Queen St W, to get your Social Insurance Number. This number allows you to get a driver’s licence or provincial ID, do your taxes more easily, and be fully integrated into Canadian civic life. Bring your student permit and passport.
+
+### TCard
+
+You get your TCard, or U of T student ID, at the student information desk inside the Bookstore Building at 214 College Street. Bring your student visa and passport.
 
 ### Insurance
 
-Your incidental fees include health and dental benefits, so use them when you can.
+**UHIP card:** Assuming you are not a Canadian citizen, you will be getting health insurance through the University Health Insurance Plan. The university contracts out health insurance to Sun Life Canada, so you have to jump through a few hoops to print off your card at home. You can also bring your student visa to the UHIP office at Cumberland House, 33 St. George Street, and they will print it out for you. It is a very unimpressive paper card, but make sure to keep it safe. It will be possible to obtain it from the first days of August.
 
-- **SGS insurance claim ID:** `UTG + your student number + 00`
-- **TA insurance claim ID:** `UTA + your employee number + 00`
-- TA insurance is usually activated after signing eligible TA contracts with more than 15 hours.
-- RA and TA contracts are different; RA contracts generally do not include the same insurance setup.
-- September is often a transition/opt-out period. You may need to wait until October to claim September expenses.
-- Vision benefits are time-limited, so check timing before waiting too long.
-- TA insurance may include a health spending account that expires each August.
+**Dental insurance:** Incidental fees are huge, so you’d better take advantage of the benefits. One of the coolest benefits is dental insurance. Every year, we can reimburse dental expenses, including regular check-ups and cleaning, up to $550 plus $1,350 from two insurance plans:
 
-Useful links:
+- **SGS insurance:** `UTG + your student number + 00`
+- **TA insurance:** automatically registered when you sign TA contracts for the first time and have more than 15 hours. Use `UTA + your employee number + 00`. See [CUPE 3902 Unit 1 benefits](https://cupe3902.org/unit-1/benefits/).
 
-- [CUPE 3902 Unit 1 benefits](https://cupe3902.org/unit-1/benefits/)
-- [UTGSU health and dental plan guidance](https://utgsu.ca/health-and-dental/what-insurance-plan-do-i-use/)
+Note that every September is a transition/opt-out period. Your insurance is still valid for this period, but you can’t make claims during this period. You can claim your September expenses in October.
 
-### Banking
+For more information, please refer to the [UTGSU guide to which insurance plan to use](https://utgsu.ca/health-and-dental/what-insurance-plan-do-i-use/).
 
-Open a Canadian bank account as soon as possible so your funding can be deposited. Ask for a student account, since student accounts often waive fees. International credit history usually does not transfer to Canada, so expect to build credit locally.
+Note that RA and TA contracts are different, and the RA contracts generally do not include insurance.
 
-Banks and accounts prior students have used:
+**Glasses/vision:** The insurance plans also include some amounts for vision/glasses. It’s recommended that you claim it right away as you can only get $150 every 24 months, and the clock starts when you use the credit.
 
-- **Scotiabank:** common recommendation because ATMs are widespread and student credit-card options may be accessible.
-- **Tangerine:** online, no-frills Scotiabank subsidiary with no minimum balance and no monthly fees.
-- **RBC:** convenient for some students near Grad House; ask about current savings promotions.
-- **TD Canada Trust:** large ATM network, including access near campus.
-- **CIBC:** some international students have found it friendly for opening debit and credit cards quickly.
-- **Simplii:** online CIBC subsidiary with no-frills banking and CIBC ATM access.
-- **Wealthsimple Cash:** useful as a supplementary account, especially for interest and no foreign transaction fees, but not a full day-to-day bank replacement.
+For the TA insurance, you will have $300 in your health spending account as well. You can reimburse any medical-related expenses through that account. This account expires every August, and it is use it or lose it.
 
-### Cell phones and internet
+### Your bank
 
-Students have used Rogers, Bell, Fizz, Telus, Freedom, and other providers. Ask about student plans and U of T employee or student discounts when available. If you want to keep a non-Canadian number active, check whether your phone supports a physical SIM plus eSIM.
+All of us have different banks. If you have a credit history in your home country, even the US, it will not transfer to Canada, so you’ll have to start from scratch. Open your bank account as soon as possible to have your funding directly deposited there. Make sure you ask for a student account, as this account has many benefits for free. One Rotman PhD student had quite an interesting banking journey, so here’s his advice:
 
-For home internet, compare providers and ask about promotions. If your building supports Fibrestream or Beanfield, those have often been affordable fiber options. Arrange installation early if you are moving into your own place.
+> “For most cases, I recommend Scotiabank. The ATMs are everywhere, there are no ‘irritating’ fees, for example paying $1 each time you use your debit card over five transactions a month, and you may be able to open a credit card to build credit without putting any money down as collateral, which is common at most other banks. Moreover, the Scene credit card gives you 1% effective cash-back in rewards points that you can use to watch movies at Cineplex.”
+
+There are perks from other banks as well. Leting’s bank, RBC, is very convenient to Grad House, and TD Canada Trust is one of the largest banks in the region and has the most ATMs, including one in Robarts Library. Ben uses multiple banks for multiple purposes.
+
+**Tangerine**  
+Used by Ben. Subsidiary of Scotiabank. No-frills account, no account minimums, and no fees. You can use any Scotiabank ATM without fees. If you qualify for their credit card, it’s a free credit card that gives you 2% back in any three categories. Ben uses recurring transactions, transit, and entertainment.
+
+**RBC**  
+Used by Leting, Giulia, Junhao, and Xingchao. RBC currently has very high promotional interest rates on savings accounts due to inflation. It doesn’t hurt to call a representative or stop by the RBC branch to ask if interested. Credit card recommendation: RBC ION+, with 3 points for every dollar spent on food, grocery, gaming, etc., and 15,000 points for free return flights between Toronto and NYC.
+
+**TD Canada Trust**  
+Used by Lulin.
+
+**CIBC**  
+Used by Clark and Divyesh. CIBC can be more friendly to international students than other banks. You can open a debit and credit card on the same day. You can also e-transfer up to a $2,000 limit a day, which is not a lot, but other banks like RBC may only have a $1,000 limit for international students.
+
+**Simplii**  
+Used by Ben. Subsidiary of CIBC, so you can use CIBC branches. They offer online-only services/no frills, but they offer unlimited transactions, no minimum balance, and no fees. You can also get their free credit card, which gives you 4% back on dining.
+
+**Wealthsimple Cash**  
+Used by Ben. No-frills, online only, no account minimums, unlimited transactions. Do not use this account for day-to-day banking. Essentially it’s a prepaid credit card, but the cash account gives you roughly 3% interest on your bank balance and 1% back on all transactions, plus no FX fees on foreign transactions. Ben uses this as a supplement to other banks because you can’t withdraw money directly from the account.
+
+### Cell phones
+
+Leting uses Rogers, Clark uses Bell, Xingchao uses Fizz, Lulin uses Telus, and Ben uses Telus as well through a different corporate phone scheme. Fizz is really cheap for US and Canada, and coverage is actually pretty good. Note that U of T has an EPP with Telus, which gives you a 5G plan with unlimited data, with 30GB at unlimited speed, using your U of T email address. In case you plan to buy a new phone, make sure that you ask for a student account option as well. For instance, Bell has a huge discount option for students.
+
+If you want to keep your non-Canadian SIM, check if your phone can hold two SIMs. Most iPhones can. One of the two cards should be added as a virtual eSIM.
+
+If you plan to use internet data sparingly, one of the cheapest options might be Freedom. This company offers a prepaid plan granting unlimited text and calls for approximately $120, tax included, for the full year. Data can be added, if needed, at $15 plus tax per gigabyte per month.
+
+In addition, if you will travel to the US for a couple of days, Xijiang recommends an app called Airalo, which enables you to have internet data at a low price, around US$4.50 for 1 GB.
+
+### TV and internet
+
+If you have your own place and have to find an internet/TV provider, we would recommend bundling this with your phone service. For example, when you buy a phone, ask for a bundling price from Bell, Rogers, etc. Make sure to ask for a promotion, as they always have such promotions due to high competition among providers. We recommend comparing different providers and visiting some stores in person rather than via online chats. Ask for installation ASAP, since it is very inconvenient to spend the first few days without any connections.
+
+Fibrestream, as well as Beanfield, seems to be a great and affordable fiber option, though it is not available in all buildings. For buildings with Fibrestream and Beanfield, you can get Bell at around $60 for 1.5 Gbps as well, though prior students did not recommend it due to Bell’s unstable fiber internet.
+
+### Driver’s licence or provincial ID
+
+Head to ServiceOntario. For a driver’s licence, you must go to the College Park ServiceOntario at 777 Bay Street. This can take a while, maybe 45 minutes to 2 hours. Try to visit ServiceOntario around 4 PM. You don’t need to wait long around this time, as we learned by experience. Bring your student visa, passport, and any other required documentation. For example, in order to swap your Korean driver’s licence, you need a document from the Korean embassy. An even better option is to [book a ServiceOntario appointment](https://www.ontario.ca/page/book-serviceontario-appointment) if possible.
 
 ### Taxes
 
-You usually do not need to handle taxes until the second semester, but file a tax return. Stipend treatment and credits can matter, and low-income benefits may be meaningful. Tax forms are usually available through ACORN around mid-February, and Canadian tax returns are generally due April 30.
+You won’t have to worry about this until the second semester, but the good news is that your stipend is tax-free. The bad news is that filing taxes is frustrating. Come mid-February, you can access your tax forms on ACORN, the U of T logistical site where you will see your grades, tax forms, and stipend payments. Stipend payments are paid out in three chunks on the 9th or 10th of September, January, and May. The January payment will be reduced by incidental fees such as UHIP and other services such as the gym.
 
-Students have used free or low-cost options such as Wealthsimple Tax, TurboTax, U of T student tax clinics, and peer help from students with tax experience. For registered savings plans such as TFSA, RRSP, and FHSA, ask for advice before acting, especially if you may be a non-resident for tax purposes.
+It’s in your best interest to file your tax return, as you’ll likely qualify as a low-income resident and receive close to $2,000 in low-income benefits.
+
+You can file taxes online or go to a tax advisor. If you choose online, Lulin recommends TurboTax for free filing software in most cases. Wealthsimple Tax is also free, pay what you want. There is also a U of T Students’ Union Tax Clinic that helps with filing, though spots fill up fast. Ben is/was a tax accountant and runs an NPO that does tax returns for free for students. He offered to do the tax returns for Rotman students for free last year and will likely reoffer that service as long as he’s at Rotman. Taxes in Canada are due on April 30.
+
+Once you file your taxes, make sure to apply for the Ontario Electricity Rebate. Ben’s monthly hydro bill is about $60 to $70, and the rebate covers all of it.
+
+You may hear terms such as TFSA, RRSP, and FHSA floating around for savings plans. Please discuss with Ben, a former financial advisor, to get an overall Canadian education before doing anything with these investment plans, as for non-resident students there are special considerations, especially for PhD students, that you should be aware of. A lot of advice is generally catered toward Canadian resident students. If you have general financial questions, feel free to bug Ben.
 
 ## Housing
 {: #housing}
 
-Finding housing in Toronto can take time. Reach out to accounting students and other Rotman PhD students, especially students who are graduating or moving.
+Finding your place in Toronto is not the easiest thing. Reach out to other students in the department, especially students about to graduate, as there are a few apartments that pass from student to student.
 
-Useful housing sources:
+The following are useful websites or Facebook groups for finding houses, rooms, or roommates:
 
-- [PadMapper](https://www.padmapper.com/) for listings with map filters.
-- Condos.ca or a rental agent for condo/apartment searches.
-- Realtor.ca for a broader property database.
+- [PadMapper](https://www.padmapper.com/), a listing aggregator with a useful map and set of filters.
+- Condos.ca, which is very reliable as you are matched with an agent. The downside is that units can be quite expensive and are mostly in condos/apartment buildings, so no houses.
+- Realtor.ca, which provides a comprehensive online database of residential and commercial properties for sale or rent across the country.
 - [Toronto Home Zone on Facebook](https://www.facebook.com/groups/bunzhomezone/)
-- [University of Toronto Off-Campus Housing Facebook group](https://www.facebook.com/groups/370115193161790/)
-- Kijiji or Craigslist, with extra attention to scams.
+- [University of Toronto - Off-Campus Housing (St. George) on Facebook](https://www.facebook.com/groups/370115193161790/)
+- Kijiji, where you can select a distance radius from Rotman in your search. Pay special attention to scams.
+- Craigslist.
 - [U of T Off-Campus Housing Search](https://offcampushousing.utoronto.ca/)
 - [U of T Roommate Finder](https://studentlife.utoronto.ca/task/find-a-roommate/)
-- [U of T housing resources](https://offcampushousing.utoronto.ca/resource)
-- U of T Grad House, if you apply early enough.
+- [U of T Housing Resources](https://offcampushousing.utoronto.ca/resource), including a useful apartment viewing checklist.
+- U of T Grad House, if you apply as early as possible, because the waiting list can be pretty long.
 
-Tenant-rights reminders:
+Also, don’t hesitate to reach out to the Ontario Tenants Board to know your rights or if you have any questions: [Renting in Ontario: Your rights](https://www.ontario.ca/page/renting-ontario-your-rights). When you rent a place in Toronto, you usually have to sign the Ontario standard lease for a year and prepare 12 post-dated cheques. Once you are over your one-year lease, you are on a month-to-month basis unless you renew, and the owner can only increase the rent by a capped rate unless the building is fairly new and is exempt from these restrictions. Buildings first inhabited after 2018 are exempt from rent controls, and price hikes can be whatever they want.
 
-- Use the Ontario standard lease where possible.
-- Buildings first occupied after 2018 may be exempt from rent-control limits.
-- Landlords generally need to give 24 hours' notice before entering your unit.
-- Rent increases generally require 90 days' notice and must follow applicable rules.
-- Landlord eviction rights are limited to specific circumstances.
-- The landlord-tenant framework may not protect you the same way if you share a kitchen, washroom, or other common space with the owner.
-- [Downtown Legal Services](https://downtownlegalservices.ca/) can help U of T students with legal issues.
-- Ontario has tenant-rights information at [Renting in Ontario: Your rights](https://www.ontario.ca/page/renting-ontario-your-rights).
+Divyesh highly recommends renting a place that is rent-controlled, meaning a pre-2018 build, as rent increases are generally predictable and usually small, indexed to CPI at roughly 2-3%. He also highly recommends not signing a new annual lease at the end of the prior one and instead moving to month-to-month, because otherwise it locks you in for another year. There is a plus side to renewing a lease annually, which is that your landlord cannot issue you an N12 notice of eviction until the next year. Ben renews his lease annually so that he doesn’t need to worry about moving and has security for another year. Pros and cons should be considered.
 
-Possible housing strategies:
+Your incidental fees do cover services from [Downtown Legal Services](https://downtownlegalservices.ca/) at U of T, who are unfortunately very familiar with situations where landlords take advantage of unknowing international students. Please feel free to use their services if necessary.
 
-- **Roommates:** use Facebook groups, Kijiji, the U of T Roommate Finder, and the new Rotman cohort.
-- **Arrive and search:** book temporary accommodation for the last two to three weeks of August, get a Canadian phone number, and schedule many viewings because units move quickly.
-- **Secure before arrival:** use Condos.ca or a rental agent if you need to move directly into a place when you arrive.
+Things you should know about tenant rights:
 
-Most students live within walking distance of campus, but downtown units are competitive. A rental agent can help with condo searches and should not cost you directly; the commission is normally paid from the first month's rent.
+- Landlords must give you 24 hours before entering your domicile.
+- Landlords must give 90 days’ notice before any rent hikes, and the increase must be within the guidelines stated above.
+- A landlord’s right to evict you is limited to certain circumstances, such as non-payment or moving in for their immediate family’s usage.
+- The Landlord Tenant Act does not apply if you share common space with them, such as kitchens, washrooms, or laundry areas. It is highly preferable to avoid such a situation, as they are technically not “landlords” and you are not entitled to tenant rights.
+
+Here are some strategies that could work for finding a place:
+
+**Living with roommates:** Use Facebook groups, Kijiji, or the U of T Roommate Finder to find a room in a shared house, or to find potential roommates. Reach out to the new Rotman PhD cohort and also to other accounting students. It is highly likely that someone else is looking for a roommate as well. You can use Facebook groups to look for full units too.
+
+**Living on your own or with roommates:** Find temporary accommodation in Toronto for August. You might need the last two to three weeks of August to find accommodation for September 1. Arrive in Toronto and get a Canadian phone number. Use PadMapper, Kijiji, or Facebook groups to find listings and phone contacts of owners or agencies. Call to set up viewings. Book multiple viewings as units come and go fast. Use the U of T apartment viewing checklist to help you check the features and amenities of the units.
+
+**Living on your own and getting directly to your new place once you arrive in Toronto:** Use Condos.ca or a rental agent to help you secure a place to get in right when you arrive in Toronto.
+
+Most of us are living within walking distance of the campus. For example, Ben lives in the Bay Corridor area. Hunting for a nice unit in downtown Toronto is tough, so prior students recommend working with a real estate agent. Half of the first rent goes to your agents as a form of commission. You don’t need to pay the extra commission.
+
+It is highly recommended that you find an agent if you plan to find condos/apartments because it is free. With an agent, it is easier to complete the contracting process and avoid scams. For all leases, make sure that you use the standardized contract from the Ontario Tenants Board so that your rights are fully protected. Most realtors will not work with you until you are physically in Canada. Ben can recommend a realtor when you arrive. If you need temporary accommodation or have difficulties with Airbnb while you’re scouting out places, Ben’s apartment building has guest suites for $140/night, up to two weeks. Let him know in advance and he can potentially book a room for you.
 
 ### Getting around
 
-Owning a car in Toronto is usually not worth the cost because parking, gas, and mandatory insurance are expensive. Most students use walking, TTC, biking, or occasional intercity transit.
+Parking, auto insurance, which is mandatory in Ontario, gas, etc. are generally expensive, and they are not worth the cost. Insurance costs are particularly high if you are male and younger than 25. Most of us take public transit, walk, or bike. Ben occasionally skateboards or scooters.
 
-- **TTC:** St. George Station is close to Rotman. A post-secondary monthly pass can help only if you ride often enough. The discounted pass requires a TTC student photo ID from Bathurst Station.
-- **Presto:** a reloadable transit card for TTC and GO Transit. Credit-card taps may work, but international cards can be inconsistent.
-- **Bike Share Toronto:** U of T email addresses have had access to student discounts. Winter biking can be risky if you are not used to Canadian conditions.
-- **GO Transit:** useful for nearby cities such as Mississauga. Remember to tap on and tap off.
+**Subway/bus:** Generally, transit within Toronto is called TTC, the Toronto Transit Commission. Rotman is conveniently a five-minute walk away from St. George Station. Transit is generally not the cheapest thing in Toronto, but there are ways to make it cheaper. You can buy a monthly pass with a post-secondary monthly pass if you are a frequent user of the TTC, but you need to use the pass for at least 40 trips in a month to make it worth it. You need to get a special TTC student card to get the discount. Go to Bathurst Station to get it; it costs $5.25. See the [TTC Bathurst Station Photo ID Office](https://www.ttc.ca/customer-service/TTC-Bathurst-Station-Photo-ID-Office).
+
+**Presto:** You should probably look into buying one of these cards. These are transit cards where you can load funds and then tap onto the station. Your fares will generally be cheaper than a cash fare. You can also just use a credit card, but international credit cards often have issues with tapping. Presto cards are available for free at the Toronto Public Library, or you can buy one for $5 CAD at most large supermarkets. They recently also came out with an app so you can download that instead.
+
+**Bike Share:** U of T is conveniently within range of several bike stations. Similar to other cities, you take a bike from a station and park it at another station. As long as you return the bike within 30 minutes, the ride is free. U of T is part of the student discount program, and if you sign up for Bike Share with your `@utoronto.ca` email, you’ll get a 30% discount, which ends up being about $80/year. Nonetheless, biking is slightly risky during winter with snow and black ice around if you’re not used to Canadian winters. Highly recommend that you wear protective gear. A good helmet is like $50-$100, and your brain is worth more than that.
+
+**Intercity travel:** If you need to go to another city in Ontario, such as Mississauga where there’s another U of T campus, you’ll likely use GO Transit, which is a different operator than TTC. You can just use your Presto card to tap on and off. Don’t forget to tap off, as it is a pricey thing to forget.
 
 ### Fitness
 
-Your TCard gives access during Fall and Winter to several campus gyms, including Goldring, Hart House, and the Athletic Centre. Group fitness classes are included in student fees. Summer access may require a separate fee, with possible reimbursement through the Summer Gym Bursary.
+Exercise is important for balancing health and work. Your TCard will give you access in the Fall and Winter semesters to three on-campus gyms: Goldring, with weights and machines and a basketball court; Hart House, with weights and machines, squash courts, track, swimming pool, and basketball/volleyball courts; and the Athletic Centre, with weights and machines, track, swimming pool, and badminton courts. All of them offer free group fitness classes included in your student fees. Leting attends some and can answer questions. See [U of T group fitness workouts](https://kpe.utoronto.ca/sport-recreationrecreational-workouts-activities/group-fitness-workouts).
+
+To access these facilities in the summer months, graduate students have to pay a separate fee, part of which is guaranteed to be reimbursed through the Summer Gym Bursary. The AC and Goldring are under one membership, which is a bit pricier, around $220 or more, but gives access to two gyms. Hart House is its own membership, usually around $160 for the whole summer. Gym memberships are prorated daily and become more affordable as the summer goes on. If you’re away in May and purchase the membership in June, it will be three-quarters of the price because three-quarters of the summer is remaining. Ben usually goes to Hart House as it’s less crowded and marginally closer to Rotman. The downside is that they don’t have A/C, and it can be unbearable on hotter days. Leting personally thinks Goldring is best equipped, and Ben agrees.
 
 ## Navigating Rotman
 {: #navigating-rotman}
 
-For the first two years, your office will be in PhD House. Accounting students from odd-numbered entry years have often been on the first floor, and even-numbered entry years on the second floor, but check the current assignment when you arrive.
+Your offices will be in PhD House for the first two years of the program. Those who entered the program in even-numbered years have cubicles on the second floor, and those who entered in odd-numbered years have cubicles on the first floor. You’ll be on the first floor.
 
-People and places to know:
+Shirley Vanderpuye and Kate Alexandrova are two wonderful people to get to know. They serve as PhD Coordinators, and their job is to manage the logistical aspects for all of the Rotman doctoral students, working directly under Katy DeCelles, the PhD Director and person who sent you your offer letter. Shirley and Kate’s office is across from the student lounge. Within the first few weeks of Math Camp, they will send you information about basic logistical aspects of the program, such as where to get your keys, how the scanner works, what ACORN is, etc. If you have any sort of problem with or question about the program or U of T that isn’t directly related to Accounting, go to them first. They are fountains of knowledge about all of the resources that the university has to offer. They are super kind and will always do their best to help you.
 
-- **PhD Coordinators:** Shirley Vanderpuye and Kate Alexandrova are key contacts for program logistics. If your question is about U of T, Rotman, ACORN, keys, or general program administration, start with them.
-- **IT Help Desk:** located near the Second Cup and elevators on the north side of the building. If you need software installed on a Rotman-managed computer, email IT early with the full package list.
-- **Accounting department:** located on the fifth floor of the north building. You will mostly go there for mentor meetings, Wednesday accounting seminars, and accounting topics courses.
+The IT Help Desk is on the north side of the building to the left of the Second Cup and past the elevators. They are relatively handy when you have an IT problem, and yes, it’s not a matter of if, but a matter of when you encounter a problem. Some of our favorite issues include typos in your email/login names, your computer shutting down and wiping its entire memory, and not being able to print. One important frustrating thing is that you cannot directly download most software onto a Rotman computer without administrator permission, and this includes programs as seemingly innocent as Dropbox. After you arrive on campus, save yourself some time and write the IT Desk an email with all of the software packages you need, and they will install the packages for you. A good tip is to ask for “manager permission” to install the software you want. Usually, IT forgets to take the permission back, so you keep the admin status of your PC.
 
-Printer setup from Rotman-managed devices:
+The accounting department is located on the fifth floor of the north building. The third through fifth/sixth years are on the fifth floor with the faculty. You will not be on the fifth floor much outside of meetings with your mentors, attending the Wednesday All-Accounting Seminar meetings, and attending the accounting topics courses.
 
-1. Open Start Menu.
-2. Select Run.
+To access the printer from school-provided devices only:
+
+1. Start menu.
+2. Run.
 3. Enter `\\rprint`.
 4. Select the applicable printer.
 
 ## First-year Courses
 {: #first-year-courses}
 
-The first year is economics-heavy. Expect Microeconomics, Econometrics, accounting topics courses, and the non-graded Rotman Workshop.
+One of Rotman Accounting’s competitive advantages is the breadth and depth of our training that comes in the first few years. Your first year will be relatively economics-heavy, with PhD/Masters courses in Microeconomics and Econometrics, three to four accounting topics courses, and the non-graded Wednesday Seminar.
 
-Economics courses:
+Your Economics Department classes will be heavy on math, in Micro, and statistics, in Metrics. To complement your in-class learning, you will have weekly problem sets. A good strategy is to work on the problem sets individually during the week and meet up for an hour the day before the due date to discuss the questions on the problem set and different aspects of the material, especially for Micro. The material is challenging even for those with a strong quantitative background, and productive collaboration is probably the number-one key to success in these courses. Each of these courses has a midterm and a final that make up the vast majority of your grade, and Metrics will have an empirical paper assignment as well. As a final note, these courses will have around 30-50 people and will take place in lecture halls across campus.
 
-- Micro and Metrics are mathematically and statistically demanding.
-- Weekly problem sets are important. Work individually first, then meet as a group before the deadline.
-- Exams make up much of the grade, and Metrics may include an empirical paper assignment.
-- Classes are larger than accounting courses and often take place in lecture halls across campus.
+The required accounting topics courses will be much more intimate, with two to six people only, including first- and second-year students.
 
-Accounting topics courses:
+Each professor operates their own course differently, but the standard final deliverable is a five-page proposal/presentation that is relevant to seminar topics. Most importantly, the readings from these classes will form the basis of the comprehensive exams, or comps, taken at the end of the second year, which will test your knowledge of the theory and methods in these classes. Take good notes in these courses and save them. When asked to present papers or lead a class, preparing in advance with your co-leader helps a lot.
 
-- These are much smaller, often only first- and second-year students.
-- Professors structure seminars differently, but a common final deliverable is a short research proposal or presentation.
-- Readings form part of the base for comprehensive exams at the end of second year.
-- Take good notes and save them.
-- If you lead a class or present a paper, prepare with your co-leader in advance.
-- Use these courses to build faculty relationships and develop first-year paper ideas.
+The accounting topics courses often inspire research ideas that you might want to pursue in the first-year paper. Building strong working relationships with professors in Accounting can be an invaluable way to help generate and clarify these ideas as you progress.
 
-Course and requirement notes:
+Fun stuff: you guys are the first ones to get the new curriculum. Before, we had to take eight accounting seminars, which was a lot. Now you need to take a mix of mandatory and elective courses. Aida, the course coordinator, will give you more information. Professors hold seminars once every two years. Here are brief summaries of some of the accounting seminars:
 
-- The curriculum now includes a mix of mandatory and elective accounting courses. Aida, the course coordinator, will provide current details.
-- First year often includes one Microeconomics course, one Econometrics course, and two accounting courses with the second years.
-- See the official [Management PhD degree requirements](https://sgs.calendar.utoronto.ca/management-tri-campus-management-phd).
-- Discuss exceptions or alternate paths with the program coordinator.
+- Ole-Kristian’s Financial Accounting seminar: student-led discussions.
+- Ping’s Auditing seminar: student-led discussions.
+- Scott’s Debt Contracting and Banking seminar: student-led discussions.
+- Aida and Alex’s Corporate Governance and Tax seminar: student-led discussions.
+- Partha’s Fundamental Analysis and Valuation seminar: student-led discussions.
+- Baohua’s Accounting Theory seminar: half lectures and some student-led presentations.
+- Jeff’s Managerial Accounting seminar: half lectures and half student-led presentations.
+- Rotman Workshop, 3080H: pass/fail.
 
-Accounting seminar examples mentioned by prior students:
+Your first year generally includes one Microecon, one Econometrics, and two accounting courses, which you’ll take with the second years.
 
-- Financial Accounting
-- Auditing
-- Debt Contracting and Banking
-- Corporate Governance and Tax
-- Fundamental Analysis and Valuation
-- Accounting Theory
-- Managerial Accounting
-- Rotman Workshop, RSM 3080H, which is pass/fail
+### Degree requirements
+
+See the official [Management PhD degree requirements](https://sgs.calendar.utoronto.ca/management-tri-campus-management-phd). You need a minimum of two courses, or FCEs, from two minors, of which one needs to be another field in Rotman. We usually pick Finance as it’s the most relevant. Econ usually covers our other minor requirements.
+
+Technically, we only need six courses, as the 0.5 is for RSM 3080H, but you need four courses from Accounting for your comps, so eight is the minimum. Historically, we’ve done two Micro Econ, two Econometrics, two Finance, and eight accounting courses. Feel free to discuss with Aida, the program coordinator, if you feel like you need alternate accommodation.
 
 ## Tests and Expectations
 {: #tests-expectations}
 
-Economics tests are challenging. Plan multiple focused study days, and schedule two or three group review sessions before each major test. Going through questions with others helps when individual study starts to stall.
+Tests in your Econ courses will be tough. There’s no way around it. But no worries, they won’t stop you from making it to the rest of the program, so just enjoy the process. The material is difficult to digest, and there is a lot of it packed into each semester. Plan to spend at least a handful of focused days preparing for these tests. The most helpful aspect of your studying will be to schedule two or three group review sessions before the test to discuss questions you encountered during individual study time.
 
-Before morning exams, some students like to warm up by reviewing notes and recalling standard question patterns. Exam styles are often similar enough that this can help you get into the right rhythm.
+To re-emphasize, going it alone is a bad, or at least suboptimal, plan. The material is challenging, and you will eventually hit a point in your preparation where you don’t want to do another problem on your own. Meeting with people who are going through the same challenges helps to spread the burden of studying and keeps you motivated. It’s remarkably similar to training for a marathon or any other difficult activity that requires endurance: individually focused effort is profoundly complemented by a team mentality.
 
-If you underperform on a test, do not treat it as a verdict on your place in the program. Many students and faculty have struggled with these courses. Keep turning in problem sets, work with the group, and remember that grades may be curved.
+The tests are usually in the morning, so some of you might be interested in warming up a few hours directly before the exam. During this review, try to look at your notes and remember what a standard question on the topic might ask so you get in the rhythm of a question-answering routine. Usually, the question styles are pretty similar, so this approach could be useful to try.
 
-First-year expectations:
+You will likely underperform on a test or two. Don’t let a poor mark on a midterm or final weigh you down. Most PhDs in the program, and even some professors in the department, had their own struggles with these courses and will offer good advice and a kind ear. Remember that these courses are one of the big occupational hurdles for this career path in the same style as the first year of law school for attorneys, organic chemistry for aspiring medical students, and fluid dynamics for undergraduate engineers. Focus on working hard individually and in your team, seeing the course as a doable challenge, and you will survive, and may thrive.
 
-- Accounting seminars, brown bags, and speakers often happen on Wednesdays.
-- First-year economics courses may conflict with these events, and that is understood.
-- Attend accounting events when you can because they are useful for meeting faculty and students.
-- Start learning or improving Python, LaTeX, R, and Stata.
-- Set up Zotero or another reference manager early so your reading notes do not scatter.
+An important caveat here is that grades are curved by the end of the course. Make sure to turn in all the problem sets. They help to boost your position in the curve. As said before, we will share a folder with all the materials we have. This might be helpful for you given that some of the problems are similar throughout the years.
+
+### First-year expectations
+
+Accounting usually has its meetings, speakers, and brown bags on Wednesday mornings or midday. As a first year, you’ll likely have conflicts with Econ courses and will be unable to attend. This is expected and understood. You’re not expected to come to these sessions if you have a conflict. That being said, it’s a good opportunity to network and meet other professors and students, so try to make it when you can.
+
+If you haven’t already, try to set aside some time to learn Python, LaTeX, R, and Stata. These will be helpful tools for you in the future. Ben recommends that you download Zotero to start your personal reference library. Just download the paper and save it when you read a paper and save your notes there. It’ll pay dividends in the future.
 
 ## Second-year Planning
 {: #second-year}
 
-Several things change in the second year.
+A few things will change for the second year that are worth noting.
 
-### TA and RA work
+### Working as a TA/RA
 
-Stipends often decrease after the first year, so many students work as a TA or RA. TA positions can be competitive, and applications open early. Watch CUPE emails and contact faculty in advance when you are interested in a course or research relationship.
+Our stipend goes down by about $7,000-$8,000 starting from our second year. Thus, you need to work as a TA or RA to make up for the loss.
 
-### Elective courses
+TA positions are very competitive, and you’d better contact professors in advance to check if the positions are available. You can contact professors you’re interested in building relationships with. That being said, there are some courses where you can make money fairly easily. Feel free to reach out to upper-year students to get some tips.
 
-You may take electives in Economics, Finance, or another Rotman area. Ask accounting students which courses they have taken before registering, especially for courses outside Rotman where cross-registration can be harder.
+Applications are open very early, two to three months in advance, and you’ll receive a notification from CUPE once they are open. Please look out for those emails unless you don’t want to be embarrassed like Stacey.
 
-Courses prior students mentioned:
+### Taking elective courses
 
-- **Empirical Asset Pricing, Finance:** useful for accounting research and highly recommended by some students.
-- **Corporate Finance 1 and 2, Finance:** Corporate Finance 1 may be more theoretical, while Corporate Finance 2 may be more empirical and applicable.
-- **ECO2504 Financial Economics II:** lecture-based overview of corporate finance theory.
+You may be able to take an elective in Economics or in a different Rotman area, such as Finance. Grabbing coffee with other PhD students in Accounting to chat about their prior elective choices can be helpful as well.
 
-Register early. Cross-registration spots may be limited, and it often helps to email the professor, introduce yourself, and confirm whether you can join.
+Here are some of the courses that we have usually taken so far:
 
-### First-year paper presentation
+- **Empirical Asset Pricing, Finance:** Stacey highly recommends taking Mike and Charles’ empirical asset pricing course. The course materials are relevant to accounting research, and they are very nice, not to mention experts in this area.
+- **Corporate Finance 1 and 2, Finance:** Ben highly recommends not taking Corporate Finance 1 unless you plan on doing theoretical research. It is very much another Econ/proofing course. Corporate Finance 2 is much more applicable and involves empirical methods.
+- **ECO2504 Financial Economics II with Varouj in the Econ department:** helpful and lecture-based. He walks students through the fundamental theories of corporate finance. Emma took this course during her master’s program. It offers a good overview of some fundamental finance theories.
 
-The first-year paper is one of the most important early projects because it can shape your research trajectory. The presentation usually happens in October or November of second year. Students often connect with a potential advisor during the summer, but the paper is still your own project.
+Note that it is advised to register for courses early, especially for courses in departments outside of Rotman. The number of spots for cross-registrants is sometimes limited. In our experience, registering for courses in other departments can be challenging. The best practice is to see whether one of us has taken your class of interest before, since we may know the professor or procedures. Next, reach out to the professor, introduce yourself, and see whether you can cross-register.
 
-Peer review helps. Circulate papers and presentations a few days in advance so cohort members can comment and help anticipate questions.
+### Presentation of your first-year paper
 
-### Qualification exams
+While papers likely won’t fill you with the same level of existential dread as the Econ tests, they are probably the most important pieces of work you will do in your first/second year since they will be the foundation of your research trajectory in the program and beyond.
 
-Qualification or comprehensive exams are usually around early June after second year. The system may include mandatory and optional comp topics, so rely on the current program guidance for the exact structure.
+Count on each other for peer reviews of your paper and presentation beforehand. We usually circulate our papers and presentations among us three days in advance so we can provide comments to each other. This helps us anticipate problems, increases the quality of the work, and usually fosters fruitful discussions. Academic life is full of friendly reviews, so why not start this with your peers from the program?
+
+Usually the presentation is in October or November of your second year. Generally, you’ll connect with a potential advisor in summer who would supervise your project. Make no mistake: you’ll be writing this paper solo, but you’ll have some guidance. Your first-year paper supervisor isn’t necessarily going to be your thesis supervisor, perhaps just someone you’ve connected with during your classes.
+
+### Qualification exams around early June
+
+Fun fact: you guys will be part of a new comp system, mostly the same structure of professors writing questions for you, where there will be mandatory comp topics and optional comp topics.
+
+Otherwise, the second semester rolls on much like the first semester, with a new set of accounting topics courses. The four months will fly by, new first years will visit in April, and summer will arrive before you know it.
 
 ## Conferences
 {: #conferences}
 
-Doctoral consortia and conferences can help you meet students and faculty, learn research craft, and understand the field. Some are designed for early-stage students, while others are more useful closer to the job market. Subscribe to conference announcements through SSRN, AAA, CAAA, and relevant field lists.
+Several conferences host doctoral consortia where PhD students can receive research tips and connect with fellow students worldwide. Some consortia are recommended for students in the earlier years of their program, while others are more beneficial for those in the later years, particularly during the job market year, to increase their visibility. You can subscribe to conference announcements through SSRN, AAA, and CAAA.
 
-After passing comps, students usually receive a travel budget. Professors may also sponsor conference attendance, but first-year students are not generally expected to attend unless a good opportunity appears.
+After you pass comps in the second year, you receive a travel budget to attend conferences. Sometimes, professors may sponsor you to attend some conferences, but you’re also not expected to attend conferences when you first start. If you have the opportunity, definitely try.
 
-Events prior students mentioned:
+**CAAA Craft Workshop**  
+Attended by Ben, Divyesh, Lulin, and Clark. It has historically been hosted in early to mid-June. It includes faculty presentations on research and work-life balance, and PhD students present their dissertations for feedback.
 
-- **CAAA Craft Workshop:** historically early to mid-June, with faculty presentations and PhD dissertation feedback.
-- **CAR Doctoral Consortium:** attended by several prior Rotman Accounting students.
-- **HARC:** attended by several prior Rotman Accounting students.
-- **Deloitte-AAA Doctoral Consortium:** mid-June, requires nomination, and usually involves presenting an early job-market paper.
-- **FARS Doctoral Consortium:** mid-January, nomination required, no presentation required, and recommended for early-year PhD students.
-- **Tax Policy Research Symposium and American Tax Association Mid-Year Meeting:** useful for students with a tax focus.
-- **Rotman Accounting Conference:** often held during Math Camp in August. You may not be expected to attend, but it can be worth dropping by if possible.
+**CAR Doctoral Consortium**  
+Attended by Giulia, Ben, Xingchao, Lulin, Divyesh, and Clark.
 
-## Toronto Tips
+**HARC**  
+Attended by Junhao, Leting, and Xingchao.
+
+**Deloitte-AAA Doctoral Consortium**  
+Attended by Stacey and Lulin. It takes place in mid-June and requires participants to present early versions of their job market papers. Nomination by the PhD coordinator is required, and only one student can attend at a time.
+
+**FARS Doctoral Consortium**  
+Attended by Stacey, Lulin, and Xingchao. It is held in mid-January. It requires nomination by the PhD coordinator, allows only one student to attend at a time, and does not require presentations. It is highly recommended for early-year PhD students.
+
+**Tax Policy Research Symposium, American Tax Association Mid-Year Meeting**  
+Attended by Ben. Ben’s interested in tax, arguably only tax, so he attends a few specialist conferences. Generally not recommended for you to attend these conferences unless you actually have an interest in these fields. If you have an interest in a particular field, talk to your supervisor to see if they can sponsor your attendance. It’s a good way to put your name out there and build relationships.
+
+**Rotman Accounting Conference**  
+Every year Rotman holds its own accounting conference. Usually this is held during your Math Camp, around August 21-22, so you’re not expected to be there, but feel free to drop by if you have a chance and grab some snacks. It’d be nice to meet you guys.
+
+## Things Around Toronto
 {: #toronto}
 
-When you are not studying, Toronto has many easy places to explore near Rotman.
+Some things to do around Toronto when you’re not studying.
 
-Food:
+### Good eats
 
-- **Dundas Street:** many shops and food options; Butter Baker was a prior-student favorite.
-- **Bloor Street:** Koreatown and many affordable options, including Daldongnae.
-- **Yorkville:** more expensive, but strong restaurant options.
-- **Spadina:** Chinatown and many affordable Chinese restaurants.
-- **Gyubee:** all-you-can-eat Japanese BBQ near Bloor and St. George.
-- **Too Good To Go:** app for discounted surplus food from restaurants.
+We’re right next to Bloor Street and the Financial District, so there’s a good intersection of good food not too far from Rotman.
 
-Shopping:
+- **Dundas Street:** lots of good shops on this road. Ben’s personal favorite is Butter Baker.
+- **Bloor Street:** Koreatown. If you’re looking for Korean eats that aren’t too pricey, walk along Koreatown. A popular favorite is Daldongnae.
+- **Yorkville:** if you’re feeling fancy, this is the expensive part of town, but they also have some very nice restaurants here. If you feel like splurging, Masaki Saito, Toronto’s Michelin-star sushi restaurant, is here.
+- **Spadina:** Chinatown. If you’re looking for fairly good cheap Chinese eats, there are lots of options here.
+- **Gyubee:** right at the intersection of Bloor and St. George is a really good all-you-can-eat Japanese BBQ place. It’s usually very packed, but if you can get the opportunity to go there, it’s very good.
+- **Too Good To Go:** download the app. You can find very good deals on leftover food from restaurants at around 50% off.
 
-- **Eaton Centre:** central mall with Best Buy, Uniqlo, and many basics.
-- **The Well:** newer shopping and food destination.
-- **Yorkdale:** farther away but broader store selection.
+### Shopping
 
-Shared map:
+- **Eaton Centre:** the big mall in the area. It’s right on Dundas and Yonge. You won’t find amazing deals here, but it has most of the things you need: Best Buy, Uniqlo, and clothing stores galore.
+- **The Well:** newly opened and pretty.
+- **Yorkdale:** farther away, but you have a better variety of other shops here.
 
-- [Accounting student Toronto highlights map](https://www.google.com/maps/d/u/0/edit?mid=1LID-GnC40iL6PiEiwkcaVB3zc9l3iho&usp=sharing)
+The below map is in development, but feel free to add to it. It contains highlights of interesting things:
+
+[Toronto highlights map](https://www.google.com/maps/d/u/0/edit?mid=1LID-GnC40iL6PiEiwkcaVB3zc9l3iho&usp=sharing)
 
 ## Closing Advice
 {: #closing}
 
-Moving abroad and starting a PhD can be difficult. The city, culture, people, and academic expectations may all feel new at the same time. Try to balance studying with genuine downtime: sports, movies, museums, parks, and coffee with friends all matter.
+### A closing word about moving abroad
 
-The PhD path has roadblocks, but it is also a chance to build friendships, become a stronger researcher, and find your place in a scholarly community. Ask for help early, look out for each other, and keep moving one step at a time.
+Sometimes living abroad is difficult and challenging. You are new in the place, and sometimes you know no one, which is not your case anymore. The city is new, and the culture is different. Try to balance studying with some leisure time. Doing a sport, going to movie theaters, museums, and parks are nice ways to relax. Some days will be hard; you will miss home, family, friends, and so on. But stay strong and hold on; you put in a lot of effort to get here. Keep moving forward and do not feel blue. When you are away from home, friends become your family. They are the ones who will call you to check whether you are okay or if you need help. They are the ones that will visit you just to have a coffee or to talk. The PhD journey is full of roadblocks, but it can be a unique opportunity to meet new people, to make new friends, and to become not only a better researcher but a better person. Truly, the power of a team is much bigger than the simple sum of its individuals.
 
-Original source: [Download the 2025 Accounting Welcome Letter]({{ '/assets/uploads/rotman-accounting-welcome-letter-2025.docx' | relative_url }}).
+### In closing
+
+We hope that this letter has demystified the first year and provided some context to the sometimes stressful, exciting, and rewarding lifestyle that comprises the first eight months at Rotman. Feel free to reach out if you have any other questions.
+
+Otherwise, enjoy your final few months before becoming an academic. We can’t wait to have you join this scholarly community and, in particular, to join our team.
+
+Best,
+
+Leting, Clark, Lulin, Giulia, Xingchao, Divyesh, Ben, and Yitian

@@ -12,7 +12,7 @@ title: Resources
   <div class="category-label">{{ category }}</div>
   {% assign cat_resources = site.resources | where: "category", category | sort: "title" %}
   {% for r in cat_resources %}
-  <div class="resource-item">
+  <div class="resource-item{% if r.access %} js-hidden{% endif %}"{% if r.access %} data-access="{{ r.access }}"{% endif %}>
     {% if r.link %}
     <a href="{{ r.link }}" target="_blank" rel="noopener noreferrer">{{ r.title }}</a>
     {% else %}

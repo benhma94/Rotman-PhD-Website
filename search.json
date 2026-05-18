@@ -28,6 +28,7 @@ permalink: /search.json
       {%- capture resource_body -%}{{ resource.description | default: "" }} {{ resource.content | strip_html }}{%- endcapture -%}
       "id": "resource-{{ forloop.index }}",
       "type": "resource",
+      "access": {{ resource.access | default: "" | jsonify }},
       "title": {{ resource.title | jsonify }},
       "body": {{ resource_body | strip | truncate: 500 | jsonify }},
       "url": {{ resource.link | default: resource.url | jsonify }}
