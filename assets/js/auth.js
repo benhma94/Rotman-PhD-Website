@@ -5,7 +5,8 @@ if (location.protocol !== 'https:' && location.hostname !== 'localhost' && locat
 
 const ACCESS = {
   student: 'f6a43f33db54228a5c5e27ee64a4948101ac586c4a949f6144011b3a1e017b60',
-  admin:   '0e89f223e226ae63268cf39152ab75722e811b89d29efb22a852f1667bd22ae0'
+  admin:   '0e89f223e226ae63268cf39152ab75722e811b89d29efb22a852f1667bd22ae0',
+  accounting: '113b5ccba3c63df9386c308cffceb45954e3b62b21e30c46245d0a98c228852e'
 };
 
 async function sha256(str) {
@@ -17,9 +18,15 @@ function unlockSite(level) {
   document.getElementById('password-gate').style.display  = 'none';
   document.getElementById('site-shell').style.display     = 'flex';
   document.getElementById('site-shell').style.flexDirection = 'column';
+
+  const adminLink = document.getElementById('admin-link');
+  const accountingLink = document.getElementById('accounting-link');
+
   if (level === 'admin') {
-    const link = document.getElementById('admin-link');
-    if (link) link.style.display = 'flex';
+    if (adminLink) adminLink.style.display = 'flex';
+    if (accountingLink) accountingLink.style.display = 'flex';
+  } else if (level === 'accounting') {
+    if (accountingLink) accountingLink.style.display = 'flex';
   }
 }
 
@@ -37,6 +44,11 @@ async function checkPassword() {
   if (hash === ACCESS.admin) {
     localStorage.setItem('phd-access', 'admin');
     unlockSite('admin');
+  } else if (hash === ACCESS.accounting) {
+    localStorage.setItem('phd-access', 'accounting');
+    unlockSite('accounting');
+    const accountingLink = document.getElementById('accounting-link');
+    location.assign(accountingLink ? accountingLink.href : '/accounting');
   } else if (hash === ACCESS.student) {
     localStorage.setItem('phd-access', 'student');
     unlockSite('student');
