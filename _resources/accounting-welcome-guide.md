@@ -1,7 +1,7 @@
 ---
 title: "Accounting Welcome Guide"
 category: "Accounting"
-description: "Advice for incoming Rotman Accounting PhD students, adapted from the 2025 welcome letter."
+description: "Welcome to Rotman Accounting!"
 access: accounting
 pinned: false
 toc: true
@@ -33,11 +33,11 @@ toc_items:
 ## Welcome
 {: #welcome}
 
-Congratulations and welcome to Rotman Accounting, Océanne, Jason, and Harry!
+Congratulations and welcome to Rotman Accounting, {X}!
 
-We are all really excited that you are joining the team.
+We are all really excited that you're joining us!
 
-As newly rising years, we’ve learned a lot from the guidance of the current and rising PhD candidates, from second through fifth and sixth years.
+We’ve learned a lot from the guidance of the current and rising PhD candidates, from second through fifth and fifth years.
 
 With this letter, our goal is to consolidate some of the knowledge we’ve learned over the past years and share personal experiences that may be useful to you. Like anything new, there’s a significant amount of “tacit knowledge” that you’ll learn over the first year that we can’t necessarily describe on paper, but we’ll do our best to minimize the mystery coming your way.
 
@@ -46,7 +46,7 @@ Without further ado, here is a roughly chronological odyssey through the first y
 ## Math Camp
 {: #math-camp}
 
-Welcome to Toronto. The program will start with a quick sprint through the world of proofs, logic, and calculations. Starting around mid-August, you’ll be ushered into a basement room with around 40 confused strangers and told to do math problems for six hours a day for three weeks. Sounds like fun, right?
+Welcome to Toronto! The program will start with a quick sprint through the world of proofs, logic, and calculations. Starting around mid-August, you’ll be ushered into a basement room with around 40 confused strangers and told to do math problems for six hours a day for three weeks. Sounds like fun, right?
 
 All joking aside, the purpose of Math Camp is to bring all entering first-year students to a level of knowledge in math and statistics that will be sufficient for the required courses in the Econ Department. Your classmates will be from the programs that require some subset of basic theory courses in the Economics Department. The students will be mostly Econ PhDs and some Masters students, but there will be a smattering of Rotman folks from Finance, Accounting, Operations Management, Economic Analysis and Policy, and Marketing as well. You’ll see them again in many of your required courses, so introduce yourself.
 
@@ -64,7 +64,7 @@ One of the most important skills you’ll learn during Math Camp is to stay cool
 
 Most importantly, though, the course can act as an opportunity to form strong professional and team bonds with the other students in our cohort.
 
-During our daily lunch breaks, we explored the restaurants around campus, especially down Bloor Street, and began to get acquainted with the Exchange Café in Rotman. However, the standard Rotman “hangout” for faculty and students is Mercurio, which has lunch deals with a 10% discount for students. Also, it is pretty common to bring food from home, so if you cook, feel free to bring lunch and warm it up in the microwaves in PhD House. Kensington Market offers some relatively cheap restaurants within walking distance, along with a T&T grocery store that opened in 2022. All Metro grocery stores, including the one on Robert and Bloor, give 10% off if you show them your U of T student ID and join their loyalty program. The Shoppers Drug Mart at 236 Bloor St West also offers a 15% discount for students every day. There are other places, mostly on Bloor Street, that have similar discounts. If you’re curious, just ask us. Chinatown on Spadina also has cheap produce and meats if you know how to choose your own groceries. Pat Central is useful if you’re looking for Korean products at grocery-store prices. Bulk Barn also has 10% off on Wednesdays for students.
+During our daily lunch breaks, we explored the restaurants around campus, especially down Bloor Street, and began to get acquainted with the Exchange Café in Rotman. However, the standard Rotman “hangout” for faculty and students is Mercurio, which has lunch deals with a 10% discount for students. Also, it is pretty common to bring food from home, so if you cook, feel free to bring lunch and warm it up in the microwaves in PhD House. Kensington Market offers some relatively cheap restaurants within walking distance, along with a T&T grocery store. All Metro grocery stores, including the one on Robert and Bloor, give 10% off if you show them your U of T student ID and join their loyalty program. The Shoppers Drug Mart at 236 Bloor St West also offers a 15% discount for students every day. There are other places, mostly on Bloor Street, that have similar discounts. If you’re curious, just ask us. Chinatown on Spadina also has cheap produce and meats if you know how to choose your own groceries. Pat Central is useful if you’re looking for Korean products at grocery-store prices. Bulk Barn also has 10% off on Wednesdays for students.
 
 ## Government, Health, Financial, and Cellular Logistics
 {: #logistics}
@@ -110,7 +110,7 @@ There are perks from other banks as well. Leting’s bank, RBC, is very convenie
 Used by Ben. Subsidiary of Scotiabank. No-frills account, no account minimums, and no fees. You can use any Scotiabank ATM without fees. If you qualify for their credit card, it’s a free credit card that gives you 2% back in any three categories. Ben uses recurring transactions, transit, and entertainment.
 
 **RBC**  
-Used by Leting, Giulia, Junhao, and Xingchao. RBC currently has very high promotional interest rates on savings accounts due to inflation. It doesn’t hurt to call a representative or stop by the RBC branch to ask if interested. Credit card recommendation: RBC ION+, with 3 points for every dollar spent on food, grocery, gaming, etc., and 15,000 points for free return flights between Toronto and NYC.
+Used by Giulia, and Xingchao. RBC currently has very high promotional interest rates on savings accounts due to inflation. It doesn’t hurt to call a representative or stop by the RBC branch to ask if interested. Credit card recommendation: RBC ION+, with 3 points for every dollar spent on food, grocery, gaming, etc., and 15,000 points for free return flights between Toronto and NYC.
 
 **TD Canada Trust**  
 Used by Lulin.
@@ -126,13 +126,13 @@ Used by Ben. No-frills, online only, no account minimums, unlimited transactions
 
 ### Cell phones
 
-Leting uses Rogers, Clark uses Bell, Xingchao uses Fizz, Lulin uses Telus, and Ben uses Telus as well through a different corporate phone scheme. Fizz is really cheap for US and Canada, and coverage is actually pretty good. Note that U of T has an EPP with Telus, which gives you a 5G plan with unlimited data, with 30GB at unlimited speed, using your U of T email address. In case you plan to buy a new phone, make sure that you ask for a student account option as well. For instance, Bell has a huge discount option for students.
+Clark uses Bell, Xingchao uses Fizz, Lulin uses Telus, and Ben uses Telus as well through a different corporate phone scheme. Fizz is really cheap for US and Canada, and coverage is actually pretty good. Note that U of T has an EPP with Telus, which gives you a 5G plan with unlimited data, with 30GB at unlimited speed, using your U of T email address. In case you plan to buy a new phone, make sure that you ask for a student account option as well. For instance, Bell has a huge discount option for students.
 
 If you want to keep your non-Canadian SIM, check if your phone can hold two SIMs. Most iPhones can. One of the two cards should be added as a virtual eSIM.
 
 If you plan to use internet data sparingly, one of the cheapest options might be Freedom. This company offers a prepaid plan granting unlimited text and calls for approximately $120, tax included, for the full year. Data can be added, if needed, at $15 plus tax per gigabyte per month.
 
-In addition, if you will travel to the US for a couple of days, Xijiang recommends an app called Airalo, which enables you to have internet data at a low price, around US$4.50 for 1 GB.
+In addition, if you will travel to the US for a couple of days, Airalo (app)enables you to have internet data at a low price, around US$4.50 for 1 GB.
 
 ### TV and internet
 
@@ -154,7 +154,7 @@ You can file taxes online or go to a tax advisor. If you choose online, Lulin re
 
 Once you file your taxes, make sure to apply for the Ontario Electricity Rebate. Ben’s monthly hydro bill is about $60 to $70, and the rebate covers all of it.
 
-You may hear terms such as TFSA, RRSP, and FHSA floating around for savings plans. Please discuss with Ben, a former financial advisor, to get an overall Canadian education before doing anything with these investment plans, as for non-resident students there are special considerations, especially for PhD students, that you should be aware of. A lot of advice is generally catered toward Canadian resident students. If you have general financial questions, feel free to bug Ben.
+You may hear terms such as TFSA, RRSP, and FHSA floating around for savings plans. Please discuss with Ben, (he literally teaches the Rotman course for personal tax strategy), to get an overall Canadian education before doing anything with these investment plans, as for non-resident students there are special considerations, especially for PhD students, that you should be aware of. A lot of advice is generally catered toward Canadian resident students. If you have general financial questions, feel free to bug Ben, he hasn't bitten many students.
 
 ## Housing
 {: #housing}
@@ -228,13 +228,6 @@ Shirley Vanderpuye and Kate Alexandrova are two wonderful people to get to know.
 The IT Help Desk is on the north side of the building to the left of the Second Cup and past the elevators. They are relatively handy when you have an IT problem, and yes, it’s not a matter of if, but a matter of when you encounter a problem. Some of our favorite issues include typos in your email/login names, your computer shutting down and wiping its entire memory, and not being able to print. One important frustrating thing is that you cannot directly download most software onto a Rotman computer without administrator permission, and this includes programs as seemingly innocent as Dropbox. After you arrive on campus, save yourself some time and write the IT Desk an email with all of the software packages you need, and they will install the packages for you. A good tip is to ask for “manager permission” to install the software you want. Usually, IT forgets to take the permission back, so you keep the admin status of your PC.
 
 The accounting department is located on the fifth floor of the north building. The third through fifth/sixth years are on the fifth floor with the faculty. You will not be on the fifth floor much outside of meetings with your mentors, attending the Wednesday All-Accounting Seminar meetings, and attending the accounting topics courses.
-
-To access the printer from school-provided devices only:
-
-1. Start menu.
-2. Run.
-3. Enter `\\rprint`.
-4. Select the applicable printer.
 
 ## First-year Courses
 {: #first-year-courses}
