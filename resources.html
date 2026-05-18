@@ -8,7 +8,7 @@ title: Resources
 
 {% assign categories = site.resources | map: "category" | uniq | sort %}
 {% for category in categories %}
-<div class="resource-category">
+<div class="resource-category{% if category == 'Accounting' %} js-hidden{% endif %}"{% if category == 'Accounting' %} data-access="accounting"{% endif %}>
   <div class="category-label">{{ category }}</div>
   {% assign cat_resources = site.resources | where: "category", category | sort: "title" %}
   {% for r in cat_resources %}
