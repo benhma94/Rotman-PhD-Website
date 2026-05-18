@@ -9,6 +9,31 @@ layout: default
   {% endif %}
 </div>
 
+{% if page.toc and page.toc_items %}
+<div class="resource-layout resource-layout--toc">
+  <nav class="resource-toc" aria-label="Page contents">
+    <div class="resource-toc-title">Contents</div>
+    <ol>
+      {% for item in page.toc_items %}
+      <li><a href="#{{ item.id }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ol>
+  </nav>
+  <article class="resource-document">
+    {% if page.description %}
+    <p class="resource-summary">{{ page.description }}</p>
+    {% endif %}
+
+    {{ content }}
+
+    {% if page.link %}
+    <p class="resource-source">
+      <a href="{{ page.link }}" target="_blank" rel="noopener noreferrer">Open resource</a>
+    </p>
+    {% endif %}
+  </article>
+</div>
+{% else %}
 <article class="resource-document">
   {% if page.description %}
   <p class="resource-summary">{{ page.description }}</p>
@@ -22,3 +47,4 @@ layout: default
   </p>
   {% endif %}
 </article>
+{% endif %}
