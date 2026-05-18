@@ -175,12 +175,17 @@ body {
 
 .notice-alert {
   background: var(--white);
+  border: 0;
   border-left: 4px solid var(--pink);
   border-radius: 0 8px 8px 0;
   padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
   gap: 1rem;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
   margin-bottom: 1.25rem;
   cursor: pointer;
@@ -215,7 +220,21 @@ body {
 }
 .resource-link:hover { text-decoration: underline; }
 
-.event-item { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.75rem; cursor: pointer; border-radius: 4px; transition: background 0.15s; }
+.event-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
 .event-item:hover { background: var(--gray-100); }
 .date-badge {
   background: var(--navy);
@@ -232,6 +251,7 @@ body {
 .date-badge.deadline { background: var(--pink); }
 .event-title { font-size: 0.9rem; }
 .event-title.deadline { color: var(--pink); font-weight: 600; }
+.empty-state { color: var(--gray-600); font-size: 0.9rem; }
 
 /* ── Page headers ──────────────────────────── */
 .page-header { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--navy); }
@@ -307,11 +327,16 @@ body {
 /* ── Notices page ──────────────────────────── */
 .notice-item {
   background: var(--white);
+  border: 0;
   border-radius: 6px;
   padding: 1rem 1.25rem;
   margin-bottom: 0.75rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   border-left: 3px solid transparent;
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   cursor: pointer;
   transition: box-shadow 0.15s, transform 0.1s;
 }
@@ -404,10 +429,15 @@ body {
   gap: 1rem;
   align-items: flex-start;
   background: var(--white);
+  border: 0;
   border-radius: 6px;
   padding: 1rem;
   margin-bottom: 0.75rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  width: 100%;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   cursor: pointer;
   transition: box-shadow 0.15s, transform 0.1s;
 }

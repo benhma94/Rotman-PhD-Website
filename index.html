@@ -9,16 +9,18 @@ title: Home
 
 {% assign pinned_notice = site.notices | where: "pinned", true | sort: "date" | reverse | first %}
 {% if pinned_notice %}
-<div class="notice-alert"
+<button type="button"
+     class="notice-alert"
      data-title="{{ pinned_notice.title | escape }}"
      data-date="{{ pinned_notice.date | date: '%B %-d, %Y' }}"
-     data-pinned="true">
+     data-pinned="true"
+     aria-haspopup="dialog">
   <span style="font-size:1.5rem">📢</span>
   <div>
     <div class="notice-label">Latest Notice</div>
     <div class="notice-title">{{ pinned_notice.title }}</div>
   </div>
-</div>
+</button>
 <template id="home-notice-body">{{ pinned_notice.content }}</template>
 <script>
 (function () {
@@ -51,13 +53,19 @@ title: Home
 
   <div class="card">
     <div class="card-header">📅 Upcoming Events</div>
+    {% assign today = site.time | date: "%Y-%m-%d" %}
     {% assign upcoming = site.events | sort: "date" %}
-    {% for event in upcoming limit: 4 %}
-    <div class="event-item"
+    {% assign shown_events = 0 %}
+    {% for event in upcoming %}
+    {% assign event_day = event.date | date: "%Y-%m-%d" %}
+    {% if event_day >= today and shown_events < 4 %}
+    <button type="button"
+         class="event-item"
          data-title="{{ event.title | escape }}{% if event.type == 'deadline' %} ⚠️{% endif %}"
          data-subtitle="{{ event.date | date: '%B %-d, %Y' }}{% if event.type == 'deadline' %} · Deadline{% endif %}"
          data-description="{{ event.description | escape }}"
-         data-location="{{ event.location | escape }}">
+         data-location="{{ event.location | escape }}"
+         aria-haspopup="dialog">
       <div class="date-badge {% if event.type == 'deadline' %}deadline{% endif %}">
         {{ event.date | date: "%b" | upcase }}<br>
         {{ event.date | date: "%-d" }}
@@ -65,8 +73,13 @@ title: Home
       <div class="event-title {% if event.type == 'deadline' %}deadline{% endif %}">
         {{ event.title }}{% if event.type == 'deadline' %} ⚠️{% endif %}
       </div>
-    </div>
+    </button>
+    {% assign shown_events = shown_events | plus: 1 %}
+    {% endif %}
     {% endfor %}
+    {% if shown_events == 0 %}
+    <p class="empty-state">No upcoming events.</p>
+    {% endif %}
   </div>
 <script>
 (function () {

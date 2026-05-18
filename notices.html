@@ -11,14 +11,16 @@ title: Notices
 {% assign all_notices = pinned | concat: unpinned %}
 
 {% for notice in all_notices %}
-<div class="notice-item {% if notice.pinned %}pinned{% endif %}"
+<button type="button"
+     class="notice-item {% if notice.pinned %}pinned{% endif %}"
      data-notice="{{ forloop.index }}"
      data-title="{{ notice.title | escape }}"
      data-date="{{ notice.date | date: '%B %-d, %Y' }}"
-     data-pinned="{{ notice.pinned }}">
+     data-pinned="{{ notice.pinned }}"
+     aria-haspopup="dialog">
   <div class="notice-date">{{ notice.date | date: "%B %-d, %Y" }}{% if notice.pinned %} &nbsp;📌 Pinned{% endif %}</div>
   <div class="notice-title">{{ notice.title }}</div>
-</div>
+</button>
 <template id="notice-body-{{ forloop.index }}">{{ notice.content }}</template>
 {% endfor %}
 

@@ -25,13 +25,15 @@ title: Events
 <div id="list-view">
   {% assign sorted_events = site.events | sort: "date" %}
   {% for event in sorted_events %}
-  <div class="event-full-item"
+  <button type="button"
+       class="event-full-item"
        data-title="{{ event.title | escape }}{% if event.type == 'deadline' %} ⚠️{% endif %}"
        data-subtitle="{{ event.date | date: '%B %-d, %Y' }}{% if event.type == 'deadline' %} · Deadline{% endif %}"
        data-description="{{ event.description | escape }}"
        data-location="{{ event.location | escape }}"
        data-start-time="{{ event.start_time }}"
-       data-end-time="{{ event.end_time }}">
+       data-end-time="{{ event.end_time }}"
+       aria-haspopup="dialog">
     <div class="event-full-badge {% if event.type == 'deadline' %}deadline{% endif %}">
       <div class="badge-day">{{ event.date | date: "%-d" }}</div>
       <div class="badge-month">{{ event.date | date: "%b %Y" }}</div>
@@ -42,7 +44,7 @@ title: Events
       <div class="event-location">📍 {{ event.location }}</div>
       {% endif %}
     </div>
-  </div>
+  </button>
   {% endfor %}
 </div>
 
