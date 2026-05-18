@@ -37,9 +37,15 @@ title: Home
     <div class="card-header">📁 Quick Resources</div>
     {% assign pinned_resources = site.resources | where: "pinned", true %}
     {% for r in pinned_resources limit: 6 %}
-    <a class="resource-link" href="{{ r.url }}" target="_blank" rel="noopener noreferrer">
+    {% if r.link %}
+    <a class="resource-link" href="{{ r.link }}" target="_blank" rel="noopener noreferrer">
       {{ r.title }}
     </a>
+    {% else %}
+    <a class="resource-link" href="{{ r.url | relative_url }}">
+      {{ r.title }}
+    </a>
+    {% endif %}
     {% endfor %}
   </div>
 

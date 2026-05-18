@@ -25,11 +25,12 @@ permalink: /search.json
   ],
   "resources": [
     {%- for resource in site.resources %}{
+      {%- capture resource_body -%}{{ resource.description | default: "" }} {{ resource.content | strip_html }}{%- endcapture -%}
       "id": "resource-{{ forloop.index }}",
       "type": "resource",
       "title": {{ resource.title | jsonify }},
-      "body": {{ resource.description | default: "" | jsonify }},
-      "url": "/resources/"
+      "body": {{ resource_body | strip | truncate: 500 | jsonify }},
+      "url": {{ resource.link | default: resource.url | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {%- endfor %}
   ]

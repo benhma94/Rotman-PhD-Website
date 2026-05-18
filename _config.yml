@@ -14,10 +14,16 @@ collections:
     output: false
     sort_by: date
   resources:
-    output: false
+    output: true
+    permalink: /resources/:name/
 
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
+  - scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "resource"

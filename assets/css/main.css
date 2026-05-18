@@ -259,6 +259,50 @@ body {
 .resource-item a { color: var(--cyan); font-weight: 600; text-decoration: none; }
 .resource-item a:hover { text-decoration: underline; }
 .resource-desc { font-size: 0.85rem; color: var(--gray-600); }
+.resource-meta {
+  color: var(--gray-600);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+.resource-document {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  max-width: 760px;
+  padding: 1.5rem;
+}
+.resource-document h2,
+.resource-document h3 {
+  color: var(--navy);
+  margin: 1.25rem 0 0.5rem;
+}
+.resource-document p,
+.resource-document ul,
+.resource-document ol {
+  margin-bottom: 0.85rem;
+}
+.resource-document ul,
+.resource-document ol {
+  padding-left: 1.25rem;
+}
+.resource-document code {
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+}
+.resource-document a { color: var(--cyan); font-weight: 600; }
+.resource-summary {
+  color: var(--gray-600);
+  font-size: 0.95rem;
+}
+.resource-source {
+  border-top: 1px solid var(--gray-200);
+  padding-top: 1rem;
+}
 
 /* ── Notices page ──────────────────────────── */
 .notice-item {
