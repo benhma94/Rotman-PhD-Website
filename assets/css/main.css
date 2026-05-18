@@ -94,6 +94,27 @@ body {
 }
 .top-bar .site-title   { color: var(--white); font-weight: 700; font-size: 1rem; }
 .top-bar .academic-year { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+.top-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.logout-button {
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.24);
+  border-radius: 4px;
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.logout-button:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.4);
+}
 
 /* ── Layout ────────────────────────────────── */
 .layout {
@@ -476,6 +497,9 @@ body {
   .layout          { flex-direction: column; }
   .content         { margin-left: 0; padding: 1rem; }
   .dashboard-grid  { grid-template-columns: 1fr; }
+  .top-bar         { padding: 0 1rem; }
+  .top-bar-actions { gap: 0.6rem; }
+  .logout-button   { padding: 0.3rem 0.5rem; }
 }
 
 /* ── View toggle tabs ──────────────────────────── */

@@ -9,9 +9,36 @@ const ACCESS = {
   accounting: '113b5ccba3c63df9386c308cffceb45954e3b62b21e30c46245d0a98c228852e'
 };
 
+const ACCESS_KEY = 'phd-access';
+
 async function sha256(str) {
   const buf  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+function saveAccess(level) {
+  sessionStorage.setItem(ACCESS_KEY, level);
+  localStorage.removeItem(ACCESS_KEY);
+}
+
+function clearAccess() {
+  sessionStorage.removeItem(ACCESS_KEY);
+  localStorage.removeItem(ACCESS_KEY);
+}
+
+function restoreAccess() {
+  const saved = sessionStorage.getItem(ACCESS_KEY);
+  const legacySaved = localStorage.getItem(ACCESS_KEY);
+
+  if (saved) return saved;
+
+  if (legacySaved) {
+    sessionStorage.setItem(ACCESS_KEY, legacySaved);
+    localStorage.removeItem(ACCESS_KEY);
+    return legacySaved;
+  }
+
+  return null;
 }
 
 function unlockSite(level) {
@@ -42,15 +69,15 @@ async function checkPassword() {
     return;
   }
   if (hash === ACCESS.admin) {
-    localStorage.setItem('phd-access', 'admin');
+    saveAccess('admin');
     unlockSite('admin');
   } else if (hash === ACCESS.accounting) {
-    localStorage.setItem('phd-access', 'accounting');
+    saveAccess('accounting');
     unlockSite('accounting');
     const accountingLink = document.getElementById('accounting-link');
     location.assign(accountingLink ? accountingLink.href : '/accounting');
   } else if (hash === ACCESS.student) {
-    localStorage.setItem('phd-access', 'student');
+    saveAccess('student');
     unlockSite('student');
   } else {
     errorEl.textContent = 'Incorrect password. Please try again.';
@@ -58,8 +85,30 @@ async function checkPassword() {
   }
 }
 
+function logoutSite() {
+  clearAccess();
+  document.getElementById('site-shell').style.display = 'none';
+  document.getElementById('password-gate').style.display = 'flex';
+
+  const passwordInput = document.getElementById('password-input');
+  const errorEl = document.getElementById('password-error');
+  const adminLink = document.getElementById('admin-link');
+  const accountingLink = document.getElementById('accounting-link');
+
+  if (passwordInput) {
+    passwordInput.value = '';
+    passwordInput.focus();
+  }
+  if (errorEl) {
+    errorEl.textContent = '';
+    errorEl.style.display = 'none';
+  }
+  if (adminLink) adminLink.style.display = 'none';
+  if (accountingLink) accountingLink.style.display = 'none';
+}
+
 // Restore session on page load
-const saved = localStorage.getItem('phd-access');
+const saved = restoreAccess();
 if (saved) {
   unlockSite(saved);
 } else {
@@ -69,3 +118,6 @@ if (saved) {
 // Allow Enter key
 document.getElementById('password-input')
   .addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
+
+document.getElementById('logout-button')
+  .addEventListener('click', logoutSite);
