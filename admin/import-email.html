@@ -304,6 +304,71 @@
       const bodyText = extractBodyText(text, headers);
       return { title, bodyText };
     }
+
+    // ── Extraction helpers ────────────────────────────────────────────────────
+
+    const MONTHS = {
+      january:1, february:2, march:3, april:4, may:5, june:6,
+      july:7, august:8, september:9, october:10, november:11, december:12,
+      jan:1, feb:2, mar:3, apr:4, jun:6, jul:7, aug:8, sep:9, oct:10, nov:11, dec:12
+    };
+
+    function padTwo(n) { return String(n).padStart(2, '0'); }
+
+    function toIso(year, month, day) {
+      return `${year}-${padTwo(month)}-${padTwo(day)}`;
+    }
+
+    function extractDates(text) {
+      const found = [];
+      const seen = new Set();
+      const currentYear = new Date().getFullYear();
+
+      function add(iso, label) {
+        if (!seen.has(iso)) { seen.add(iso); found.push({ iso, label }); }
+      }
+
+      // YYYY-MM-DD or YYYY/MM/DD
+      for (const m of text.matchAll(/\b(\d{4})[-/](0?[1-9]|1[0-2])[-/](0?[1-9]|[12]\d|3[01])\b/g)) {
+        const iso = toIso(+m[1], +m[2], +m[3]);
+        add(iso, iso);
+      }
+
+      // Month DD, YYYY  or  Month DD YYYY
+      for (const m of text.matchAll(/\b(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\s+(0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)?,?\s+(\d{4})\b/gi)) {
+        const iso = toIso(+m[3], MONTHS[m[1].toLowerCase()], +m[2]);
+        add(iso, `${m[1]} ${m[2]}, ${m[3]}`);
+      }
+
+      // DD Month YYYY
+      for (const m of text.matchAll(/\b(0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)?\s+(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\s+(\d{4})\b/gi)) {
+        const iso = toIso(+m[3], MONTHS[m[2].toLowerCase()], +m[1]);
+        add(iso, `${m[1]} ${m[2]} ${m[3]}`);
+      }
+
+      // Month DD (no year — current year assumed)
+      for (const m of text.matchAll(/\b(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\s+(0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)?\b/gi)) {
+        const month = MONTHS[m[1].toLowerCase()];
+        const iso = toIso(currentYear, month, +m[2]);
+        add(iso, `${m[1]} ${m[2]} (${currentYear} assumed)`);
+      }
+
+      found.sort((a, b) => a.iso.localeCompare(b.iso));
+      return found;
+    }
+
+    function detectType(text) {
+      return /\b(deadline|due|submission|application)\b/i.test(text) ? 'deadline' : 'event';
+    }
+
+    function extractDescription(text) {
+      const paragraphs = text.split(/\n{2,}/).map(p => p.replace(/\s+/g, ' ').trim());
+      for (const p of paragraphs) {
+        if (p.length >= 50) return p.slice(0, 400);
+      }
+      const longest = paragraphs.filter(p => p.length > 0).sort((a, b) => b.length - a.length)[0];
+      return longest ? longest.slice(0, 400) : '';
+    }
   </script>
 </body>
 </html>
