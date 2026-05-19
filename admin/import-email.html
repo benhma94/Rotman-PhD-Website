@@ -443,6 +443,110 @@
       formSection.style.display = 'block';
       formSection.scrollIntoView({ behavior: 'smooth' });
     }
+
+    // ── GitHub commit ─────────────────────────────────────────────────────────
+
+    function slugify(str) {
+      return str
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .trim()
+        .replace(/[\s-]+/g, '-')
+        .slice(0, 60);
+    }
+
+    function buildFrontmatter(fields) {
+      const lines = ['---'];
+      function yamlVal(v) {
+        return /[:#\[\]{}&*!|>'",%@`]/.test(v) || v.startsWith('-')
+          ? `"${v.replace(/"/g, '\\"')}"`
+          : v;
+      }
+      lines.push(`title: ${yamlVal(fields.title)}`);
+      lines.push(`date: ${fields.date}`);
+      if (fields.start_time) lines.push(`start_time: ${fields.start_time}`);
+      if (fields.end_time)   lines.push(`end_time: ${fields.end_time}`);
+      if (fields.location)   lines.push(`location: ${yamlVal(fields.location)}`);
+      if (fields.description) lines.push(`description: ${yamlVal(fields.description)}`);
+      lines.push(`type: ${fields.type}`);
+      lines.push('---');
+      return lines.join('\n') + '\n';
+    }
+
+    async function commitEvent(token, filename, content, title) {
+      const url = `https://api.github.com/repos/benhma94/Rotman-PhD-Website/contents/_events/${filename}`;
+      const encoded = btoa(unescape(encodeURIComponent(content)));
+      const res = await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Content-Type': 'application/json',
+          'Accept': 'application/vnd.github+json'
+        },
+        body: JSON.stringify({
+          message: `feat: import event from email — ${title}`,
+          content: encoded,
+          branch: 'master'
+        })
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.message || `GitHub API error ${res.status}`);
+      }
+      return res.json();
+    }
+
+    // ── Submit handler ────────────────────────────────────────────────────────
+
+    document.getElementById('submit-btn').addEventListener('click', async () => {
+      const btn    = document.getElementById('submit-btn');
+      const status = document.getElementById('status');
+
+      const fields = {
+        title:       document.getElementById('f-title').value.trim(),
+        date:        document.getElementById('f-date').value,
+        start_time:  document.getElementById('f-start-time').value,
+        end_time:    document.getElementById('f-end-time').value,
+        location:    document.getElementById('f-location').value.trim(),
+        description: document.getElementById('f-description').value.trim(),
+        type:        document.getElementById('f-type').value,
+      };
+
+      if (!fields.title || !fields.date) {
+        status.className = 'error';
+        status.style.display = 'block';
+        status.textContent = 'Title and Date are required.';
+        return;
+      }
+
+      if (!TOKEN) {
+        status.className = 'error';
+        status.style.display = 'block';
+        status.innerHTML = 'Not authenticated. <a href="/admin">Log in at /admin</a> first.';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Creating…';
+      status.style.display = 'none';
+
+      const filename = `${fields.date}-${slugify(fields.title)}.md`;
+      const content  = buildFrontmatter(fields);
+
+      try {
+        await commitEvent(TOKEN, filename, content, fields.title);
+        status.className = 'success';
+        status.innerHTML = `Event created: <code>_events/${filename}</code>. GitHub Pages will rebuild in ~60 seconds. <a href="/admin">View or edit in CMS →</a>`;
+        status.style.display = 'block';
+        btn.textContent = 'Created ✓';
+      } catch (err) {
+        status.className = 'error';
+        status.textContent = `Error: ${err.message}`;
+        status.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Create Event';
+      }
+    });
   </script>
 </body>
 </html>
