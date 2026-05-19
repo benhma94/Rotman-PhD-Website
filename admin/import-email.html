@@ -253,41 +253,93 @@
       return headers;
     }
 
+    function splitHeaderBody(text) {
+      const sep = text.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
+      const sepIdx = text.indexOf(sep);
+      if (sepIdx === -1) return { headers: {}, body: text };
+      return {
+        headers: parseHeaders(text),
+        body: text.slice(sepIdx + sep.length)
+      };
+    }
+
+    function getHeaderParam(headerValue, paramName) {
+      const re = new RegExp(`${paramName}=("[^"]+"|[^;\\s]+)`, 'i');
+      const match = headerValue.match(re);
+      if (!match) return '';
+      return match[1].replace(/^"|"$/g, '');
+    }
+
+    function decodeBinaryString(binary, charset) {
+      const bytes = Uint8Array.from(binary, ch => ch.charCodeAt(0));
+      if (typeof TextDecoder !== 'undefined') {
+        try {
+          return new TextDecoder(charset || 'utf-8').decode(bytes);
+        } catch {
+          // Fall through to UTF-8 percent decoding below.
+        }
+      }
+      try {
+        return decodeURIComponent(Array.from(bytes, b => `%${padTwo(b.toString(16))}`).join(''));
+      } catch {
+        return binary;
+      }
+    }
+
+    function decodeQuotedPrintable(payload, charset) {
+      const binary = payload
+        .replace(/=\r?\n/g, '')
+        .replace(/=([0-9A-Fa-f]{2})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
+      return decodeBinaryString(binary, charset);
+    }
+
+    function decodeTransferEncodedBody(payload, headers) {
+      const encoding = (headers['content-transfer-encoding'] || '').toLowerCase();
+      const charset = getHeaderParam(headers['content-type'] || '', 'charset') || 'utf-8';
+
+      if (encoding === 'base64') {
+        try {
+          return decodeBinaryString(atob(payload.replace(/\s+/g, '')), charset);
+        } catch {
+          return payload;
+        }
+      }
+      if (encoding === 'quoted-printable') return decodeQuotedPrintable(payload, charset);
+      return payload;
+    }
+
     function extractBodyText(text, headers) {
       const sep = text.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
       const sepIdx = text.indexOf(sep);
       const bodyRaw = sepIdx !== -1 ? text.slice(sepIdx + sep.length) : text;
-      const ct = (headers['content-type'] || 'text/plain').toLowerCase();
+      const rawCt = headers['content-type'] || 'text/plain';
+      const ct = rawCt.toLowerCase();
 
       if (ct.includes('multipart/')) {
-        const boundaryMatch = ct.match(/boundary="?([^";\s\r\n]+)"?/i);
-        if (!boundaryMatch) return bodyRaw.trim();
-        const boundary = boundaryMatch[1];
+        const boundary = getHeaderParam(rawCt, 'boundary');
+        if (!boundary) return bodyRaw.trim();
         const parts = bodyRaw.split('--' + boundary);
 
         for (const part of parts) {
-          const partSep = part.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
-          const partSepIdx = part.indexOf(partSep);
-          if (partSepIdx === -1) continue;
-          const partHeaderBlock = part.slice(0, partSepIdx).toLowerCase();
-          if (partHeaderBlock.includes('content-type: text/plain')) {
-            return part.slice(partSepIdx + partSep.length).trim();
+          const { headers: partHeaders, body: partBody } = splitHeaderBody(part);
+          const partCt = (partHeaders['content-type'] || '').toLowerCase();
+          if (partCt.includes('text/plain')) {
+            return decodeTransferEncodedBody(partBody, partHeaders).trim();
           }
         }
         for (const part of parts) {
-          const partSep = part.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
-          const partSepIdx = part.indexOf(partSep);
-          if (partSepIdx === -1) continue;
-          const partHeaderBlock = part.slice(0, partSepIdx).toLowerCase();
-          if (partHeaderBlock.includes('content-type: text/html')) {
-            return stripHtml(part.slice(partSepIdx + partSep.length)).trim();
+          const { headers: partHeaders, body: partBody } = splitHeaderBody(part);
+          const partCt = (partHeaders['content-type'] || '').toLowerCase();
+          if (partCt.includes('text/html')) {
+            return stripHtml(decodeTransferEncodedBody(partBody, partHeaders)).trim();
           }
         }
         return bodyRaw.trim();
       }
 
-      if (ct.includes('text/html')) return stripHtml(bodyRaw).trim();
-      return bodyRaw.trim();
+      const bodyText = decodeTransferEncodedBody(bodyRaw, headers);
+      if (ct.includes('text/html')) return stripHtml(bodyText).trim();
+      return bodyText.trim();
     }
 
     function parseEml(text) {
@@ -417,9 +469,14 @@
       return new Date().toISOString().slice(0, 10);
     }
 
+    function chooseDefaultDate(dates) {
+      const today = todayIso();
+      return dates.find(d => d.iso >= today) || dates[dates.length - 1];
+    }
+
     function populateForm(emlText) {
       const { title, bodyText } = parseEml(emlText);
-      const dates = extractDates(bodyText + ' ' + emlText.slice(0, 500));
+      const dates = extractDates(`${title} ${bodyText}`);
 
       document.getElementById('f-title').value       = title;
       document.getElementById('f-type').value        = detectType(emlText);
@@ -429,11 +486,15 @@
         document.getElementById('f-date').value = todayIso();
         detectedDatesField.style.display = 'none';
       } else {
-        document.getElementById('f-date').value = dates[0].iso;
+        const defaultDate = chooseDefaultDate(dates).iso;
+        document.getElementById('f-date').value = defaultDate;
         if (dates.length > 1) {
-          detectedDatesSelect.innerHTML = dates
-            .map(d => `<option value="${d.iso}">${d.label} (${d.iso})</option>`)
-            .join('');
+          detectedDatesSelect.innerHTML = '';
+          for (const d of dates) {
+            const option = new Option(`${d.label} (${d.iso})`, d.iso);
+            option.selected = d.iso === defaultDate;
+            detectedDatesSelect.add(option);
+          }
           detectedDatesField.style.display = 'block';
           detectedDatesSelect.onchange = () => {
             document.getElementById('f-date').value = detectedDatesSelect.value;
