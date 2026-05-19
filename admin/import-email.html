@@ -458,8 +458,8 @@
     function buildFrontmatter(fields) {
       const lines = ['---'];
       function yamlVal(v) {
-        return /[:#\[\]{}&*!|>'",%@`]/.test(v) || v.startsWith('-')
-          ? `"${v.replace(/"/g, '\\"')}"`
+        return /[:#\[\]{}&*!|>'",%@`\n]/.test(v) || v.startsWith('-')
+          ? `"${v.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`
           : v;
       }
       lines.push(`title: ${yamlVal(fields.title)}`);
