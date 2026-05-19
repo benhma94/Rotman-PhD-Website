@@ -196,7 +196,25 @@
     </form>
   </main>
   <script>
-    // JS goes here in subsequent tasks
+    // ── Auth ─────────────────────────────────────────────────────────────────
+    function getGithubToken() {
+      try {
+        const raw = localStorage.getItem('netlify-cms-user');
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        return parsed.token || null;
+      } catch {
+        return null;
+      }
+    }
+
+    const TOKEN = getGithubToken();
+
+    if (!TOKEN) {
+      document.getElementById('auth-error').style.display = 'block';
+      document.getElementById('upload-zone').style.opacity = '0.4';
+      document.getElementById('upload-zone').style.pointerEvents = 'none';
+    }
   </script>
 </body>
 </html>
