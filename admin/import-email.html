@@ -369,6 +369,80 @@
       const longest = paragraphs.filter(p => p.length > 0).sort((a, b) => b.length - a.length)[0];
       return longest ? longest.slice(0, 400) : '';
     }
+
+    // ── Upload handler ────────────────────────────────────────────────────────
+
+    const uploadZone = document.getElementById('upload-zone');
+    const emlInput   = document.getElementById('eml-input');
+    const formSection = document.getElementById('form-section');
+    const detectedDatesField = document.getElementById('detected-dates-field');
+    const detectedDatesSelect = document.getElementById('detected-dates');
+
+    uploadZone.addEventListener('click', () => emlInput.click());
+
+    uploadZone.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); emlInput.click(); }
+    });
+
+    uploadZone.addEventListener('dragover', e => {
+      e.preventDefault();
+      uploadZone.style.background = '#eef4fb';
+    });
+
+    uploadZone.addEventListener('dragleave', () => {
+      uploadZone.style.background = '';
+    });
+
+    uploadZone.addEventListener('drop', e => {
+      e.preventDefault();
+      uploadZone.style.background = '';
+      const file = e.dataTransfer.files[0];
+      if (file) processFile(file);
+    });
+
+    emlInput.addEventListener('change', () => {
+      if (emlInput.files[0]) processFile(emlInput.files[0]);
+    });
+
+    function processFile(file) {
+      const reader = new FileReader();
+      reader.onload = e => populateForm(e.target.result);
+      reader.readAsText(file);
+    }
+
+    function todayIso() {
+      return new Date().toISOString().slice(0, 10);
+    }
+
+    function populateForm(emlText) {
+      const { title, bodyText } = parseEml(emlText);
+      const dates = extractDates(bodyText + ' ' + emlText.slice(0, 500));
+
+      document.getElementById('f-title').value       = title;
+      document.getElementById('f-type').value        = detectType(emlText);
+      document.getElementById('f-description').value = extractDescription(bodyText);
+
+      if (dates.length === 0) {
+        document.getElementById('f-date').value = todayIso();
+        detectedDatesField.style.display = 'none';
+      } else {
+        document.getElementById('f-date').value = dates[0].iso;
+        if (dates.length > 1) {
+          detectedDatesSelect.innerHTML = dates
+            .map(d => `<option value="${d.iso}">${d.label} (${d.iso})</option>`)
+            .join('');
+          detectedDatesField.style.display = 'block';
+          detectedDatesSelect.onchange = () => {
+            document.getElementById('f-date').value = detectedDatesSelect.value;
+          };
+        } else {
+          detectedDatesField.style.display = 'none';
+        }
+      }
+
+      formSection.style.display = 'block';
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
 </body>
 </html>
