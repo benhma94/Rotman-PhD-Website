@@ -215,6 +215,88 @@
       document.getElementById('upload-zone').style.opacity = '0.4';
       document.getElementById('upload-zone').style.pointerEvents = 'none';
     }
+
+    // ── .eml parser ──────────────────────────────────────────────────────────
+
+    function stripHtml(html) {
+      return html
+        .replace(/<style[\s\S]*?<\/style>/gi, '')
+        .replace(/<script[\s\S]*?<\/script>/gi, '')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/&nbsp;/gi, ' ')
+        .replace(/&amp;/gi, '&')
+        .replace(/&lt;/gi, '<')
+        .replace(/&gt;/gi, '>')
+        .replace(/&quot;/gi, '"')
+        .replace(/[ \t]{2,}/g, ' ')
+        .replace(/\n{3,}/g, '\n\n')
+        .trim();
+    }
+
+    function parseHeaders(text) {
+      const sep = text.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
+      const headerBlock = text.slice(0, text.indexOf(sep));
+      const unfolded = headerBlock
+        .replace(/\r\n([ \t]+)/g, ' ')
+        .replace(/\n([ \t]+)/g, ' ');
+      const headers = {};
+      for (const line of unfolded.split(/\r?\n/)) {
+        const colon = line.indexOf(':');
+        if (colon > 0) {
+          const key = line.slice(0, colon).toLowerCase().trim();
+          const val = line.slice(colon + 1).trim();
+          if (!headers[key]) headers[key] = val;
+        }
+      }
+      return headers;
+    }
+
+    function extractBodyText(text, headers) {
+      const sep = text.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
+      const bodyRaw = text.slice(text.indexOf(sep) + sep.length);
+      const ct = (headers['content-type'] || 'text/plain').toLowerCase();
+
+      if (ct.includes('multipart/')) {
+        const boundaryMatch = ct.match(/boundary="?([^";\s\r\n]+)"?/i);
+        if (!boundaryMatch) return bodyRaw.trim();
+        const boundary = boundaryMatch[1];
+        const parts = bodyRaw.split('--' + boundary);
+
+        for (const part of parts) {
+          const partSep = part.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
+          const partHeaderBlock = part.slice(0, part.indexOf(partSep)).toLowerCase();
+          if (partHeaderBlock.includes('content-type: text/plain')) {
+            return part.slice(part.indexOf(partSep) + partSep.length).trim();
+          }
+        }
+        for (const part of parts) {
+          const partSep = part.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
+          const partHeaderBlock = part.slice(0, part.indexOf(partSep)).toLowerCase();
+          if (partHeaderBlock.includes('content-type: text/html')) {
+            return stripHtml(part.slice(part.indexOf(partSep) + partSep.length)).trim();
+          }
+        }
+        return bodyRaw.trim();
+      }
+
+      if (ct.includes('text/html')) return stripHtml(bodyRaw).trim();
+      return bodyRaw.trim();
+    }
+
+    function parseEml(text) {
+      const headers = parseHeaders(text);
+      let subject = headers['subject'] || '';
+      subject = subject.replace(/=\?[^?]+\?[BbQq]\?[^?]*\?=/g, s => {
+        try {
+          const parts = s.slice(2, -2).split('?');
+          if (parts[1].toUpperCase() === 'B') return atob(parts[2]);
+          return parts[2].replace(/_/g, ' ').replace(/=([0-9A-Fa-f]{2})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
+        } catch { return s; }
+      });
+      const title = subject.replace(/^(re:|fwd:|fw:)\s*/gi, '').trim();
+      const bodyText = extractBodyText(text, headers);
+      return { title, bodyText };
+    }
   </script>
 </body>
 </html>
