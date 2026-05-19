@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Import Event from Email — Rotman PhD Admin</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: "Avenir Next LT", "Avenir Next", system-ui, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #004990;
+      color: #fff;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 { font-size: 1rem; font-weight: 600; margin: 0; }
+    header a { color: #41C3DC; font-size: 0.85rem; text-decoration: none; }
+    header a:hover { text-decoration: underline; }
+    main {
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 0 16px 80px;
+    }
+    #auth-error {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 24px;
+      display: none;
+    }
+    #auth-error a { color: #004990; }
+    .upload-zone {
+      background: #fff;
+      border: 2px dashed #004990;
+      border-radius: 8px;
+      padding: 32px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-bottom: 32px;
+    }
+    .upload-zone:hover { background: #eef4fb; }
+    .upload-zone input[type="file"] { display: none; }
+    .upload-zone p { margin: 8px 0 0; color: #555; font-size: 0.9rem; }
+    .upload-zone .icon { font-size: 2rem; }
+    #form-section { display: none; }
+    .field { margin-bottom: 20px; }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #fff;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #004990;
+      box-shadow: 0 0 0 3px rgba(0,73,144,0.1);
+    }
+    textarea { resize: vertical; min-height: 100px; }
+    .row { display: flex; gap: 16px; }
+    .row .field { flex: 1; }
+    .hint { font-size: 0.78rem; color: #777; margin-top: 4px; }
+    #detected-dates-field { margin-bottom: 12px; }
+    button[type="submit"] {
+      background: #E20778;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 28px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    button[type="submit"]:hover { background: #b8055f; }
+    button[type="submit"]:disabled { background: #aaa; cursor: not-allowed; }
+    #status {
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: 6px;
+      display: none;
+      font-size: 0.9rem;
+    }
+    #status.success {
+      background: #d4edda;
+      border: 1px solid #28a745;
+      color: #155724;
+    }
+    #status.error {
+      background: #f8d7da;
+      border: 1px solid #dc3545;
+      color: #721c24;
+    }
+    #status a { color: inherit; font-weight: 600; }
+    hr { border: none; border-top: 1px solid #e0e0e0; margin: 28px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Import Event from Email</h1>
+    <a href="/admin">← Back to Admin</a>
+  </header>
+  <main>
+    <div id="auth-error">
+      You must be logged in to the CMS before using this tool.
+      <a href="/admin">Log in at /admin</a>, then return here.
+    </div>
+
+    <div class="upload-zone" id="upload-zone">
+      <input type="file" id="eml-input" accept=".eml" />
+      <div class="icon">📧</div>
+      <strong>Click to choose a .eml file</strong>
+      <p>Export the email from your email client as a .eml file, then upload it here.</p>
+    </div>
+
+    <div id="form-section">
+      <hr />
+      <h2 style="margin-top:0;font-size:1.1rem;color:#004990;">Review extracted details</h2>
+      <p style="color:#555;font-size:0.9rem;margin-top:0;">Edit any field before creating the event.</p>
+
+      <div id="detected-dates-field" class="field" style="display:none;">
+        <label for="detected-dates">Detected dates — pick the right one</label>
+        <select id="detected-dates"></select>
+      </div>
+
+      <div class="field">
+        <label for="f-title">Title *</label>
+        <input type="text" id="f-title" required />
+      </div>
+
+      <div class="field">
+        <label for="f-date">Date *</label>
+        <input type="date" id="f-date" required />
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="f-start-time">Start Time</label>
+          <input type="time" id="f-start-time" />
+          <p class="hint">Leave blank for all-day.</p>
+        </div>
+        <div class="field">
+          <label for="f-end-time">End Time</label>
+          <input type="time" id="f-end-time" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-location">Location</label>
+        <input type="text" id="f-location" />
+      </div>
+
+      <div class="field">
+        <label for="f-type">Type *</label>
+        <select id="f-type">
+          <option value="event">Event</option>
+          <option value="deadline">Deadline</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f-description">Description</label>
+        <textarea id="f-description"></textarea>
+      </div>
+
+      <button type="submit" id="submit-btn">Create Event</button>
+      <div id="status"></div>
+    </div>
+  </main>
+  <script>
+    // JS goes here in subsequent tasks
+  </script>
+</body>
+</html>
