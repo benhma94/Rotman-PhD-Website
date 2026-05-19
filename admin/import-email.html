@@ -235,7 +235,9 @@
 
     function parseHeaders(text) {
       const sep = text.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
-      const headerBlock = text.slice(0, text.indexOf(sep));
+      const sepIdx = text.indexOf(sep);
+      if (sepIdx === -1) return {};
+      const headerBlock = text.slice(0, sepIdx);
       const unfolded = headerBlock
         .replace(/\r\n([ \t]+)/g, ' ')
         .replace(/\n([ \t]+)/g, ' ');
@@ -253,7 +255,8 @@
 
     function extractBodyText(text, headers) {
       const sep = text.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
-      const bodyRaw = text.slice(text.indexOf(sep) + sep.length);
+      const sepIdx = text.indexOf(sep);
+      const bodyRaw = sepIdx !== -1 ? text.slice(sepIdx + sep.length) : text;
       const ct = (headers['content-type'] || 'text/plain').toLowerCase();
 
       if (ct.includes('multipart/')) {
@@ -264,16 +267,20 @@
 
         for (const part of parts) {
           const partSep = part.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
-          const partHeaderBlock = part.slice(0, part.indexOf(partSep)).toLowerCase();
+          const partSepIdx = part.indexOf(partSep);
+          if (partSepIdx === -1) continue;
+          const partHeaderBlock = part.slice(0, partSepIdx).toLowerCase();
           if (partHeaderBlock.includes('content-type: text/plain')) {
-            return part.slice(part.indexOf(partSep) + partSep.length).trim();
+            return part.slice(partSepIdx + partSep.length).trim();
           }
         }
         for (const part of parts) {
           const partSep = part.indexOf('\r\n\r\n') !== -1 ? '\r\n\r\n' : '\n\n';
-          const partHeaderBlock = part.slice(0, part.indexOf(partSep)).toLowerCase();
+          const partSepIdx = part.indexOf(partSep);
+          if (partSepIdx === -1) continue;
+          const partHeaderBlock = part.slice(0, partSepIdx).toLowerCase();
           if (partHeaderBlock.includes('content-type: text/html')) {
-            return stripHtml(part.slice(part.indexOf(partSep) + partSep.length)).trim();
+            return stripHtml(part.slice(partSepIdx + partSep.length)).trim();
           }
         }
         return bodyRaw.trim();
