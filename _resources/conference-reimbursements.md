@@ -7,7 +7,7 @@ pinned: false
 
 Use Concur for conference reimbursement claims.
 
-1. Log in to Concur. If you do not have a Concur vendor account, contact Darryl Bush to get set up.
+1. [Log in to Concur](https://finance.utoronto.ca/travel-and-expenses-with-concur/). If you do not have a Concur vendor account, contact Darryl Bush to get set up.
 2. Upload your receipts and expenses. Check that exchange rates are correct.
 3. If you are claiming per diems, check the expense policy before submitting.
 4. Leave the fund and cost centre blank. FSO will review the expenses and assign them.

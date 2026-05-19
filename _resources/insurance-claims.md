@@ -7,6 +7,8 @@ pinned: false
 
 Use the correct claim ID format for the insurance plan you are claiming under.
 
+Submit insurance claims through [Green Shield][green-shield].
+
 ## SGS Insurance
 
 Use:
@@ -22,3 +24,5 @@ Use:
 `UTA + your employee number + 00`
 
 For details, see the [CUPE 3902 Unit 1 benefits page](https://cupe3902.org/unit-1/benefits/).
+
+[green-shield]: https://app.greenshieldplus.ca/
