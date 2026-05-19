@@ -86,6 +86,8 @@
     .row .field { flex: 1; }
     .hint { font-size: 0.78rem; color: #777; margin-top: 4px; }
     #detected-dates-field { margin-bottom: 12px; }
+    #form-section h2 { margin-top: 0; font-size: 1.1rem; color: #004990; }
+    #form-section > p { color: #555; font-size: 0.9rem; margin-top: 0; }
     button[type="submit"] {
       background: #E20778;
       color: #fff;
@@ -127,22 +129,22 @@
     <a href="/admin">← Back to Admin</a>
   </header>
   <main>
-    <div id="auth-error">
+    <div id="auth-error" role="alert">
       You must be logged in to the CMS before using this tool.
       <a href="/admin">Log in at /admin</a>, then return here.
     </div>
 
-    <div class="upload-zone" id="upload-zone">
+    <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Choose .eml file">
       <input type="file" id="eml-input" accept=".eml" />
       <div class="icon">📧</div>
       <strong>Click to choose a .eml file</strong>
       <p>Export the email from your email client as a .eml file, then upload it here.</p>
     </div>
 
-    <div id="form-section">
+    <form id="form-section" novalidate>
       <hr />
-      <h2 style="margin-top:0;font-size:1.1rem;color:#004990;">Review extracted details</h2>
-      <p style="color:#555;font-size:0.9rem;margin-top:0;">Edit any field before creating the event.</p>
+      <h2>Review extracted details</h2>
+      <p>Edit any field before creating the event.</p>
 
       <div id="detected-dates-field" class="field" style="display:none;">
         <label for="detected-dates">Detected dates — pick the right one</label>
@@ -189,9 +191,9 @@
         <textarea id="f-description"></textarea>
       </div>
 
-      <button type="submit" id="submit-btn">Create Event</button>
+      <button type="button" id="submit-btn">Create Event</button>
       <div id="status"></div>
-    </div>
+    </form>
   </main>
   <script>
     // JS goes here in subsequent tasks
