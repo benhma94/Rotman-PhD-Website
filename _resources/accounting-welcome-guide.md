@@ -324,7 +324,7 @@ Otherwise, the second semester rolls on much like the first semester, with a new
 
 Several conferences host doctoral consortia where PhD students can receive research tips and connect with fellow students worldwide. Some consortia are recommended for students in the earlier years of their program, while others are more beneficial for those in the later years, particularly during the job market year, to increase their visibility. You can subscribe to conference announcements through SSRN, AAA, and CAAA.
 
-After you pass comps in the second year, you receive a travel budget to attend conferences. Sometimes, professors may sponsor you to attend some conferences, but you’re also not expected to attend conferences when you first start. If you have the opportunity, definitely try.
+After you pass comps in the second year, you receive a travel budget ($2,851) to attend conferences. Sometimes, professors may sponsor you to attend some conferences (especially if you're presenting a coauthored paper), but you’re also not expected to attend conferences when you first start. If you have the opportunity, definitely try.
 
 **CAAA Craft Workshop**  
 Attended by Ben, Divyesh, Lulin, and Clark. It has historically been hosted in early to mid-June. It includes faculty presentations on research and work-life balance, and PhD students present their dissertations for feedback.
