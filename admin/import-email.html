@@ -88,7 +88,7 @@
     #detected-dates-field { margin-bottom: 12px; }
     #form-section h2 { margin-top: 0; font-size: 1.1rem; color: #004990; }
     #form-section > p { color: #555; font-size: 0.9rem; margin-top: 0; }
-    button[type="submit"] {
+    #submit-btn {
       background: #E20778;
       color: #fff;
       border: none;
@@ -100,8 +100,8 @@
       cursor: pointer;
       transition: background 0.15s;
     }
-    button[type="submit"]:hover { background: #b8055f; }
-    button[type="submit"]:disabled { background: #aaa; cursor: not-allowed; }
+    #submit-btn:hover { background: #b8055f; }
+    #submit-btn:disabled { background: #aaa; cursor: not-allowed; }
     #status {
       margin-top: 16px;
       padding: 12px 16px;
@@ -346,11 +346,14 @@
         add(iso, `${m[1]} ${m[2]} ${m[3]}`);
       }
 
-      // Month DD (no year — current year assumed)
+      // Month DD (no year — current year assumed); skip if same MM-DD already found with a year
+      const seenMonthDay = new Set(found.map(d => d.iso.slice(5)));
       for (const m of text.matchAll(/\b(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|oct|nov|dec)\s+(0?[1-9]|[12]\d|3[01])(?:st|nd|rd|th)?\b/gi)) {
         const month = MONTHS[m[1].toLowerCase()];
-        const iso = toIso(currentYear, month, +m[2]);
-        add(iso, `${m[1]} ${m[2]} (${currentYear} assumed)`);
+        const mmdd = padTwo(month) + '-' + padTwo(+m[2]);
+        if (!seenMonthDay.has(mmdd)) {
+          add(toIso(currentYear, month, +m[2]), `${m[1]} ${m[2]} (${currentYear} assumed)`);
+        }
       }
 
       found.sort((a, b) => a.iso.localeCompare(b.iso));
