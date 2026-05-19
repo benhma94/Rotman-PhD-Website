@@ -6,3 +6,5 @@ vendor/
 .bundle/
 .worktrees/
 .superpowers/
+.claude/
+docs/
