@@ -52,6 +52,13 @@
     .upload-zone input[type="file"] { display: none; }
     .upload-zone p { margin: 8px 0 0; color: #555; font-size: 0.9rem; }
     .upload-zone .icon { font-size: 2rem; }
+    #upload-status {
+      display: none;
+      margin: -16px 0 24px;
+      color: #555;
+      font-size: 0.9rem;
+    }
+    #upload-status.error { color: #721c24; }
     #form-section { display: none; }
     .field { margin-bottom: 20px; }
     label {
@@ -130,16 +137,17 @@
   </header>
   <main>
     <div id="auth-error" role="alert">
-      You must be logged in to the CMS before using this tool.
+      You must be logged in to the CMS before creating an event.
       <a href="/admin">Log in at /admin</a>, then return here.
     </div>
 
-    <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Choose .eml file">
-      <input type="file" id="eml-input" accept=".eml" />
+    <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Choose .eml or .msg file">
+      <input type="file" id="eml-input" accept=".eml,.msg" />
       <div class="icon">📧</div>
-      <strong>Click to choose a .eml file</strong>
-      <p>Export the email from your email client as a .eml file, then upload it here.</p>
+      <strong>Click to choose a .eml or .msg file</strong>
+      <p>Upload an email exported from Gmail, Outlook, or another mail client.</p>
     </div>
+    <div id="upload-status" role="status" aria-live="polite"></div>
 
     <form id="form-section" novalidate>
       <hr />
@@ -198,22 +206,43 @@
   <script>
     // ── Auth ─────────────────────────────────────────────────────────────────
     function getGithubToken() {
-      try {
-        const raw = localStorage.getItem('netlify-cms-user');
-        if (!raw) return null;
-        const parsed = JSON.parse(raw);
-        return parsed.token || null;
-      } catch {
-        return null;
+      const keys = ['decap-cms-user', 'netlify-cms-user'];
+      const stores = [localStorage, sessionStorage];
+
+      function tokenFromUser(user) {
+        if (!user || typeof user !== 'object') return null;
+        const candidates = [
+          user.token,
+          user.token && user.token.token,
+          user.token && user.token.access_token,
+          user.auth_token,
+          user.oauth_token,
+          user.backend && user.backend.token,
+          user.backend && user.backend.token && user.backend.token.access_token,
+          user.user && user.user.token,
+          user.user && user.user.token && user.user.token.access_token
+        ];
+        return candidates.find(token => typeof token === 'string' && token.length > 0) || null;
       }
+
+      for (const store of stores) {
+        for (const key of keys) {
+          const raw = store.getItem(key);
+          if (!raw) continue;
+          try {
+            const token = tokenFromUser(JSON.parse(raw));
+            if (token) return token;
+          } catch {
+            if (raw.length > 0 && !raw.startsWith('{')) return raw;
+          }
+        }
+      }
+
+      return null;
     }
 
-    const TOKEN = getGithubToken();
-
-    if (!TOKEN) {
+    if (!getGithubToken()) {
       document.getElementById('auth-error').style.display = 'block';
-      document.getElementById('upload-zone').style.opacity = '0.4';
-      document.getElementById('upload-zone').style.pointerEvents = 'none';
     }
 
     // ── .eml parser ──────────────────────────────────────────────────────────
@@ -342,9 +371,8 @@
       return bodyText.trim();
     }
 
-    function parseEml(text) {
-      const headers = parseHeaders(text);
-      let subject = headers['subject'] || '';
+    function cleanSubject(subject) {
+      subject = subject || '';
       subject = subject.replace(/=\?[^?]+\?[BbQq]\?[^?]*\?=/g, s => {
         try {
           const parts = s.slice(2, -2).split('?');
@@ -352,9 +380,14 @@
           return parts[2].replace(/_/g, ' ').replace(/=([0-9A-Fa-f]{2})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
         } catch { return s; }
       });
-      const title = subject.replace(/^(re:|fwd:|fw:)\s*/gi, '').trim();
+      return subject.replace(/^(re:|fwd:|fw:)\s*/gi, '').trim();
+    }
+
+    function parseEml(text) {
+      const headers = parseHeaders(text);
+      const title = cleanSubject(headers['subject']);
       const bodyText = extractBodyText(text, headers);
-      return { title, bodyText };
+      return { title, bodyText, rawText: text };
     }
 
     // ── Extraction helpers ────────────────────────────────────────────────────
@@ -427,11 +460,103 @@
 
     // ── Upload handler ────────────────────────────────────────────────────────
 
+    function readFileAsText(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = e => resolve(e.target.result);
+        reader.onerror = () => reject(new Error('Could not read the selected file.'));
+        reader.readAsText(file);
+      });
+    }
+
+    function readFileAsArrayBuffer(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = e => resolve(e.target.result);
+        reader.onerror = () => reject(new Error('Could not read the selected file.'));
+        reader.readAsArrayBuffer(file);
+      });
+    }
+
+    let msgReaderPromise = null;
+
+    async function loadMsgReader() {
+      if (!msgReaderPromise) {
+        msgReaderPromise = import('https://cdn.jsdelivr.net/npm/@kenjiuno/msgreader@1.26.0-beta1/+esm')
+          .then(mod => {
+            const MsgReader = mod.default || mod.MsgReader;
+            if (!MsgReader) throw new Error('Could not load the Outlook .msg parser.');
+            return MsgReader;
+          });
+      }
+      return msgReaderPromise;
+    }
+
+    function textFromMaybeBytes(value) {
+      if (!value) return '';
+      if (typeof value === 'string') return value;
+      if (value instanceof Uint8Array || value instanceof ArrayBuffer) {
+        try {
+          return new TextDecoder('utf-8').decode(value instanceof Uint8Array ? value : new Uint8Array(value));
+        } catch {
+          return '';
+        }
+      }
+      return String(value);
+    }
+
+    function parseDateTime(value) {
+      if (!value) return {};
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return {};
+      return {
+        date: toIso(date.getFullYear(), date.getMonth() + 1, date.getDate()),
+        time: `${padTwo(date.getHours())}:${padTwo(date.getMinutes())}`
+      };
+    }
+
+    async function parseMsgFile(file) {
+      const [MsgReader, buffer] = await Promise.all([loadMsgReader(), readFileAsArrayBuffer(file)]);
+      const reader = new MsgReader(buffer);
+      const data = reader.getFileData();
+
+      if (data.error) throw new Error(data.error);
+
+      const html = textFromMaybeBytes(data.bodyHtml || data.bodyHTML || data.html);
+      const bodyText = data.body || stripHtml(html) || data.preview || '';
+      const start = parseDateTime(data.apptStartWhole || data.clipStart);
+      const end = parseDateTime(data.apptEndWhole || data.clipEnd);
+      const fallbackTitle = file.name.replace(/\.msg$/i, '').replace(/[-_]+/g, ' ');
+
+      return {
+        title: cleanSubject(data.subject || data.normalizedSubject || data.conversationTopic || fallbackTitle),
+        bodyText,
+        rawText: [data.subject, data.headers, bodyText].filter(Boolean).join('\n\n'),
+        date: start.date || '',
+        start_time: start.time || '',
+        end_time: end.date === start.date ? (end.time || '') : '',
+        location: data.apptLocation || data.location || ''
+      };
+    }
+
+    async function parseUploadedEmail(file) {
+      if (/\.msg$/i.test(file.name)) return parseMsgFile(file);
+      const text = await readFileAsText(file);
+      return parseEml(text);
+    }
+
     const uploadZone = document.getElementById('upload-zone');
     const emlInput   = document.getElementById('eml-input');
     const formSection = document.getElementById('form-section');
     const detectedDatesField = document.getElementById('detected-dates-field');
     const detectedDatesSelect = document.getElementById('detected-dates');
+    const uploadStatus = document.getElementById('upload-status');
+
+    function setUploadStatus(message, isError) {
+      uploadStatus.textContent = message;
+      uploadStatus.className = isError ? 'error' : '';
+      uploadStatus.style.display = message ? 'block' : 'none';
+    }
 
     uploadZone.addEventListener('click', () => emlInput.click());
 
@@ -459,10 +584,15 @@
       if (emlInput.files[0]) processFile(emlInput.files[0]);
     });
 
-    function processFile(file) {
-      const reader = new FileReader();
-      reader.onload = e => populateForm(e.target.result);
-      reader.readAsText(file);
+    async function processFile(file) {
+      setUploadStatus('Reading file...', false);
+      try {
+        const parsedEmail = await parseUploadedEmail(file);
+        populateForm(parsedEmail);
+        setUploadStatus('', false);
+      } catch (err) {
+        setUploadStatus(`Could not import this file: ${err.message}`, true);
+      }
     }
 
     function todayIso() {
@@ -474,13 +604,18 @@
       return dates.find(d => d.iso >= today) || dates[dates.length - 1];
     }
 
-    function populateForm(emlText) {
-      const { title, bodyText } = parseEml(emlText);
-      const dates = extractDates(`${title} ${bodyText}`);
+    function populateForm(email) {
+      const title = email.title || '';
+      const bodyText = email.bodyText || '';
+      const rawText = email.rawText || `${title} ${bodyText}`;
+      const dates = email.date ? [{ iso: email.date, label: 'Outlook appointment date' }] : extractDates(`${title} ${bodyText}`);
 
       document.getElementById('f-title').value       = title;
-      document.getElementById('f-type').value        = detectType(emlText);
+      document.getElementById('f-type').value        = detectType(rawText);
       document.getElementById('f-description').value = extractDescription(bodyText);
+      document.getElementById('f-start-time').value  = email.start_time || '';
+      document.getElementById('f-end-time').value    = email.end_time || '';
+      document.getElementById('f-location').value    = email.location || '';
 
       if (dates.length === 0) {
         document.getElementById('f-date').value = todayIso();
@@ -583,7 +718,9 @@
         return;
       }
 
-      if (!TOKEN) {
+      const token = getGithubToken();
+
+      if (!token) {
         status.className = 'error';
         status.style.display = 'block';
         status.innerHTML = 'Not authenticated. <a href="/admin">Log in at /admin</a> first.';
@@ -598,7 +735,7 @@
       const content  = buildFrontmatter(fields);
 
       try {
-        await commitEvent(TOKEN, filename, content, fields.title);
+        await commitEvent(token, filename, content, fields.title);
         status.className = 'success';
         status.innerHTML = `Event created: <code>_events/${filename}</code>. GitHub Pages will rebuild in ~60 seconds. <a href="/admin">View or edit in CMS →</a>`;
         status.style.display = 'block';
