@@ -57,6 +57,16 @@ DESCRIPTION:{{ event.description | strip_newlines }}
 {%- if event.location %}
 LOCATION:{{ event.location }}
 {%- endif %}
+{%- if event.attachments %}
+{%- for att in event.attachments -%}
+{%- if att.file contains "://" -%}
+{%- assign att_url = att.file -%}
+{%- else -%}
+{%- assign att_url = att.file | prepend: site.baseurl | prepend: site.url -%}
+{%- endif %}
+ATTACH:{{ att_url }}
+{%- endfor -%}
+{%- endif %}
 END:VEVENT
 {%- endfor %}
 END:VCALENDAR

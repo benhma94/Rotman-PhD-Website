@@ -33,6 +33,7 @@ title: Events
        data-location="{{ event.location | escape }}"
        data-start-time="{{ event.start_time }}"
        data-end-time="{{ event.end_time }}"
+       {% if event.attachments %}data-attachments="{{ event.attachments | jsonify | escape }}"{% endif %}
        aria-haspopup="dialog">
     <div class="event-full-badge {% if event.type == 'deadline' %}deadline{% endif %}">
       <div class="badge-day">{{ event.date | date: "%-d" }}</div>
@@ -49,6 +50,6 @@ title: Events
 </div>
 
 <script type="application/json" id="events-data">
-[{% assign sorted_events = site.events | sort: "date" %}{% for event in sorted_events %}{% unless forloop.first %},{% endunless %}{"title":{{ event.title | jsonify }},"date":"{{ event.date | date: "%Y-%m-%d" }}","type":"{{ event.type }}","location":{{ event.location | default: "" | jsonify }},"description":{{ event.description | default: "" | jsonify }},"start_time":{{ event.start_time | default: "" | jsonify }},"end_time":{{ event.end_time | default: "" | jsonify }}}{% endfor %}]
+[{% assign sorted_events = site.events | sort: "date" %}{% for event in sorted_events %}{% unless forloop.first %},{% endunless %}{"title":{{ event.title | jsonify }},"date":"{{ event.date | date: "%Y-%m-%d" }}","type":"{{ event.type }}","location":{{ event.location | default: "" | jsonify }},"description":{{ event.description | default: "" | jsonify }},"start_time":{{ event.start_time | default: "" | jsonify }},"end_time":{{ event.end_time | default: "" | jsonify }},"attachments":{% if event.attachments %}{{ event.attachments | jsonify }}{% else %}[]{% endif %}}{% endfor %}]
 </script>
 <script src="{{ '/assets/js/calendar.js' | relative_url }}"></script>

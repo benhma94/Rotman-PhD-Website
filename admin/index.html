@@ -81,6 +81,15 @@
                   { label: 'Deadline', value: 'deadline' }
                 ],
                 default: 'event'
+              },
+              {
+                label: 'Attachments', name: 'attachments', widget: 'list', required: false,
+                summary: '{{fields.label}}',
+                hint: 'Forms, PDFs, etc. that go with this event.',
+                fields: [
+                  { label: 'Label', name: 'label', widget: 'string', required: false, hint: 'Display text. Defaults to filename.' },
+                  { label: 'File',  name: 'file',  widget: 'file' }
+                ]
               }
             ]
           },

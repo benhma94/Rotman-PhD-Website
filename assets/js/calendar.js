@@ -68,9 +68,15 @@
         var subtitle = el.dataset.subtitle + (timeStr ? ' · ' + timeStr : '');
         var desc = el.dataset.description;
         var loc  = el.dataset.location;
+        var attachments = null;
+        if (el.dataset.attachments) {
+          try { attachments = JSON.parse(el.dataset.attachments); } catch (e) { attachments = null; }
+        }
         var html = [];
         if (desc) html.push('<p>' + esc(desc) + '</p>');
         if (loc)  html.push('<p>📍 ' + esc(loc) + '</p>');
+        var attachmentsHtml = renderAttachments(attachments);
+        if (attachmentsHtml) html.push(attachmentsHtml);
         NoticeDialog.open(el.dataset.title, subtitle,
           html.length ? html.join('') : '<p><em>No additional details.</em></p>');
       });
@@ -171,7 +177,21 @@
     if (ev.start_time)  parts.push('<p>🕐 ' + esc(fmtTimeRange(ev.start_time, ev.end_time)) + '</p>');
     if (ev.description) parts.push('<p>' + esc(ev.description) + '</p>');
     if (ev.location)    parts.push('<p>📍 ' + esc(ev.location) + '</p>');
+    var attachmentsHtml = renderAttachments(ev.attachments);
+    if (attachmentsHtml) parts.push(attachmentsHtml);
     return parts.length ? parts.join('') : '<p><em>No additional details.</em></p>';
+  }
+
+  function renderAttachments(attachments) {
+    if (!attachments || !attachments.length) return '';
+    var items = attachments.map(function (a) {
+      if (!a || !a.file) return '';
+      var url = esc(a.file);
+      var fallback = a.file.split('/').pop();
+      var label = esc(a.label || fallback);
+      return '<li><a href="' + url + '" target="_blank" rel="noopener">📎 ' + label + '</a></li>';
+    }).join('');
+    return '<ul class="event-attachments">' + items + '</ul>';
   }
 
   function formatDate(dateStr) {
