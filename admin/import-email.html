@@ -141,11 +141,11 @@
       <a href="/admin">Log in at /admin</a>, then return here.
     </div>
 
-    <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Choose .eml or .msg file">
-      <input type="file" id="eml-input" accept=".eml,.msg" />
+    <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Choose Outlook .msg or .eml file">
+      <input type="file" id="email-input" accept=".msg,.eml" />
       <div class="icon">📧</div>
-      <strong>Click to choose a .eml or .msg file</strong>
-      <p>Upload an email exported from Gmail, Outlook, or another mail client.</p>
+      <strong>Click to choose an Outlook .msg file</strong>
+      <p>.eml files are also supported.</p>
     </div>
     <div id="upload-status" role="status" aria-live="polite"></div>
 
@@ -691,7 +691,7 @@
     }
 
     const uploadZone = document.getElementById('upload-zone');
-    const emlInput   = document.getElementById('eml-input');
+    const emailInput = document.getElementById('email-input');
     const formSection = document.getElementById('form-section');
     const detectedDatesField = document.getElementById('detected-dates-field');
     const detectedDatesSelect = document.getElementById('detected-dates');
@@ -703,10 +703,10 @@
       uploadStatus.style.display = message ? 'block' : 'none';
     }
 
-    uploadZone.addEventListener('click', () => emlInput.click());
+    uploadZone.addEventListener('click', () => emailInput.click());
 
     uploadZone.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); emlInput.click(); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); emailInput.click(); }
     });
 
     uploadZone.addEventListener('dragover', e => {
@@ -725,8 +725,8 @@
       if (file) processFile(file);
     });
 
-    emlInput.addEventListener('change', () => {
-      if (emlInput.files[0]) processFile(emlInput.files[0]);
+    emailInput.addEventListener('change', () => {
+      if (emailInput.files[0]) processFile(emailInput.files[0]);
     });
 
     async function processFile(file) {
