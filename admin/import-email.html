@@ -141,11 +141,11 @@
       <a href="/admin">Log in at /admin</a>, then return here.
     </div>
 
-    <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Choose .eml or .msg file">
-      <input type="file" id="eml-input" accept=".eml,.msg" />
+    <div class="upload-zone" id="upload-zone" role="button" tabindex="0" aria-label="Choose Outlook .msg or .eml file">
+      <input type="file" id="email-input" accept=".msg,.eml" />
       <div class="icon">📧</div>
-      <strong>Click to choose a .eml or .msg file</strong>
-      <p>Upload an email exported from Gmail, Outlook, or another mail client.</p>
+      <strong>Click to choose an Outlook .msg file</strong>
+      <p>.eml files are also supported.</p>
     </div>
     <div id="upload-status" role="status" aria-live="polite"></div>
 
@@ -478,31 +478,83 @@
       });
     }
 
-    let msgReaderPromise = null;
+    let msgParserPromise = null;
+    let modernMsgReaderPromise = null;
+    let legacyMsgReaderPromise = null;
 
-    async function loadMsgReader() {
-      if (!msgReaderPromise) {
-        msgReaderPromise = import('https://cdn.jsdelivr.net/npm/@kenjiuno/msgreader@1.26.0-beta1/+esm')
+    async function loadMsgParser() {
+      if (!msgParserPromise) {
+        msgParserPromise = import('https://cdn.jsdelivr.net/npm/msg-parser@1.0.10/+esm')
           .then(mod => {
-            const MsgReader = mod.default || mod.MsgReader;
-            if (!MsgReader) throw new Error('Could not load the Outlook .msg parser.');
-            return MsgReader;
+            if (!mod.Msg) throw new Error('Could not load the Outlook .msg parser.');
+            return mod;
+          })
+          .catch(err => {
+            msgParserPromise = null;
+            throw err;
           });
       }
-      return msgReaderPromise;
+      return msgParserPromise;
+    }
+
+    async function loadModernMsgReader() {
+      if (!modernMsgReaderPromise) {
+        modernMsgReaderPromise = import('https://cdn.jsdelivr.net/npm/@kenjiuno/msgreader@1.28.0/+esm')
+          .then(mod => {
+            const MsgReader = mod.default || mod.MsgReader;
+            if (!MsgReader) throw new Error('Could not load the secondary Outlook .msg parser.');
+            return MsgReader;
+          })
+          .catch(err => {
+            modernMsgReaderPromise = null;
+            throw err;
+          });
+      }
+      return modernMsgReaderPromise;
+    }
+
+    async function loadLegacyMsgReader() {
+      if (!legacyMsgReaderPromise) {
+        legacyMsgReaderPromise = import('https://cdn.jsdelivr.net/npm/@kenjiuno/msgreader@1.1.3/+esm')
+          .then(mod => {
+            const MsgReader = mod.default || mod.MsgReader;
+            if (!MsgReader) throw new Error('Could not load the fallback Outlook .msg parser.');
+            return MsgReader;
+          })
+          .catch(err => {
+            legacyMsgReaderPromise = null;
+            throw err;
+          });
+      }
+      return legacyMsgReaderPromise;
     }
 
     function textFromMaybeBytes(value) {
       if (!value) return '';
       if (typeof value === 'string') return value;
-      if (value instanceof Uint8Array || value instanceof ArrayBuffer) {
+      if (value instanceof Uint8Array || value instanceof ArrayBuffer || ArrayBuffer.isView(value)) {
+        const bytes = value instanceof Uint8Array
+          ? value
+          : new Uint8Array(value.buffer || value, value.byteOffset || 0, value.byteLength || undefined);
         try {
-          return new TextDecoder('utf-8').decode(value instanceof Uint8Array ? value : new Uint8Array(value));
+          let oddZeros = 0;
+          let oddCount = 0;
+          const sampleLimit = Math.min(bytes.length - 1, 200);
+          for (let i = 1; i < sampleLimit; i += 2) {
+            oddCount += 1;
+            if (bytes[i] === 0) oddZeros += 1;
+          }
+          const encoding = oddCount > 0 && oddZeros / oddCount > 0.6 ? 'utf-16le' : 'utf-8';
+          return new TextDecoder(encoding).decode(bytes);
         } catch {
           return '';
         }
       }
       return String(value);
+    }
+
+    function cleanMsgString(value) {
+      return textFromMaybeBytes(value).replace(/\0/g, '').trim();
     }
 
     function parseDateTime(value) {
@@ -515,28 +567,121 @@
       };
     }
 
-    async function parseMsgFile(file) {
-      const [MsgReader, buffer] = await Promise.all([loadMsgReader(), readFileAsArrayBuffer(file)]);
+    function fallbackMsgTitle(file) {
+      return file.name.replace(/\.msg$/i, '').replace(/[-_]+/g, ' ');
+    }
+
+    function getMsgParserProperty(msg, properties) {
+      for (const prop of properties) {
+        if (!prop) continue;
+        try {
+          const value = msg.getProperty(prop);
+          if (value !== undefined && value !== null && value !== '') return value;
+        } catch {
+          // Some named properties are not present in every .msg file.
+        }
+      }
+      return '';
+    }
+
+    async function parseMsgFileWithMsgParser(buffer, file) {
+      const parser = await loadMsgParser();
+      const msg = parser.Msg.fromUint8Array(new Uint8Array(buffer));
+
+      const title = cleanMsgString(getMsgParserProperty(msg, [
+        parser.PidTagSubject,
+        parser.PidTagNormalizedSubject,
+        parser.PidTagConversationTopic,
+        parser.PidNameInternetSubject,
+        parser.PidNameSubject
+      ]));
+      const html = cleanMsgString(getMsgParserProperty(msg, [
+        parser.PidTagBodyHtml,
+        parser.PidTagHtml
+      ]));
+      const body = cleanMsgString(getMsgParserProperty(msg, [
+        parser.PidTagBody
+      ]));
+      const headers = cleanMsgString(getMsgParserProperty(msg, [
+        parser.PidTagTransportMessageHeaders
+      ]));
+      const bodyText = body || stripHtml(html);
+      const start = parseDateTime(getMsgParserProperty(msg, [
+        parser.PidLidAppointmentStartWhole,
+        parser.PidLidAppointmentStartTime,
+        parser.PidLidClipStart,
+        parser.PidTagICalendarStartTime,
+        parser.PidTagStartDate
+      ]));
+      const end = parseDateTime(getMsgParserProperty(msg, [
+        parser.PidLidAppointmentEndWhole,
+        parser.PidLidAppointmentEndTime,
+        parser.PidLidClipEnd,
+        parser.PidTagICalendarEndTime,
+        parser.PidTagEndDate
+      ]));
+      const location = cleanMsgString(getMsgParserProperty(msg, [
+        parser.PidLidLocation,
+        parser.PidTagLocation,
+        parser.PidNameLocationUrl,
+        parser.PidNameCalendarLocationUrl
+      ]));
+
+      return {
+        title: cleanSubject(title || fallbackMsgTitle(file)),
+        bodyText,
+        rawText: [title, headers, bodyText].filter(Boolean).join('\n\n'),
+        date: start.date || '',
+        start_time: start.time || '',
+        end_time: end.date === start.date ? (end.time || '') : '',
+        location
+      };
+    }
+
+    async function parseMsgFileWithMsgReader(buffer, file, loadReader) {
+      const MsgReader = await loadReader();
       const reader = new MsgReader(buffer);
       const data = reader.getFileData();
 
       if (data.error) throw new Error(data.error);
 
-      const html = textFromMaybeBytes(data.bodyHtml || data.bodyHTML || data.html);
-      const bodyText = data.body || stripHtml(html) || data.preview || '';
+      const html = cleanMsgString(data.bodyHtml || data.bodyHTML || data.html);
+      const bodyText = cleanMsgString(data.body) || stripHtml(html) || cleanMsgString(data.preview);
       const start = parseDateTime(data.apptStartWhole || data.clipStart);
       const end = parseDateTime(data.apptEndWhole || data.clipEnd);
-      const fallbackTitle = file.name.replace(/\.msg$/i, '').replace(/[-_]+/g, ' ');
+      const title = cleanMsgString(data.subject || data.normalizedSubject || data.conversationTopic);
+      const headers = cleanMsgString(data.headers);
 
       return {
-        title: cleanSubject(data.subject || data.normalizedSubject || data.conversationTopic || fallbackTitle),
+        title: cleanSubject(title || fallbackMsgTitle(file)),
         bodyText,
-        rawText: [data.subject, data.headers, bodyText].filter(Boolean).join('\n\n'),
+        rawText: [title, headers, bodyText].filter(Boolean).join('\n\n'),
         date: start.date || '',
         start_time: start.time || '',
         end_time: end.date === start.date ? (end.time || '') : '',
-        location: data.apptLocation || data.location || ''
+        location: cleanMsgString(data.apptLocation || data.location)
       };
+    }
+
+    async function parseMsgFile(file) {
+      const buffer = await readFileAsArrayBuffer(file);
+      const errors = [];
+      const parsers = [
+        () => parseMsgFileWithMsgParser(buffer, file),
+        () => parseMsgFileWithMsgReader(buffer, file, loadModernMsgReader),
+        () => parseMsgFileWithMsgReader(buffer, file, loadLegacyMsgReader)
+      ];
+
+      for (const parse of parsers) {
+        try {
+          return await parse();
+        } catch (err) {
+          errors.push(err && err.message ? err.message : String(err));
+        }
+      }
+
+      const lastError = errors[errors.length - 1] || 'unknown parser error';
+      throw new Error(`Outlook .msg parsing failed: ${lastError}`);
     }
 
     async function parseUploadedEmail(file) {
@@ -546,7 +691,7 @@
     }
 
     const uploadZone = document.getElementById('upload-zone');
-    const emlInput   = document.getElementById('eml-input');
+    const emailInput = document.getElementById('email-input');
     const formSection = document.getElementById('form-section');
     const detectedDatesField = document.getElementById('detected-dates-field');
     const detectedDatesSelect = document.getElementById('detected-dates');
@@ -558,10 +703,10 @@
       uploadStatus.style.display = message ? 'block' : 'none';
     }
 
-    uploadZone.addEventListener('click', () => emlInput.click());
+    uploadZone.addEventListener('click', () => emailInput.click());
 
     uploadZone.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); emlInput.click(); }
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); emailInput.click(); }
     });
 
     uploadZone.addEventListener('dragover', e => {
@@ -580,8 +725,8 @@
       if (file) processFile(file);
     });
 
-    emlInput.addEventListener('change', () => {
-      if (emlInput.files[0]) processFile(emlInput.files[0]);
+    emailInput.addEventListener('change', () => {
+      if (emailInput.files[0]) processFile(emailInput.files[0]);
     });
 
     async function processFile(file) {
