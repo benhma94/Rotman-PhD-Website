@@ -8,3 +8,13 @@ vendor/
 .superpowers/
 .claude/
 docs/
+
+# Editor / atomic-write temp files
+*.tmp
+*.tmp.*
+
+# OS / Dropbox cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*conflicted copy*
