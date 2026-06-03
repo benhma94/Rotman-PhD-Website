@@ -1,0 +1,6 @@
+---
+title: "Award Announcement: Doctoral Completion Award 2026-2027"
+date: 2026-06-19
+description: "Please find attached the application form for 2026-2027 Doctoral Completion Award. \n \nThe Doctoral Completion Award (DCA) is intended to support full-time PhD students who are beyond the funded cohort and within time-limit for the degree.\n \nEligibility:\n \nFor each session the award is held, DCA recipients must be: \n \n•	registered as a full-time PhD or SJD student (DMA, EdD and flexible-time PhD students are ineligible); and\n•	beyond the program’s funded cohort as established by the graduate Faculty/unit practice (year 6 for PhD / PhD direct-entry programs); and\n•	within time limit for the degree (students on approved program extensions are ineligible); and\n•	in good standing in their graduate program and making satisfactory progress toward the completion of their degree requirements. \nPlease note: OSOTF form must be also submitted by domestic students (permanent residents or citizens). If you are an international student, please submit DCA form only.\n \nPlease complete and submit forms along with your CV to me by e-mail by the end of the day on Friday, June 19."
+type: deadline
+---
