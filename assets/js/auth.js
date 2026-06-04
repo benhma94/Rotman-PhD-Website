@@ -6,8 +6,17 @@ if (location.protocol !== 'https:' && location.hostname !== 'localhost' && locat
 const ACCESS = {
   student: 'f6a43f33db54228a5c5e27ee64a4948101ac586c4a949f6144011b3a1e017b60',
   admin:   '0e89f223e226ae63268cf39152ab75722e811b89d29efb22a852f1667bd22ae0',
-  accounting: '113b5ccba3c63df9386c308cffceb45954e3b62b21e30c46245d0a98c228852e'
+  accounting: '113b5ccba3c63df9386c308cffceb45954e3b62b21e30c46245d0a98c228852e',
+  finance:    'b696d75511dc16f2b52563e3113a498311a79866f4672862197aa9a8c5c0da12',
+  obhrm:      'a42b64f9be746ad66f4e64414adfacf27df49b07dba7d51cfd1d00a319bca146',
+  strategy:   '6b27710dfaafdcec2b06b7d3c6abe56d98162848b08a9da01e88863e2add413f',
+  marketing:  'f5904cf7a1231a7a13a8cffbd2f0482984a1c69e96fc48dd96be8858a1707e60',
+  eap:        'c33b7e6d42b33642f0ebdc431657bad7f016c32070bd996004b66f27b2396912',
+  operations: '358cc201f87d9dc9defd3eac467a62fae720aa99a76be8b98e0fc9b3893a427d'
 };
+
+// Department access levels that each unlock their own welcome-guide page.
+const DEPARTMENTS = ['accounting','finance','obhrm','strategy','marketing','eap','operations'];
 
 const ACCESS_KEY = 'phd-access';
 
@@ -81,7 +90,7 @@ function showGateError(message) {
 function unlockSite(level) {
   const required = requiredAccess();
   if (!canAccess(level, required)) {
-    showGateError('This page requires the accounting password.');
+    showGateError('You don\'t have access to this page.');
     updateAccessVisibility(level);
     return false;
   }
@@ -91,13 +100,22 @@ function unlockSite(level) {
   document.getElementById('site-shell').style.flexDirection = 'column';
 
   const adminLink = document.getElementById('admin-link');
-  const accountingLink = document.getElementById('accounting-link');
+
+  // Hide every department link first, then reveal the relevant one(s).
+  DEPARTMENTS.forEach(d => {
+    const link = document.getElementById(d + '-link');
+    if (link) link.style.display = 'none';
+  });
 
   if (level === 'admin') {
     if (adminLink) adminLink.style.display = 'flex';
-    if (accountingLink) accountingLink.style.display = 'flex';
-  } else if (level === 'accounting') {
-    if (accountingLink) accountingLink.style.display = 'flex';
+    DEPARTMENTS.forEach(d => {
+      const link = document.getElementById(d + '-link');
+      if (link) link.style.display = 'flex';
+    });
+  } else if (DEPARTMENTS.includes(level)) {
+    const link = document.getElementById(level + '-link');
+    if (link) link.style.display = 'flex';
   }
 
   updateAccessVisibility(level);
@@ -118,18 +136,21 @@ async function checkPassword() {
   if (hash === ACCESS.admin) {
     saveAccess('admin');
     unlockSite('admin');
-  } else if (hash === ACCESS.accounting) {
-    saveAccess('accounting');
-    if (unlockSite('accounting') && !requiredAccess()) {
-      const accountingLink = document.getElementById('accounting-link');
-      location.assign(accountingLink ? accountingLink.href : '/resources/accounting-welcome-guide/');
-    }
   } else if (hash === ACCESS.student) {
     saveAccess('student');
     unlockSite('student');
   } else {
-    errorEl.textContent = 'Incorrect password. Please try again.';
-    errorEl.style.display = 'block';
+    const dept = DEPARTMENTS.find(d => hash === ACCESS[d]);
+    if (dept) {
+      saveAccess(dept);
+      if (unlockSite(dept) && !requiredAccess()) {
+        const link = document.getElementById(dept + '-link');
+        location.assign(link ? link.href : '/resources/' + dept + '-welcome-guide/');
+      }
+    } else {
+      errorEl.textContent = 'Incorrect password. Please try again.';
+      errorEl.style.display = 'block';
+    }
   }
 }
 
@@ -141,7 +162,6 @@ function logoutSite() {
   const passwordInput = document.getElementById('password-input');
   const errorEl = document.getElementById('password-error');
   const adminLink = document.getElementById('admin-link');
-  const accountingLink = document.getElementById('accounting-link');
 
   if (passwordInput) {
     passwordInput.value = '';
@@ -152,7 +172,10 @@ function logoutSite() {
     errorEl.style.display = 'none';
   }
   if (adminLink) adminLink.style.display = 'none';
-  if (accountingLink) accountingLink.style.display = 'none';
+  DEPARTMENTS.forEach(d => {
+    const link = document.getElementById(d + '-link');
+    if (link) link.style.display = 'none';
+  });
   updateAccessVisibility('');
 }
 

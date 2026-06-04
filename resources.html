@@ -8,9 +8,11 @@ title: Resources
 
 {% assign categories = site.resources | map: "category" | uniq | sort %}
 {% for category in categories %}
-<div class="resource-category{% if category == 'Accounting' %} js-hidden{% endif %}"{% if category == 'Accounting' %} data-access="accounting"{% endif %}>
+{% assign cat_resources = site.resources | where: "category", category | sort: "title" %}
+{% assign cat_access = "" %}
+{% for r in cat_resources %}{% if r.access %}{% assign cat_access = r.access %}{% endif %}{% endfor %}
+<div class="resource-category{% if cat_access != '' %} js-hidden{% endif %}"{% if cat_access != '' %} data-access="{{ cat_access }}"{% endif %}>
   <div class="category-label">{{ category }}</div>
-  {% assign cat_resources = site.resources | where: "category", category | sort: "title" %}
   {% for r in cat_resources %}
   <div class="resource-item{% if r.access %} js-hidden{% endif %}"{% if r.access %} data-access="{{ r.access }}"{% endif %}>
     {% if r.link %}
