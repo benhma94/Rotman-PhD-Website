@@ -64,7 +64,14 @@ One of the most important skills you’ll learn during Math Camp is to stay cool
 
 Most importantly, though, the course can act as an opportunity to form strong professional and team bonds with the other students in our cohort.
 
-During our daily lunch breaks, we explored the restaurants around campus, especially down Bloor Street, and began to get acquainted with the Exchange Café in Rotman. However, the standard Rotman “hangout” for faculty and students is Mercurio, which has lunch deals with a 10% discount for students. Also, it is pretty common to bring food from home, so if you cook, feel free to bring lunch and warm it up in the microwaves in PhD House. Kensington Market offers some relatively cheap restaurants within walking distance, along with a T&T grocery store. All Metro grocery stores, including the one on Robert and Bloor, give 10% off if you show them your U of T student ID and join their loyalty program. The Shoppers Drug Mart at 236 Bloor St West also offers a 15% discount for students every day. There are other places, mostly on Bloor Street, that have similar discounts. If you’re curious, just ask us. Chinatown on Spadina also has cheap produce and meats if you know how to choose your own groceries. Pat Central is useful if you’re looking for Korean products at grocery-store prices. Bulk Barn also has 10% off on Wednesdays for students.
+During our daily lunch breaks, we explored the restaurants around campus, especially down Bloor Street, and began to get acquainted with the Exchange Café in Rotman. However, the standard Rotman “hangout” for faculty and students is Mercurio, which has lunch deals with a 10% discount for students. Also, it is pretty common to bring food from home, so if you cook, feel free to bring lunch and warm it up in the microwaves in PhD House. Other cheap options are:
+* Kensington Market offers some relatively cheap restaurants within walking distance, along with a T&T grocery store. 
+* All Metro grocery stores, including the one on Robert and Bloor, give 10% off if you show them your U of T student ID and join their loyalty program. 
+* The Shoppers Drug Mart at 236 Bloor St West also offers a 15% discount for students every day. 
+* There are other places, mostly on Bloor Street, that have similar discounts. If you’re curious, just ask us. 
+* Chinatown on Spadina also has cheap produce and meats if you know how to choose your own groceries. 
+* Pat Central is useful if you’re looking for Korean products at grocery-store prices. 
+* Bulk Barn also has 10% off on Wednesdays for students.
 
 ## Government, Health, Financial, and Cellular Logistics
 {: #logistics}
@@ -262,7 +269,7 @@ See the official [Management PhD degree requirements](https://sgs.calendar.utoro
 
 Technically, we only need six courses, as the 0.5 is for RSM 3080H, but you need four courses from Accounting for your comps, so eight is the minimum. Historically, we’ve done two Micro Econ, two Econometrics, two Finance, and eight accounting courses. Feel free to discuss with Aida, the program coordinator, if you feel like you need alternate accommodation. 
 
-## Tests and Expectations
+### Tests and Expectations
 {: #tests-expectations}
 
 Tests in your Econ courses will be tough. There’s no way around it. But no worries, they won’t stop you from making it to the rest of the program, so just enjoy the process. The material is difficult to digest, and there is a lot of it packed into each semester. Plan to spend at least a handful of focused days preparing for these tests. The most helpful aspect of your studying will be to schedule two or three group review sessions before the test to discuss questions you encountered during individual study time.
@@ -320,6 +327,28 @@ Fun fact: you guys will be part of a new comp system, mostly the same structure 
 
 Otherwise, the second semester rolls on much like the first semester, with a new set of accounting topics courses. The four months will fly by, new first years will visit in April, and summer will arrive before you know it.
 
+### Thesis Committee
+
+At the end of July in Year 2, you will need to have a supervisory committee in place. Your committee can change and won't necessarily stay the same throughout (you can update it every year), but some things to keep in mind.
+1) Committee Chair: Your most important selection of the committee. Make sure you get along with your chair/advisor. Some people have co-chairs, but make sure that they get along. It's frustrating when inter-personal relationships get in the way of your academic progress. This individual does NOT have to be the same person as who advised you on your first-year paper. Ideally also someone who can advise you on your area of interest.
+   * On a political level, it is good to select a chair who is senior in the department (full prof) and well connected, as their letter of recommendation will carry the most weight when applying for jobs.
+2) Committee members can change (and often do). Your advisor can assist in selecting committee members that they like and work well with. You update your committee every year, and sometimes your advisor will recommend to include professors from Econ or finance.
+3) External advisor: This is someone your chair will think about with you that ideally has reputational strength and can help in your thesis.
+
+Every advisor relationship is different. Some students meet with their chairs once a month, or once a month. Some students get along very well with their advisors and meet every day and co-author on lots of projects. There's no rule on how to select advisors, but this is definitely an important relationship that will last much longer than your PhD.
+
+## Third Year
+{: #Third-year}
+
+After you complete your comps, you get promoted and move up to the 5th floor! Here you get to see other profs and really start to connect with faculty. No one takes attendance, if you still prefer to work from home, feel free! Other students come in every day.
+
+By the end of July of third year, you should have a draft thesis *proposal*. Not the thesis. Proposal. These can and will often change before you go on the job market. These proposals are usually presented late summer or early fall to the department.
+
+## Fourth Year
+{: #Fourth-year}
+
+Oh boy, the home stretch. Ideally by Summer (really June) of your fourth year, your thesis should now be in a preliminary state where you can start talking about it to people and start receving feedback. Ideally you present your thesis in April/May as your JMP (Job Market Paper). By the end of summer, you may need to start applying to jobs, and fifth year is really just interviews and finalizing your thesis.
+
 ## Conferences
 {: #conferences}
 
@@ -357,7 +386,7 @@ Some things to do around Toronto when you’re not studying.
 
 We’re right next to Bloor Street and the Financial District, so there’s a good intersection of good food not too far from Rotman.
 
-- **Dundas Street:** lots of good shops on this road. Ben’s personal favorite is Butter Baker.
+- **Dundas Street:** lots of good shops on this road. Ben’s personal favorite is Butter Baker. Giulia and Divyesh disagree and say Nani's Gelato is the way to go.
 - **Bloor Street:** Koreatown. If you’re looking for Korean eats that aren’t too pricey, walk along Koreatown. A popular favorite is Daldongnae.
 - **Yorkville:** if you’re feeling fancy, this is the expensive part of town, but they also have some very nice restaurants here. If you feel like splurging, Masaki Saito, Toronto’s Michelin-star sushi restaurant, is here.
 - **Spadina:** Chinatown. If you’re looking for fairly good cheap Chinese eats, there are lots of options here.
