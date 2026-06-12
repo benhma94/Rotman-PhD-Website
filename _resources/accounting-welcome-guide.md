@@ -33,7 +33,7 @@ toc_items:
 ## Welcome
 {: #welcome}
 
-Congratulations and welcome to Rotman Accounting, {X}!
+Congratulations and welcome to Rotman Accounting, Yufei and Shivani!
 
 We are all really excited that you're joining us!
 
@@ -100,11 +100,13 @@ For the TA insurance, you will have $300 in your health spending account as well
 
 ### Your bank
 
-All of us have different banks. If you have a credit history in your home country, even the US, it will not transfer to Canada, so you’ll have to start from scratch. Open your bank account as soon as possible to have your funding directly deposited there. Make sure you ask for a student account, as this account has many benefits for free. One Rotman PhD student had quite an interesting banking journey, so here’s his advice:
+All of us have different banks. If you have a credit history in your home country, even the US, it will not transfer to Canada, so you’ll have to start from scratch. Open your bank account as soon as possible to have your funding directly deposited there. 
 
+There are perks from other banks as well. RBC is very convenient to Grad House, and TD Canada Trust is one of the largest banks in the region and has the most ATMs, including one in Robarts Library. Ben uses multiple banks for multiple purposes.
+
+**Scotiabank**  
+Make sure you ask for a student account, as this account has many benefits for free. One Rotman PhD student had quite an interesting banking journey, so here’s his advice:
 > “For most cases, I recommend Scotiabank. The ATMs are everywhere, there are no ‘irritating’ fees, for example paying $1 each time you use your debit card over five transactions a month, and you may be able to open a credit card to build credit without putting any money down as collateral, which is common at most other banks. Moreover, the Scene credit card gives you 1% effective cash-back in rewards points that you can use to watch movies at Cineplex.”
-
-There are perks from other banks as well. Leting’s bank, RBC, is very convenient to Grad House, and TD Canada Trust is one of the largest banks in the region and has the most ATMs, including one in Robarts Library. Ben uses multiple banks for multiple purposes.
 
 **Tangerine**  
 Used by Ben. Subsidiary of Scotiabank. No-frills account, no account minimums, and no fees. You can use any Scotiabank ATM without fees. If you qualify for their credit card, it’s a free credit card that gives you 2% back in any three categories. Ben uses recurring transactions, transit, and entertainment.
@@ -113,10 +115,10 @@ Used by Ben. Subsidiary of Scotiabank. No-frills account, no account minimums, a
 Used by Giulia, and Xingchao. RBC currently has very high promotional interest rates on savings accounts due to inflation. It doesn’t hurt to call a representative or stop by the RBC branch to ask if interested. Credit card recommendation: RBC ION+, with 3 points for every dollar spent on food, grocery, gaming, etc., and 15,000 points for free return flights between Toronto and NYC.
 
 **TD Canada Trust**  
-Used by Lulin.
+
 
 **CIBC**  
-Used by Clark and Divyesh. CIBC can be more friendly to international students than other banks. You can open a debit and credit card on the same day. You can also e-transfer up to a $2,000 limit a day, which is not a lot, but other banks like RBC may only have a $1,000 limit for international students.
+Used by Divyesh. CIBC can be more friendly to international students than other banks. You can open a debit and credit card on the same day. You can also e-transfer up to a $2,000 limit a day, which is not a lot, but other banks like RBC may only have a $1,000 limit for international students.
 
 **Simplii**  
 Used by Ben. Subsidiary of CIBC, so you can use CIBC branches. They offer online-only services/no frills, but they offer unlimited transactions, no minimum balance, and no fees. You can also get their free credit card, which gives you 4% back on dining.
@@ -126,13 +128,13 @@ Used by Ben. No-frills, online only, no account minimums, unlimited transactions
 
 ### Cell phones
 
-Clark uses Bell, Xingchao uses Fizz, Lulin uses Telus, and Ben uses Telus as well through a different corporate phone scheme. Fizz is really cheap for US and Canada, and coverage is actually pretty good. Note that U of T has an EPP with Telus, which gives you a 5G plan with unlimited data, with 30GB at unlimited speed, using your U of T email address. In case you plan to buy a new phone, make sure that you ask for a student account option as well. For instance, Bell has a huge discount option for students.
+Xingchao uses Fizz and Ben uses Telus through a corporate phone scheme. Fizz is really cheap for US and Canada, and coverage is actually pretty good. Note that U of T has an EPP with Telus, which gives you a 5G plan with unlimited data, with 30GB at unlimited speed, using your U of T email address. In case you plan to buy a new phone, make sure that you ask for a student account option as well. For instance, Bell has a huge discount option for students.
 
 If you want to keep your non-Canadian SIM, check if your phone can hold two SIMs. Most iPhones can. One of the two cards should be added as a virtual eSIM.
 
 If you plan to use internet data sparingly, one of the cheapest options might be Freedom. This company offers a prepaid plan granting unlimited text and calls for approximately $120, tax included, for the full year. Data can be added, if needed, at $15 plus tax per gigabyte per month.
 
-In addition, if you will travel to the US for a couple of days, Airalo (app)enables you to have internet data at a low price, around US$4.50 for 1 GB.
+In addition, if you will travel to the US for a couple of days, Airalo(app) enables you to have internet data at a low price, around US$4.50 for 1 GB.
 
 ### TV and internet
 
@@ -150,7 +152,7 @@ You won’t have to worry about this until the second semester, but the good new
 
 It’s in your best interest to file your tax return, as you’ll likely qualify as a low-income resident and receive close to $2,000 in low-income benefits.
 
-You can file taxes online or go to a tax advisor. If you choose online, Lulin recommends TurboTax for free filing software in most cases. Wealthsimple Tax is also free, pay what you want. There is also a U of T Students’ Union Tax Clinic that helps with filing, though spots fill up fast. Ben is/was a tax accountant and runs an NPO that does tax returns for free for students. He offered to do the tax returns for Rotman students for free last year and will likely reoffer that service as long as he’s at Rotman. Taxes in Canada are due on April 30.
+You can file taxes online or go to a tax advisor. If you choose online, Wealthsimple Tax is free, pay what you want. There is also a U of T Students’ Union Tax Clinic that helps with filing, though spots fill up fast. Ben is/was a tax accountant and runs an NPO that does tax returns for free for students. He offered to do the tax returns for Rotman students for free last year and will likely reoffer that service as long as he’s at Rotman. Taxes in Canada are due on April 30.
 
 Once you file your taxes, make sure to apply for the Ontario Electricity Rebate. Ben’s monthly hydro bill is about $60 to $70, and the rebate covers all of it.
 
@@ -327,19 +329,19 @@ Several conferences host doctoral consortia where PhD students can receive resea
 After you pass comps in the second year, you receive a travel budget ($2,851) to attend conferences. Sometimes, professors may sponsor you to attend some conferences (especially if you're presenting a coauthored paper), but you’re also not expected to attend conferences when you first start. If you have the opportunity, definitely try.
 
 **CAAA Craft Workshop**  
-Attended by Ben, Divyesh, Lulin, and Clark. It has historically been hosted in early to mid-June. It includes faculty presentations on research and work-life balance, and PhD students present their dissertations for feedback.
+Attended by Ben and Divyesh. It has historically been hosted in early to mid-June. It includes faculty presentations on research and work-life balance, and PhD students present their dissertations for feedback.
 
 **CAR Doctoral Consortium**  
-Attended by Giulia, Ben, Xingchao, Lulin, Divyesh, and Clark.
+Attended by Giulia, Ben, Xingchao, and Divyesh.
 
 **HARC**  
-Attended by Junhao, Leting, and Xingchao.
+Attended by Xingchao.
 
 **Deloitte-AAA Doctoral Consortium**  
-Attended by Stacey and Lulin. It takes place in mid-June and requires participants to present early versions of their job market papers. Nomination by the PhD coordinator is required, and only one student can attend at a time.
+It takes place in mid-June and requires participants to present early versions of their job market papers. Nomination by the PhD coordinator is required, and only one student can attend at a time.
 
 **FARS Doctoral Consortium**  
-Attended by Stacey, Lulin, and Xingchao. It is held in mid-January. It requires nomination by the PhD coordinator, allows only one student to attend at a time, and does not require presentations. It is highly recommended for early-year PhD students.
+Attended by Xingchao, Ben, and Divyesh. It is held in mid-January. It requires nomination by the PhD coordinator, allows only one to two students to attend at a time, and does not require presentations. It is highly recommended for early-year PhD students.
 
 **Tax Policy Research Symposium, American Tax Association Mid-Year Meeting**  
 Attended by Ben. Ben’s interested in tax, arguably only tax, so he attends a few specialist conferences. Generally not recommended for you to attend these conferences unless you actually have an interest in these fields. If you have an interest in a particular field, talk to your supervisor to see if they can sponsor your attendance. It’s a good way to put your name out there and build relationships.
@@ -388,4 +390,4 @@ Otherwise, enjoy your final few months before becoming an academic. We can’t w
 
 Best,
 
-Leting, Clark, Lulin, Giulia, Xingchao, Divyesh, Ben, and Yitian
+[Giulia](https://www.rotman.utoronto.ca/programs/phd-program/phd-student-profiles/giulia-sargiacomo/), [Xingchao](https://www.rotman.utoronto.ca/programs/phd-program/phd-student-profiles/xingchao-gao/), [Divyesh](https://www.rotman.utoronto.ca/programs/phd-program/phd-student-profiles/divyesh-rajendra-shah/), [Ben](https://www.rotman.utoronto.ca/programs/phd-program/phd-student-profiles/ben-ma/), [Yitian](https://www.rotman.utoronto.ca/programs/phd-program/phd-student-profiles/yitian-zhang/), [Jason](https://www.rotman.utoronto.ca/programs/phd-program/phd-student-profiles/junshen-jason-lin/), and [Harry](https://www.rotman.utoronto.ca/programs/phd-program/phd-student-profiles/haoyun-gao/)
