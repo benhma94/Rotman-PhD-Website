@@ -22,6 +22,10 @@ toc_items:
     title: "Tests and expectations"
   - id: second-year
     title: "Second-year planning"
+  - id: third-year
+    title: "Third year"
+  - id: fourth-year
+    title: "Fourth year"
   - id: conferences
     title: "Conferences"
   - id: toronto
@@ -338,14 +342,14 @@ At the end of July in Year 2, you will need to have a supervisory committee in p
 Every advisor relationship is different. Some students meet with their chairs once a month, or once a month. Some students get along very well with their advisors and meet every day and co-author on lots of projects. There's no rule on how to select advisors, but this is definitely an important relationship that will last much longer than your PhD.
 
 ## Third Year
-{: #Third-year}
+{: #third-year}
 
 After you complete your comps, you get promoted and move up to the 5th floor! Here you get to see other profs and really start to connect with faculty. No one takes attendance, if you still prefer to work from home, feel free! Other students come in every day.
 
 By the end of July of third year, you should have a draft thesis *proposal*. Not the thesis. Proposal. These can and will often change before you go on the job market. These proposals are usually presented late summer or early fall to the department.
 
 ## Fourth Year
-{: #Fourth-year}
+{: #fourth-year}
 
 Oh boy, the home stretch. Ideally by Summer (really June) of your fourth year, your thesis should now be in a preliminary state where you can start talking about it to people and start receving feedback. Ideally you present your thesis in April/May as your JMP (Job Market Paper). By the end of summer, you may need to start applying to jobs, and fifth year is really just interviews and finalizing your thesis.
 
