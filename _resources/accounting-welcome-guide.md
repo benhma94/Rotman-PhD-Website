@@ -71,13 +71,13 @@ During our daily lunch breaks, we explored the restaurants around campus, especi
 
 There are a few logistical must-dos specific to Canada that you should know after you get your visa. If you follow the advice here and complete each item in approximately the order below, you will save some time.
 
-### SIN number
+### Social Security Number (SIN)
 
-It’s crucial for you to head to a Service Canada, for example City Hall at 100 Queen St W, to get your Social Insurance Number. This number allows you to get a driver’s licence or provincial ID, do your taxes more easily, and be fully integrated into Canadian civic life. Bring your student permit and passport.
+It’s crucial for you to get your SIN. This number allows you to get a driver’s licence or provincial ID, do your taxes more easily, and be fully integrated into Canadian civic life. Bring your student permit and passport.
 
 ### TCard
 
-You get your TCard, or U of T student ID, at the student information desk inside the Bookstore Building at 214 College Street. Bring your student visa and passport.
+You get your TCard, or U of T student ID, at the student information desk inside the Bookstore Building at [800 Bay Street - 5th Floor](https://maps.app.goo.gl/QZ1mPEBCDWXXyrL19). Bring your student visa and passport.
 
 ### Insurance
 
@@ -144,7 +144,7 @@ Fibrestream, as well as Beanfield, seems to be a great and affordable fiber opti
 
 ### Driver’s licence or provincial ID
 
-Head to ServiceOntario. For a driver’s licence, you must go to the College Park ServiceOntario at 777 Bay Street. This can take a while, maybe 45 minutes to 2 hours. Try to visit ServiceOntario around 4 PM. You don’t need to wait long around this time, as we learned by experience. Bring your student visa, passport, and any other required documentation. For example, in order to swap your Korean driver’s licence, you need a document from the Korean embassy. An even better option is to [book a ServiceOntario appointment](https://www.ontario.ca/page/book-serviceontario-appointment) if possible.
+Head to ServiceOntario. For a driver’s licence, you must go to the College Park ServiceOntario at [777 Bay Street](https://maps.app.goo.gl/eMJ1iokT6JLnQ9YX8). This can take a while, maybe 45 minutes to 2 hours. Try to visit ServiceOntario around 4 PM. You don’t need to wait long around this time, as we learned by experience. Bring your student visa, passport, and any other required documentation. For example, in order to swap your Korean driver’s licence, you need a document from the Korean embassy. An even better option is to [book a ServiceOntario appointment](https://www.ontario.ca/page/book-serviceontario-appointment) if possible.
 
 ### Taxes
 
@@ -156,7 +156,7 @@ You can file taxes online or go to a tax advisor. If you choose online, Wealthsi
 
 Once you file your taxes, make sure to apply for the Ontario Electricity Rebate. Ben’s monthly hydro bill is about $60 to $70, and the rebate covers all of it.
 
-You may hear terms such as TFSA, RRSP, and FHSA floating around for savings plans. Please discuss with Ben, (he literally teaches the Rotman course for personal tax strategy), to get an overall Canadian education before doing anything with these investment plans, as for non-resident students there are special considerations, especially for PhD students, that you should be aware of. A lot of advice is generally catered toward Canadian resident students. If you have general financial questions, feel free to bug Ben, he hasn't bitten many students.
+You may hear terms such as TFSA, RRSP, and FHSA floating around for savings plans. Please discuss with Ben, (he literally teaches the Rotman course for personal tax strategy), to get an overall Canadian education before doing anything with these investment plans, as for non-resident students there are special considerations, especially for PhD students, that you should be aware of. A lot of advice is generally catered toward Canadian resident students. If you have general financial questions, feel free to bug Ben, he's only bitten one student so far.
 
 ## Housing
 {: #housing}
@@ -212,18 +212,18 @@ Parking, auto insurance, which is mandatory in Ontario, gas, etc. are generally 
 
 **Bike Share:** U of T is conveniently within range of several bike stations. Similar to other cities, you take a bike from a station and park it at another station. As long as you return the bike within 30 minutes, the ride is free. U of T is part of the student discount program, and if you sign up for Bike Share with your `@utoronto.ca` email, you’ll get a 30% discount, which ends up being about $80/year. Nonetheless, biking is slightly risky during winter with snow and black ice around if you’re not used to Canadian winters. Highly recommend that you wear protective gear. A good helmet is like $50-$100, and your brain is worth more than that.
 
-**Intercity travel:** If you need to go to another city in Ontario, such as Mississauga where there’s another U of T campus, you’ll likely use GO Transit, which is a different operator than TTC. You can just use your Presto card to tap on and off. Don’t forget to tap off, as it is a pricey thing to forget.
+**Intercity travel:** If you need to go to another city in Ontario, such as Mississauga where there’s another U of T campus, you’ll likely use GO Transit, which is a different operator than TTC. You can just use your Presto card to tap on and off. Don’t forget to tap off, as it is a pricey thing to forget. There is also a shuttle that goes from U of T Downtown to UTM.
 
 ### Fitness
 
 Exercise is important for balancing health and work. Your TCard will give you access in the Fall and Winter semesters to three on-campus gyms: Goldring, with weights and machines and a basketball court; Hart House, with weights and machines, squash courts, track, swimming pool, and basketball/volleyball courts; and the Athletic Centre, with weights and machines, track, swimming pool, and badminton courts. All of them offer free group fitness classes included in your student fees. Leting attends some and can answer questions. See [U of T group fitness workouts](https://kpe.utoronto.ca/sport-recreationrecreational-workouts-activities/group-fitness-workouts).
 
-To access these facilities in the summer months, graduate students have to pay a separate fee, part of which is guaranteed to be reimbursed through the Summer Gym Bursary. The AC and Goldring are under one membership, which is a bit pricier, around $220 or more, but gives access to two gyms. Hart House is its own membership, usually around $160 for the whole summer. Gym memberships are prorated daily and become more affordable as the summer goes on. If you’re away in May and purchase the membership in June, it will be three-quarters of the price because three-quarters of the summer is remaining. Ben usually goes to Hart House as it’s less crowded and marginally closer to Rotman. The downside is that they don’t have A/C, and it can be unbearable on hotter days. Leting personally thinks Goldring is best equipped, and Ben agrees.
+To access these facilities in the summer months, graduate students have to pay a separate fee, part of which is guaranteed to be reimbursed through the Summer Gym Bursary. The AC and Goldring are under one membership, which is a bit pricier, around $220 or more, but gives access to two gyms. Hart House is its own membership, usually around $160 for the whole summer. Gym memberships are prorated daily and become more affordable as the summer goes on. If you’re away in May and purchase the membership in June, it will be three-quarters of the price because three-quarters of the summer is remaining. Ben usually goes to Hart House as it’s less crowded and marginally closer to Rotman. The downside is that they don’t have A/C, and it can be unbearable on hotter days. Ben personally thinks Goldring is best equipped.
 
 ## Navigating Rotman
 {: #navigating-rotman}
 
-Your offices will be in PhD House for the first two years of the program. Those who entered the program in even-numbered years have cubicles on the second floor, and those who entered in odd-numbered years have cubicles on the first floor. You’ll be on the first floor.
+Your offices will be in PhD House for the first two years of the program. Those who entered the program in even-numbered years have cubicles on the second floor, and those who entered in odd-numbered years have cubicles on the first floor. You’ll be on the second floor.
 
 Shirley Vanderpuye and Kate Alexandrova are two wonderful people to get to know. They serve as PhD Coordinators, and their job is to manage the logistical aspects for all of the Rotman doctoral students, working directly under Katy DeCelles, the PhD Director and person who sent you your offer letter. Shirley and Kate’s office is across from the student lounge. Within the first few weeks of Math Camp, they will send you information about basic logistical aspects of the program, such as where to get your keys, how the scanner works, what ACORN is, etc. If you have any sort of problem with or question about the program or U of T that isn’t directly related to Accounting, go to them first. They are fountains of knowledge about all of the resources that the university has to offer. They are super kind and will always do their best to help you.
 
@@ -247,13 +247,12 @@ The accounting topics courses often inspire research ideas that you might want t
 Fun stuff: you guys are the first ones to get the new curriculum. Before, we had to take eight accounting seminars, which was a lot. Now you need to take a mix of mandatory and elective courses. Aida, the course coordinator, will give you more information. Professors hold seminars once every two years. Here are brief summaries of some of the accounting seminars:
 
 - Ole-Kristian’s Financial Accounting seminar: student-led discussions.
-- Ping’s Auditing seminar: student-led discussions.
+- Ping and Alex's Auditing and Tax seminar: student-led discussions.
 - Scott’s Debt Contracting and Banking seminar: student-led discussions.
-- Aida and Alex’s Corporate Governance and Tax seminar: student-led discussions.
 - Partha’s Fundamental Analysis and Valuation seminar: student-led discussions.
 - Baohua’s Accounting Theory seminar: half lectures and some student-led presentations.
 - Jeff’s Managerial Accounting seminar: half lectures and half student-led presentations.
-- Rotman Workshop, 3080H: pass/fail.
+- Rotman Workshop, 3080H: pass/fail, a few online classes.
 
 Your first year generally includes one Microecon, one Econometrics, and two accounting courses, which you’ll take with the second years.
 
@@ -261,7 +260,7 @@ Your first year generally includes one Microecon, one Econometrics, and two acco
 
 See the official [Management PhD degree requirements](https://sgs.calendar.utoronto.ca/management-tri-campus-management-phd). You need a minimum of two courses, or FCEs, from two minors, of which one needs to be another field in Rotman. We usually pick Finance as it’s the most relevant. Econ usually covers our other minor requirements.
 
-Technically, we only need six courses, as the 0.5 is for RSM 3080H, but you need four courses from Accounting for your comps, so eight is the minimum. Historically, we’ve done two Micro Econ, two Econometrics, two Finance, and eight accounting courses. Feel free to discuss with Aida, the program coordinator, if you feel like you need alternate accommodation.
+Technically, we only need six courses, as the 0.5 is for RSM 3080H, but you need four courses from Accounting for your comps, so eight is the minimum. Historically, we’ve done two Micro Econ, two Econometrics, two Finance, and eight accounting courses. Feel free to discuss with Aida, the program coordinator, if you feel like you need alternate accommodation. 
 
 ## Tests and Expectations
 {: #tests-expectations}
@@ -274,11 +273,11 @@ The tests are usually in the morning, so some of you might be interested in warm
 
 You will likely underperform on a test or two. Don’t let a poor mark on a midterm or final weigh you down. Most PhDs in the program, and even some professors in the department, had their own struggles with these courses and will offer good advice and a kind ear. Remember that these courses are one of the big occupational hurdles for this career path in the same style as the first year of law school for attorneys, organic chemistry for aspiring medical students, and fluid dynamics for undergraduate engineers. Focus on working hard individually and in your team, seeing the course as a doable challenge, and you will survive, and may thrive.
 
-An important caveat here is that grades are curved by the end of the course. Make sure to turn in all the problem sets. They help to boost your position in the curve. As said before, we will share a folder with all the materials we have. This might be helpful for you given that some of the problems are similar throughout the years.
+An important caveat here is that grades are curved by the end of the course. Make sure to turn in all the problem sets. They help to boost your position in the curve. As said before, we will share a folder with all the materials we have. This might be helpful for you given that some of the problems are similar throughout the years. Not to say that you can't fail the course, students can and have failed Econ classes. It is DEFINITELY not the end of the world if you do, just additional layer of stress unfortunately.
 
 ### First-year expectations
 
-Accounting usually has its meetings, speakers, and brown bags on Wednesday mornings or midday. As a first year, you’ll likely have conflicts with Econ courses and will be unable to attend. This is expected and understood. You’re not expected to come to these sessions if you have a conflict. That being said, it’s a good opportunity to network and meet other professors and students, so try to make it when you can.
+Accounting usually has its meetings, speakers, and brown bags on Wednesday mornings or midday. As a first year, you’ll likely have conflicts with Econ courses and will be unable to attend. This is expected and understood. You’re not expected to come to these sessions if you have a conflict. That being said, it’s a good opportunity to network and meet other professors and students, so try to make it when you can. You are otherwise expected to attend, and profs will notice if you don't (and probably call you out).
 
 If you haven’t already, try to set aside some time to learn Python, LaTeX, R, and Stata. These will be helpful tools for you in the future. Ben recommends that you download Zotero to start your personal reference library. Just download the paper and save it when you read a paper and save your notes there. It’ll pay dividends in the future.
 
@@ -301,9 +300,9 @@ You may be able to take an elective in Economics or in a different Rotman area, 
 
 Here are some of the courses that we have usually taken so far:
 
-- **Empirical Asset Pricing, Finance:** Stacey highly recommends taking Mike and Charles’ empirical asset pricing course. The course materials are relevant to accounting research, and they are very nice, not to mention experts in this area.
-- **Corporate Finance 1 and 2, Finance:** Ben highly recommends not taking Corporate Finance 1 unless you plan on doing theoretical research. It is very much another Econ/proofing course. Corporate Finance 2 is much more applicable and involves empirical methods.
-- **ECO2504 Financial Economics II with Varouj in the Econ department:** helpful and lecture-based. He walks students through the fundamental theories of corporate finance. Emma took this course during her master’s program. It offers a good overview of some fundamental finance theories.
+- **Empirical Asset Pricing, Finance:** Ben highly recommends taking Mike and Charles’ empirical asset pricing course. The course materials are relevant to accounting research, and they are very nice, not to mention experts in this area.
+- **Corporate Finance 1 and 2, Finance:** Ben highly recommends not taking Corporate Finance 1 unless you plan on doing theoretical research. It is very much another Econ/proofing course. Corporate Finance 2 is much more applicable and involves empirical methods. Corporate Finance 2 is taught by Andrey.
+- **ECO2404 Empirical Applications of Economic Theory:** A much more applicable course on practical applications of ECON as opposed to statistical analysis.
 
 Note that it is advised to register for courses early, especially for courses in departments outside of Rotman. The number of spots for cross-registrants is sometimes limited. In our experience, registering for courses in other departments can be challenging. The best practice is to see whether one of us has taken your class of interest before, since we may know the professor or procedures. Next, reach out to the professor, introduce yourself, and see whether you can cross-register.
 
@@ -329,7 +328,7 @@ Several conferences host doctoral consortia where PhD students can receive resea
 After you pass comps in the second year, you receive a travel budget ($2,851) to attend conferences. Sometimes, professors may sponsor you to attend some conferences (especially if you're presenting a coauthored paper), but you’re also not expected to attend conferences when you first start. If you have the opportunity, definitely try.
 
 **CAAA Craft Workshop**  
-Attended by Ben and Divyesh. It has historically been hosted in early to mid-June. It includes faculty presentations on research and work-life balance, and PhD students present their dissertations for feedback.
+Attended by Ben, Giulia, Xingchao, and Divyesh. It has historically been hosted in early to mid-June. It includes faculty presentations on research and work-life balance, and PhD students present their dissertations for feedback.
 
 **CAR Doctoral Consortium**  
 Attended by Giulia, Ben, Xingchao, and Divyesh.
@@ -384,7 +383,7 @@ Sometimes living abroad is difficult and challenging. You are new in the place, 
 
 ### In closing
 
-We hope that this letter has demystified the first year and provided some context to the sometimes stressful, exciting, and rewarding lifestyle that comprises the first eight months at Rotman. Feel free to reach out if you have any other questions.
+We hope that this letter has demystified the first year and provided some context to the sometimes stressful, exciting, and rewarding lifestyle that comprises the first eight months at Rotman. Feel free to reach out if you have any other questions, or just come and say hi! If we're in office, you can find us in the first floor PhD House or the 5th floor of Rotman, most of us don't bite!
 
 Otherwise, enjoy your final few months before becoming an academic. We can’t wait to have you join this scholarly community and, in particular, to join our team.
 
