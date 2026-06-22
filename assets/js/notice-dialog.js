@@ -3,9 +3,11 @@ var NoticeDialog = (function () {
   var dlgDate  = document.getElementById('notice-dialog-date');
   var dlgTitle = document.getElementById('notice-dialog-title');
   var dlgBody  = document.getElementById('notice-dialog-body');
+  var closeButton = document.getElementById('notice-dialog-close');
   var _closeHandler = null;
+  var _returnFocus = null;
 
-  document.getElementById('notice-dialog-close').addEventListener('click', close);
+  closeButton.addEventListener('click', close);
   overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
@@ -35,10 +37,13 @@ var NoticeDialog = (function () {
     dlgTitle.textContent = title;
     dlgBody.innerHTML    = html;
     autolinkUrls(dlgBody);
+    _returnFocus = document.activeElement;
     document.body.style.overflow = 'hidden';
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         overlay.classList.add('is-open');
+        var initialFocus = dlgBody.querySelector('[data-dialog-autofocus]') || closeButton;
+        initialFocus.focus();
       });
     });
   }
@@ -46,6 +51,8 @@ var NoticeDialog = (function () {
   function close() {
     if (_closeHandler) overlay.removeEventListener('transitionend', _closeHandler);
     overlay.classList.remove('is-open');
+    if (_returnFocus && typeof _returnFocus.focus === 'function') _returnFocus.focus();
+    _returnFocus = null;
     _closeHandler = function handler(e) {
       if (e.propertyName !== 'opacity') return;
       overlay.removeEventListener('transitionend', _closeHandler);

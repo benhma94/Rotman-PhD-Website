@@ -10,7 +10,12 @@ title: Events
   <button type="button" class="view-tab active" data-view="calendar">📅 Calendar</button>
   <button type="button" class="view-tab" data-view="list">☰ List</button>
 </div>
-<a href="{{ site.url | replace: 'https://', 'webcal://' }}{{ site.baseurl }}/events.ics" class="cal-subscribe-btn">📅 Subscribe to Calendar</a>
+<button type="button"
+        class="cal-subscribe-btn"
+        id="calendar-subscribe"
+        data-calendar-url="{{ '/events.ics' | absolute_url }}"
+        data-webcal-url="{{ '/events.ics' | absolute_url | replace_first: 'https://', 'webcal://' }}"
+        aria-haspopup="dialog">📅 Subscribe to Calendar</button>
 
 <div id="calendar-view">
   <div class="cal-nav">

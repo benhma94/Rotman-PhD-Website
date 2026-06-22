@@ -52,6 +52,13 @@
     document.querySelector('.cal-prev').addEventListener('click', function () { navigate(-1); });
     document.querySelector('.cal-next').addEventListener('click', function () { navigate(1); });
 
+    var subscribeButton = document.getElementById('calendar-subscribe');
+    if (subscribeButton) {
+      subscribeButton.addEventListener('click', function () {
+        openSubscribeGuide(subscribeButton);
+      });
+    }
+
     renderGrid(currentYear, currentMonth);
 
     document.querySelectorAll('.event-full-item').forEach(function (el) {
@@ -116,6 +123,73 @@
       }
     }
 
+  }
+
+  function openSubscribeGuide(trigger) {
+    NoticeDialog.open(
+      'Subscribe to Calendar',
+      'Classic Outlook for Windows',
+      '<div class="calendar-subscribe-guide">' +
+        '<p>Copy this calendar address, then add it as an Internet Calendar in Outlook.</p>' +
+        '<div class="calendar-url-row">' +
+          '<input type="text" id="calendar-feed-url" class="calendar-feed-url" aria-label="Calendar address" readonly>' +
+          '<button type="button" id="calendar-copy-url" class="calendar-copy-btn" data-dialog-autofocus>Copy calendar link</button>' +
+        '</div>' +
+        '<p id="calendar-copy-status" class="calendar-copy-status" aria-live="polite"></p>' +
+        '<ol class="calendar-subscribe-steps">' +
+          '<li>In Outlook, select <strong>File &gt; Account Settings &gt; Account Settings</strong>.</li>' +
+          '<li>Open the <strong>Internet Calendars</strong> tab and select <strong>New</strong>.</li>' +
+          '<li>Paste the copied address, select <strong>Add</strong>, then name and save the calendar.</li>' +
+        '</ol>' +
+        '<div class="calendar-other-apps">' +
+          '<strong>Using another calendar app?</strong>' +
+          '<p><a id="calendar-webcal-link" href="">Open calendar app</a></p>' +
+        '</div>' +
+      '</div>'
+    );
+
+    var input = document.getElementById('calendar-feed-url');
+    var copyButton = document.getElementById('calendar-copy-url');
+    var status = document.getElementById('calendar-copy-status');
+    var webcalLink = document.getElementById('calendar-webcal-link');
+
+    input.value = trigger.dataset.calendarUrl;
+    webcalLink.href = trigger.dataset.webcalUrl;
+    copyButton.addEventListener('click', function () {
+      copyCalendarUrl(input, copyButton, status);
+    });
+  }
+
+  function copyCalendarUrl(input, button, status) {
+    function copied() {
+      button.textContent = 'Copied';
+      status.textContent = 'Calendar link copied to the clipboard.';
+    }
+
+    function fallbackCopy() {
+      input.focus();
+      input.select();
+      input.setSelectionRange(0, input.value.length);
+      try {
+        if (document.execCommand('copy')) {
+          copied();
+          return;
+        }
+      } catch (e) {
+        // Leave the URL selected so it can still be copied manually.
+      }
+      status.textContent = 'Copy did not work automatically. Press Ctrl+C to copy the selected link.';
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try {
+        navigator.clipboard.writeText(input.value).then(copied, fallbackCopy);
+      } catch (e) {
+        fallbackCopy();
+      }
+    } else {
+      fallbackCopy();
+    }
   }
 
   function makeCell(year, month, day, otherMonth) {

@@ -611,20 +611,79 @@ body {
 
 /* ── Calendar subscribe button ───────────────── */
 .cal-subscribe-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: 0.8rem;
+  font-family: var(--font);
   font-weight: 600;
   color: var(--cyan);
+  background: var(--white);
   text-decoration: none;
   border: 1px solid var(--cyan);
   border-radius: 4px;
   padding: 0.25rem 0.7rem;
   margin-bottom: 1rem;
+  cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
 .cal-subscribe-btn:hover {
   background: var(--cyan);
   color: var(--white);
+}
+
+.calendar-subscribe-guide p { margin: 0 0 0.75rem; }
+.calendar-url-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+.calendar-feed-url {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 4px;
+  background: var(--gray-100);
+  color: #374151;
+  font: inherit;
+}
+.calendar-copy-btn {
+  border: 1px solid var(--cyan);
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  background: var(--cyan);
+  color: var(--white);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.calendar-copy-btn:hover { filter: brightness(0.92); }
+.calendar-copy-btn:focus-visible,
+.calendar-feed-url:focus-visible,
+.cal-subscribe-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+.calendar-copy-status {
+  min-height: 1.5em;
+  margin-top: 0.35rem !important;
+  color: var(--gray-600);
+  font-size: 0.85rem;
+}
+.calendar-subscribe-steps {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.25rem;
+}
+.calendar-subscribe-steps li + li { margin-top: 0.4rem; }
+.calendar-other-apps {
+  border-top: 1px solid var(--gray-200);
+  padding-top: 0.9rem;
+}
+.calendar-other-apps p { margin: 0.2rem 0 0; }
+
+@media (max-width: 520px) {
+  .calendar-url-row { flex-direction: column; }
+  .calendar-copy-btn { width: 100%; }
 }
 
 /* ── Calendar nav ──────────────────────────────── */
