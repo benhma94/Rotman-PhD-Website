@@ -287,13 +287,13 @@ You won't have a lot of free time in the first year, but Toronto has plenty goin
 ## SSHRC funding
 {: #sshrc}
 
-SSHRC is the Canadian federal agency that funds students in research-based social-science programs (and yes, even if you do almost exclusively mathematics, you are still in social sciences). It's open to Canadian citizens and, new in 2025, international students. A closely related option is the FRQ (Fonds de Recherche du Québec) -- a near-copy of the SSHRC application that few people apply to; if you're a Quebecer, you should do it.
+[SSHRC](https://sshrc-crsh.canada.ca/en/funding/opportunities/canada-graduate-research-scholarships/doctoral-program.aspx) is the Canadian federal agency that funds students in research-based social-science programs (and yes, even if you do almost exclusively mathematics, you are still in social sciences). It's open to Canadian citizens and, new in 2025, international students. A closely related option is the [FRQ (Fonds de Recherche du Québec)](https://frq.gouv.qc.ca/en/society-and-culture/) -- a near-copy of the SSHRC application that few people apply to; if you're a Quebecer, you should do it.
 
 Procedural details change year to year, so this won't go through every step. A comprehensive prep class is offered each year; it's good but lengthy, and reading the notes and applying the core principles should be enough.
 
 ### How it works
 
-- **The competition:** As a University of Toronto student, you apply through the SSHRC portal, and the school has a quota. The application is routed through your graduate assistant but completed entirely on the portal.
+- **The competition:** As a University of Toronto student, you apply through the [SSHRC online portal](https://webapps.nserc.ca/SSHRC/faces/logonFellowships.jsp), and the school has a quota (at U of T this runs through the [SGS doctoral award process](https://www.sgs.utoronto.ca/awards/canada-graduate-research-scholarship-doctoral-cgrs-d-program/)). The application is routed through your graduate assistant but completed entirely on the portal.
 - **Time required:** If you've done it before, maybe 2-4 hours, excluding the drafting of the main documents (letter of intent and research proposal). If not, it takes longer, and you'll also need references, which takes time.
 - **Grading:** It's a competition with no participation prize. Each school does a first pass of its students, and only a portion (roughly 40% in a recent year) of the second "best tier" gets the award. It's competitive but not impossible. They grade both your background (school, grades) and your application (research proposal, letter of intent), and you get no feedback either way.
 - **If you win:** A nice CV line, an event where you shake hands and smile, and -- while you don't keep the full award -- UofT lets you keep a portion (around $10k).
@@ -309,10 +309,10 @@ Procedural details change year to year, so this won't go through every step. A c
 ## Quebec bursaries
 {: #quebec}
 
-This section covers applying for Quebec bursaries by filling out the 1121 form. (This is completely different from the FRQ competition above -- this is not a competition.)
+This section covers applying for Quebec bursaries by filling out the [1121 form](https://www.quebec.ca/en/education/student-financial-assistance/loans-bursaries-full-time-studies/studying-outside-quebec) (for students [studying outside Québec](https://www.quebec.ca/en/education/student-financial-assistance)). (This is completely different from the FRQ competition above -- this is not a competition.)
 
 - The 1121 helps you apply for Quebec student aid. If you had high past employment income (roughly > $40k before taxes), don't expect much. Depending on your past income and current needs, you may get a different mix of loans and bursaries -- loans must be repaid, bursaries are free.
-- You submit a partially filled 1121 through the "Out of Province Portal" (OOP) to the registration office, which fills in the rest; you then submit to AFE.
+- You submit a partially filled 1121 through the "Out of Province Portal" (OOP) to the registration office, which fills in the rest; you then submit to [AFE (Aide financière aux études)](https://www.quebec.ca/en/education/student-financial-assistance).
 - The AFE office can be disorganized, and if you make a mistake they may send repeated, unclear notices. Don't panic, though: the bursaries are retroactive, so if something goes wrong or your application is delayed, you'll still receive a lump-sum payment once it's sorted out.
 
 ### General instructions
