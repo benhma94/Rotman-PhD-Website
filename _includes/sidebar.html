@@ -22,6 +22,11 @@
     </a>
   </nav>
   <div class="sidebar-footer">
+    <a href="{{ '/resources/economics-welcome-guide/' | relative_url }}"
+       class="nav-item {% if page.url contains 'economics' %}active{% endif %}"
+       id="economics-link">
+      Economics
+    </a>
     <a href="{{ '/resources/accounting-welcome-guide/' | relative_url }}"
        class="nav-item {% if page.url contains 'accounting' %}active{% endif %}"
        id="accounting-link"
