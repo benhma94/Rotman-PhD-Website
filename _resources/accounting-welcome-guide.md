@@ -123,7 +123,7 @@ Make sure you ask for a student account, as this account has many benefits for f
 Used by Ben. Subsidiary of Scotiabank. No-frills account, no account minimums, and no fees. You can use any Scotiabank ATM without fees. If you qualify for their credit card, it’s a free credit card that gives you 2% back in any three categories. Ben uses recurring transactions, transit, and entertainment.
 
 **RBC**  
-Used by Giulia, and Xingchao. RBC currently has very high promotional interest rates on savings accounts due to inflation. It doesn’t hurt to call a representative or stop by the RBC branch to ask if interested. Credit card recommendation: RBC ION+, with 3 points for every dollar spent on food, grocery, gaming, etc., and 15,000 points for free return flights between Toronto and NYC.
+Used by Giulia, Xingchao, and Yitian. RBC currently has very high promotional interest rates on savings accounts due to inflation. It doesn’t hurt to call a representative or stop by the RBC branch to ask if interested. Credit card recommendation: RBC ION+, with 3 points for every dollar spent on food, grocery, gaming, etc., and 15,000 points for free return flights between Toronto and NYC.
 
 **TD Canada Trust**  
 
@@ -141,7 +141,7 @@ Used by Ben. No-frills, online only, no account minimums, unlimited transactions
 
 Xingchao uses Fizz and Ben uses Telus through a corporate phone scheme. Fizz is really cheap for US and Canada, and coverage is actually pretty good. Note that U of T has an EPP with Telus, which gives you a 5G plan with unlimited data, with 30GB at unlimited speed, using your U of T email address. In case you plan to buy a new phone, make sure that you ask for a student account option as well. For instance, Bell has a huge discount option for students.
 
-If you want to keep your non-Canadian SIM, check if your phone can hold two SIMs. Most iPhones can. One of the two cards should be added as a virtual eSIM.
+If you want to keep your non-Canadian SIM, check if your phone can hold two SIMs. Most iPhones can. One of the two cards should be added as a virtual eSIM. (PS: [CTExcel](https://www.ctexcel.ca/newversion/home) offers a program that allows a Chinese e-SIM, which can be used to receive calls and messages from China almost for free, along with a Canadian e-SIM.)
 
 If you plan to use internet data sparingly, one of the cheapest options might be Freedom. This company offers a prepaid plan granting unlimited text and calls for approximately $120, tax included, for the full year. Data can be added, if needed, at $15 plus tax per gigabyte per month.
 
@@ -186,6 +186,7 @@ The following are useful websites or Facebook groups for finding houses, rooms, 
 - [U of T Off-Campus Housing Search](https://offcampushousing.utoronto.ca/)
 - [U of T Roommate Finder](https://studentlife.utoronto.ca/task/find-a-roommate/)
 - [U of T Housing Resources](https://offcampushousing.utoronto.ca/resource), including a useful apartment viewing checklist.
+- For Chinese: [RealMaster](https://www.realmaster.com/en/)  
 - U of T Grad House, if you apply as early as possible, because the waiting list can be pretty long.
 
 Also, don’t hesitate to reach out to the Ontario Tenants Board to know your rights or if you have any questions: [Renting in Ontario: Your rights](https://www.ontario.ca/page/renting-ontario-your-rights). When you rent a place in Toronto, you usually have to sign the Ontario standard lease for a year and prepare 12 post-dated cheques. Once you are over your one-year lease, you are on a month-to-month basis unless you renew, and the owner can only increase the rent by a capped rate unless the building is fairly new and is exempt from these restrictions. Buildings first inhabited after 2018 are exempt from rent controls, and price hikes can be whatever they want.
@@ -255,17 +256,18 @@ Each professor operates their own course differently, but the standard final del
 
 The accounting topics courses often inspire research ideas that you might want to pursue in the first-year paper. Building strong working relationships with professors in Accounting can be an invaluable way to help generate and clarify these ideas as you progress.
 
-Fun stuff: you guys are the first ones to get the new curriculum. Before, we had to take eight accounting seminars, which was a lot. Now you need to take a mix of mandatory and elective courses. Aida, the course coordinator, will give you more information. Professors hold seminars once every two years. Here are brief summaries of some of the accounting seminars:
+Fun stuff: you guys are the first ones to get the new curriculum. Before, we had to take eight accounting seminars, which was a lot. Now you need to take a mix of mandatory and elective courses. Aida (temporarily will be Jee-Eun Shin when Aida is on sabbatical in 26-27 academic year), the course coordinator, will give you more information. Professors hold seminars once every two years. Here are brief summaries of some of the accounting seminars (all offered on a half-year basis):
 
-- Ole-Kristian’s Financial Accounting seminar: student-led discussions.
+- Ole-Kristian’s Financial Accounting seminar: student-led discussions. (get prepared for econometrics or empirical methods related questions in class)
 - Ping and Alex's Auditing and Tax seminar: student-led discussions.
 - Scott’s Debt Contracting and Banking seminar: student-led discussions.
-- Partha’s Fundamental Analysis and Valuation seminar: student-led discussions.
-- Baohua’s Accounting Theory seminar: half lectures and some student-led presentations.
-- Jeff’s Managerial Accounting seminar: half lectures and half student-led presentations.
-- Rotman Workshop, 3080H: pass/fail, a few online classes.
+- Partha’s Fundamental Analysis and Valuation seminar: student-led discussions. (classic capital market and valuation papers such as Ball-and-Brown)
+- Baohua’s Accounting Theory seminar: half lectures and some student-led presentations, mostly analytical models (last offered in 2025 Fall as half a course with Dushyant)
+- Dushyant’s Financial Accounting and Disclosure seminar: half lectures and student-led presentations, some overlaps with Partha’s seminar (last offered in 2025 Fall as half a course with Baohua)
+- Jeff’s Managerial Accounting seminar: half lectures and half student-led presentations. (some math/stats + econometrics, get ready for weekly assignments, biweekly presentations, a final exam, and a final project which requires you to come up with a paper)
+- Rotman Workshop, 3080H: pass/fail, (sometimes offered online, but most likely to be held in-person)
 
-Your first year generally includes one Microecon, one Econometrics, and two accounting courses, which you’ll take with the second years.
+Your first two semesters generally include two Microecon (half-year courses), two Econometrics (half-year courses), and three to four Accounting (half-year courses), which you’ll take with the second years.
 
 ### Degree requirements
 
@@ -303,7 +305,7 @@ Our stipend goes down by about $7,000-$8,000 starting from our second year. Thus
 
 TA positions are very competitive, and you’d better contact professors in advance to check if the positions are available. You can contact professors you’re interested in building relationships with. That being said, there are some courses where you can make money fairly easily. Feel free to reach out to upper-year students to get some tips.
 
-Applications are open very early, two to three months in advance, and you’ll receive a notification from CUPE once they are open. Please look out for those emails unless you don’t want to be embarrassed like Stacey.
+Applications are open very early, two to three months in advance, and you’ll receive a notification from CUPE once they are open. Please look out for those emails unless you don’t want to be embarrassed like former upper-years.
 
 ### Taking elective courses
 
@@ -312,7 +314,7 @@ You may be able to take an elective in Economics or in a different Rotman area, 
 Here are some of the courses that we have usually taken so far:
 
 - **Empirical Asset Pricing, Finance:** Ben highly recommends taking Mike and Charles’ empirical asset pricing course. The course materials are relevant to accounting research, and they are very nice, not to mention experts in this area.
-- **Corporate Finance 1 and 2, Finance:** Ben highly recommends not taking Corporate Finance 1 unless you plan on doing theoretical research. It is very much another Econ/proofing course. Corporate Finance 2 is much more applicable and involves empirical methods. Corporate Finance 2 is taught by Andrey.
+- **Corporate Finance 1 and 2, Finance:** Ben & Yitian highly recommend not taking Corporate Finance 1 unless you plan on doing theoretical research. It is very much another Econ/proofing course. Corporate Finance 2 is much more applicable and involves empirical methods. Corporate Finance 2 is taught by Andrey.
 - **ECO2404 Empirical Applications of Economic Theory:** A much more applicable course on practical applications of ECON as opposed to statistical analysis.
 
 Note that it is advised to register for courses early, especially for courses in departments outside of Rotman. The number of spots for cross-registrants is sometimes limited. In our experience, registering for courses in other departments can be challenging. The best practice is to see whether one of us has taken your class of interest before, since we may know the professor or procedures. Next, reach out to the professor, introduce yourself, and see whether you can cross-register.
@@ -327,9 +329,7 @@ Usually the presentation is in October or November of your second year. Generall
 
 ### Qualification exams around early June
 
-Fun fact: you guys will be part of a new comp system, mostly the same structure of professors writing questions for you, where there will be mandatory comp topics and optional comp topics.
-
-Otherwise, the second semester rolls on much like the first semester, with a new set of accounting topics courses. The four months will fly by, new first years will visit in April, and summer will arrive before you know it.
+As of June 2026, there will be four core courses included in the comp: OKH’s empirical methods in accounting research; Scott’s debt contracting and banking; Partha’s capital market and valuation; and Jeff’s managerial accounting. To take those comps, you would need to take those four mandatory seminars.
 
 ### Thesis Committee
 
@@ -361,7 +361,7 @@ Several conferences host doctoral consortia where PhD students can receive resea
 After you pass comps in the second year, you receive a travel budget ($2,851) to attend conferences. Sometimes, professors may sponsor you to attend some conferences (especially if you're presenting a coauthored paper), but you’re also not expected to attend conferences when you first start. If you have the opportunity, definitely try.
 
 **CAAA Craft Workshop**  
-Attended by Ben, Giulia, Xingchao, and Divyesh. It has historically been hosted in early to mid-June. It includes faculty presentations on research and work-life balance, and PhD students present their dissertations for feedback.
+Attended by Ben, Giulia, Xingchao, Divyesh, and Yitian. It has historically been hosted from early to mid-June. It includes faculty presentations on research and work-life balance, and PhD students present their dissertations for feedback. CAAA is usually held within Canada, which allows you to explore Canada (2026 was in Banff).
 
 **CAR Doctoral Consortium**  
 Attended by Giulia, Ben, Xingchao, and Divyesh.
